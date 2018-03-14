@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <title>python.内置函数</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            width: auto;
+            height: auto;
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            overflow-x: scroll;
+            min-width: 0px;
+            margin: 0 10px;
+        }
+        #nav-thumbs{
+            overflow-y: scroll;
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            display: block;
+            margin:10px auto;
+            margin-bottom: 0;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #08a1ef;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+            #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+            #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+            #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info">
+        <div id="content-info">
+          <div id="title">python.内置函数</div>
+        </div>
+        <div id="author-info">
+          <div class="text" id="author-name">admin</div>
+          <div class="text" id="share-time">2018-01-31</div>
+        </div>
+      </div>
+      <div id="main-content">
+        <div id="svg-container"><svg width="1727" xmlns:ed="http://www.edrawsoft.cn/xml/2017/SVGExtensions/" viewBox="0 0 1727 5853" xmlns:xlink="http://www.w3.org/1999/xlink" ed:vSpacing="30" preserveAspectRadio="xMinYMin meet" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns="http://www.w3.org/2000/svg" ed:name="Page-1" id="page1" height="5853" ed:hSpacing="30">
+    <style type="text/css"><![CDATA[
+g[ed\:togtopicid],g[ed\:hyperlink],g[ed\:comment],g[ed\:note] {cursor:pointer;}
+g[id] {-moz-user-select: none;-ms-user-select: none;user-select: none;}
+svg text::selection,svg tspan::selection{background-color: #4285f4;color: #ffffff;fill: #ffffff;}
+.st2 {fill:#303030;font-family:宋体;font-size:10pt}
+.st1 {fill:#303030;font-family:宋体;font-size:12pt}
+.st3 {fill:#303030;font-family:宋体;font-size:14pt}
+]]></style>
+    <defs>
+        <linearGradient y2="100%" x2="0%" y1="0%" id="lg1" x1="0%">
+            <stop stop-color="#ffffff" offset="0"/>
+            <stop stop-color="#f0f5f0" offset="0.25"/>
+            <stop stop-color="#e1ebe1" offset="0.75"/>
+            <stop stop-color="#c8d7c8" offset="1"/>
+        </linearGradient>
+    </defs>
+    <rect width="1727" x="0" y="0" height="5853" fill="#ffffff"/>
+    <g transform="translate(345,155.85)" ed:parentid="101" id="102" ed:height="40" ed:width="139">
+        <path stroke="#4486b1" d="M4,0L135,0C137.2,0,139,1.8,139,4L139,36C139,38.2,137.2,40,135,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" stroke-linejoin="round" fill="#f5f9fe"/>
+        <path stroke="#4486b1" transform="translate(-63.75,1395.37)" stroke-linecap="round" id="103" d="M-49,1344.4C15.2,1041.7,-55.8,-1375.4,63.8,-1375.4" stroke-linejoin="round" fill="none"/>
+        <text class="st1">
+            <tspan style="white-space:pre" textLength="96" lengthAdjust="spacing" x="22" y="26.5">查看内置函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(345,2953.95)" ed:parentid="101" id="104" ed:height="40" ed:width="107">
+        <path stroke="#4486b1" d="M4,0L103,0C105.2,0,107,1.8,107,4L107,36C107,38.2,105.2,40,103,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" stroke-linejoin="round" fill="#f5f9fe"/>
+        <path stroke="#4486b1" transform="translate(-63.75,-3.68)" stroke-linecap="round" id="105" d="M0.7,-0.8C19.6,11.3,37.6,23.7,63.8,23.7" stroke-linejoin="round" fill="none"/>
+        <text class="st1">
+            <tspan style="white-space:pre" textLength="64" lengthAdjust="spacing" x="22" y="26.5">内置函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,151)" ed:parentid="102" id="114" ed:height="20.5" ed:width="86">
+        <path stroke="#4486b1" transform="translate(-14.5,22.67)" stroke-linecap="round" id="115" d="M-14.5,2.2C-2.4,2.2,4.6,-2.2,14.5,-2.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L86,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="78" lengthAdjust="spacing" x="4" y="15.8">查看全局变量</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,180.2)" ed:parentid="102" id="116" ed:height="20.5" ed:width="86">
+        <path stroke="#4486b1" transform="translate(-14.5,8.08)" stroke-linecap="round" id="117" d="M-14.5,-12.4C-0,-12.4,-0.9,12.4,14.5,12.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L86,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="78" lengthAdjust="spacing" x="4" y="15.8">查看内置函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(628,151)" ed:parentid="114" id="118" ed:height="20.5" ed:width="71">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="119" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="63" lengthAdjust="spacing" x="4" y="15.8">globals()</tspan>
+        </text>
+    </g>
+    <g transform="translate(628,180.2)" ed:parentid="116" id="120" ed:height="20.5" ed:width="127">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="121" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L127,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="119" lengthAdjust="spacing" x="4" y="15.8">dir(__builtins__)</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,267.8)" ed:parentid="104" id="122" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,1363.32)" stroke-linecap="round" id="123" d="M-14.5,1342.8C5.8,1342.8,-14.5,-1342.8,14.5,-1342.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">abs()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,386.2)" ed:parentid="104" id="124" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,1304.12)" stroke-linecap="round" id="125" d="M-14.5,1283.6C5.8,1283.6,-14.5,-1283.6,14.5,-1283.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">all()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,549.6)" ed:parentid="104" id="126" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,1222.42)" stroke-linecap="round" id="127" d="M-14.5,1201.9C5.8,1201.9,-14.5,-1201.9,14.5,-1201.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">any()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,727.2)" ed:parentid="104" id="128" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,1133.62)" stroke-linecap="round" id="129" d="M-14.5,1113.1C5.8,1113.1,-14.5,-1113.1,14.5,-1113.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">ascii()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1126.2)" ed:parentid="104" id="130" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,934.12)" stroke-linecap="round" id="131" d="M-14.5,913.6C5.8,913.6,-14.5,-913.6,14.5,-913.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">bool()</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,245.7)" ed:parentid="122" id="132" ed:height="20.5" ed:width="73">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="133" d="M-14.5,11.1C-0.3,11.1,-0.2,-11,14.5,-11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L73,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="65" lengthAdjust="spacing" x="4" y="15.8">绝对值函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,319.1)" ed:parentid="124" id="136" ed:height="20.5" ed:width="582">
+        <path stroke="#4486b1" transform="translate(-14.5,54.05)" stroke-linecap="round" id="137" d="M-14.5,33.5C4,33.5,-10.2,-33.6,14.5,-33.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L582,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="574" lengthAdjust="spacing" x="4" y="15.8">接收一个可迭代对象，如果对象里的所有元素的bool运算值都是True，那么返回True，否则False。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,274.9)" ed:parentid="122" id="138" ed:height="35.5" ed:width="85">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="139" d="M-14.5,-11.1C-0.3,-11.1,-0.2,11,14.5,11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L85,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> abs(-1)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">1</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,348.3)" ed:parentid="124" id="140" ed:height="125.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,91.95)" stroke-linecap="round" id="141" d="M-14.5,-33.5C4,-33.5,-10.2,33.5,14.5,33.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,125.5L120,125.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> all([1,1,1])</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> all([1,1,0])</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">False</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> all([1,0,0])</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">False</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> all([0,0,0])</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">False</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,482.5)" ed:parentid="126" id="142" ed:height="20.5" ed:width="595">
+        <path stroke="#4486b1" transform="translate(-14.5,54.05)" stroke-linecap="round" id="143" d="M-14.5,33.5C4,33.5,-10.2,-33.5,14.5,-33.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L595,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="587" lengthAdjust="spacing" x="4" y="15.8">接收一个可迭代对象，如果迭代对象里有一个元素的bool运算值是True，那么返回True，否则False。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,511.7)" ed:parentid="126" id="144" ed:height="125.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,91.95)" stroke-linecap="round" id="145" d="M-14.5,-33.5C4,-33.5,-10.2,33.6,14.5,33.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,125.5L120,125.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> any([1,1,1])</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> any([1,0,1])</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> any([1,0,0])</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> any([0,0,0])</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">False</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1281.3)" ed:parentid="104" id="146" ed:height="20.5" ed:width="85">
+        <path stroke="#4486b1" transform="translate(-14.5,856.57)" stroke-linecap="round" id="147" d="M-14.5,836.1C5.8,836.1,-14.5,-836.1,14.5,-836.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L85,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="77" lengthAdjust="spacing" x="4" y="15.8">bytearray()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1406.8)" ed:parentid="104" id="148" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,793.82)" stroke-linecap="round" id="149" d="M-14.5,773.3C5.8,773.3,-14.5,-773.3,14.5,-773.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">bytes()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1532.3)" ed:parentid="104" id="150" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,731.07)" stroke-linecap="round" id="151" d="M-14.5,710.6C5.8,710.6,-14.5,-710.6,14.5,-710.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">str()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,926.5)" ed:parentid="104" id="154" ed:height="20.5" ed:width="127">
+        <path stroke="#4486b1" transform="translate(-14.5,1033.97)" stroke-linecap="round" id="155" d="M-14.5,1013.5C5.8,1013.5,-14.5,-1013.5,14.5,-1013.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L127,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="119" lengthAdjust="spacing" x="4" y="15.8">bin(),oct(),hex()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1672.8)" ed:parentid="104" id="156" ed:height="20.5" ed:width="78">
+        <path stroke="#4486b1" transform="translate(-14.5,660.82)" stroke-linecap="round" id="157" d="M-14.5,640.3C5.8,640.3,-14.5,-640.3,14.5,-640.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L78,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="70" lengthAdjust="spacing" x="4" y="15.8">callable()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1828.7)" ed:parentid="104" id="158" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,582.87)" stroke-linecap="round" id="159" d="M-14.5,562.4C5.8,562.4,-14.5,-562.4,14.5,-562.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">chr()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1954.6)" ed:parentid="104" id="160" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,519.92)" stroke-linecap="round" id="161" d="M-14.5,499.4C5.8,499.4,-14.5,-499.4,14.5,-499.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">ord()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2020.9)" ed:parentid="104" id="162" ed:height="20.5" ed:width="281">
+        <path stroke="#4486b1" transform="translate(-14.5,486.77)" stroke-linecap="round" id="163" d="M-14.5,466.3C5.8,466.3,-14.5,-466.3,14.5,-466.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L281,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="273" lengthAdjust="spacing" x="4" y="15.8">classmethod(),staticmethod(),property()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2102.2)" ed:parentid="104" id="164" ed:height="20.5" ed:width="71">
+        <path stroke="#4486b1" transform="translate(-14.5,446.12)" stroke-linecap="round" id="165" d="M-14.5,425.6C5.8,425.6,-14.5,-425.6,14.5,-425.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="63" lengthAdjust="spacing" x="4" y="15.8">compile()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2205.6)" ed:parentid="104" id="166" ed:height="20.5" ed:width="71">
+        <path stroke="#4486b1" transform="translate(-14.5,394.42)" stroke-linecap="round" id="167" d="M-14.5,373.9C5.8,373.9,-14.5,-373.9,14.5,-373.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="63" lengthAdjust="spacing" x="4" y="15.8">complex()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2256.9)" ed:parentid="104" id="168" ed:height="20.5" ed:width="281">
+        <path stroke="#4486b1" transform="translate(-14.5,368.77)" stroke-linecap="round" id="169" d="M-14.5,348.3C5.8,348.3,-14.5,-348.3,14.5,-348.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L281,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="273" lengthAdjust="spacing" x="4" y="15.8">delattr(),setattr(),getattr(),hasattr()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2308.2)" ed:parentid="104" id="170" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,343.12)" stroke-linecap="round" id="171" d="M-14.5,322.6C5.8,322.6,-14.5,-322.6,14.5,-322.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">dir()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2359.5)" ed:parentid="104" id="172" ed:height="20.5" ed:width="295">
+        <path stroke="#4486b1" transform="translate(-14.5,317.47)" stroke-linecap="round" id="173" d="M-14.5,297C5.8,297,-14.5,-297,14.5,-297" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L295,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="287" lengthAdjust="spacing" x="4" y="15.8">int(),float(),list(),dict(),set(),tuple()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2410.8)" ed:parentid="104" id="174" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,291.82)" stroke-linecap="round" id="175" d="M-14.5,271.3C5.8,271.3,-14.5,-271.3,14.5,-271.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">divmod()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2521.7)" ed:parentid="104" id="176" ed:height="20.5" ed:width="85">
+        <path stroke="#4486b1" transform="translate(-14.5,236.37)" stroke-linecap="round" id="177" d="M-14.5,215.9C5.8,215.9,-14.5,-215.9,14.5,-215.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L85,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="77" lengthAdjust="spacing" x="4" y="15.8">enumerate()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2655.1)" ed:parentid="104" id="178" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,169.67)" stroke-linecap="round" id="179" d="M-14.5,149.2C5.8,149.2,-14.5,-149.2,14.5,-149.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">eval()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2766)" ed:parentid="104" id="180" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,114.22)" stroke-linecap="round" id="181" d="M-14.5,93.7C5.8,93.7,-14.5,-93.7,14.5,-93.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">exec()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2869.4)" ed:parentid="104" id="182" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,62.52)" stroke-linecap="round" id="183" d="M-14.5,42C5,42,-12.6,-42,14.5,-42" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">format()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,2972.8)" ed:parentid="104" id="184" ed:height="20.5" ed:width="85">
+        <path stroke="#4486b1" transform="translate(-14.5,10.82)" stroke-linecap="round" id="185" d="M-14.5,-9.7C-0.6,-9.7,0.5,9.7,14.5,9.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L85,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="77" lengthAdjust="spacing" x="4" y="15.8">frozenset()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3039.1)" ed:parentid="104" id="186" ed:height="20.5" ed:width="71">
+        <path stroke="#4486b1" transform="translate(-14.5,-22.33)" stroke-linecap="round" id="187" d="M-14.5,-42.8C5.1,-42.8,-12.8,42.8,14.5,42.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="63" lengthAdjust="spacing" x="4" y="15.8">globals()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3105)" ed:parentid="104" id="188" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-55.28)" stroke-linecap="round" id="189" d="M-14.5,-75.8C5.8,-75.8,-14.5,75.8,14.5,75.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">hash()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3170.9)" ed:parentid="104" id="190" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-88.23)" stroke-linecap="round" id="191" d="M-14.5,-108.7C5.8,-108.7,-14.5,108.7,14.5,108.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">help()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3200.1)" ed:parentid="104" id="192" ed:height="20.5" ed:width="36">
+        <path stroke="#4486b1" transform="translate(-14.5,-102.83)" stroke-linecap="round" id="193" d="M-14.5,-123.3C5.8,-123.3,-14.5,123.3,14.5,123.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L36,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="28" lengthAdjust="spacing" x="4" y="15.8">id()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3251.4)" ed:parentid="104" id="194" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-128.47)" stroke-linecap="round" id="195" d="M-14.5,-149C5.8,-149,-14.5,149,14.5,149" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">input()</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,645.9)" ed:parentid="128" id="196" ed:height="20.5" ed:width="312">
+        <path stroke="#4486b1" transform="translate(-14.5,61.15)" stroke-linecap="round" id="197" d="M-14.5,40.6C4.9,40.6,-12.3,-40.7,14.5,-40.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L312,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="304" lengthAdjust="spacing" x="4" y="15.8">调用对象的__repr__()方法，获得该方法的返回值。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,675.1)" ed:parentid="128" id="198" ed:height="20.5" ed:width="286">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="199" d="M-14.5,26C2.7,26,-7.4,-26,14.5,-26" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L286,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="278" lengthAdjust="spacing" x="4" y="15.8">__repr__()方法是由对象所属类型实现的方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,733.5)" ed:parentid="128" id="200" ed:height="95.5" ed:width="113">
+        <path stroke="#4486b1" transform="translate(-14.5,54.85)" stroke-linecap="round" id="201" d="M-14.5,-40.7C4.9,-40.7,-12.3,40.7,14.5,40.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L113,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = [1,2,3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> ascii(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">'[1, 2, 3]'</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> b = 'haha'</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> ascii(b)</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">"'haha'"</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,704.3)" ed:parentid="128" id="202" ed:height="20.5" ed:width="277">
+        <path stroke="#4486b1" transform="translate(-14.5,31.95)" stroke-linecap="round" id="203" d="M-14.5,11.5C-0.2,11.5,-0.4,-11.4,14.5,-11.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L277,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="269" lengthAdjust="spacing" x="4" y="15.8">此内置函数使用不多，一般使用print函数替代</tspan>
+        </text>
+    </g>
+    <g transform="translate(637,837.7)" ed:parentid="154" id="204" ed:height="20.5" ed:width="115">
+        <path stroke="#4486b1" transform="translate(-14.5,64.9)" stroke-linecap="round" id="205" d="M-14.5,44.4C5.2,44.4,-13.1,-44.4,14.5,-44.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L115,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="107" lengthAdjust="spacing" x="4" y="15.8">bin(),二进制转换</tspan>
+        </text>
+    </g>
+    <g transform="translate(637,866.9)" ed:parentid="154" id="206" ed:height="20.5" ed:width="115">
+        <path stroke="#4486b1" transform="translate(-14.5,50.3)" stroke-linecap="round" id="207" d="M-14.5,29.8C3.4,29.8,-8.9,-29.8,14.5,-29.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L115,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="107" lengthAdjust="spacing" x="4" y="15.8">oct(),八进制转换</tspan>
+        </text>
+    </g>
+    <g transform="translate(637,896.1)" ed:parentid="154" id="208" ed:height="20.5" ed:width="128">
+        <path stroke="#4486b1" transform="translate(-14.5,35.7)" stroke-linecap="round" id="209" d="M-14.5,15.2C0.6,15.2,-2.3,-15.2,14.5,-15.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L128,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="120" lengthAdjust="spacing" x="4" y="15.8">hex(),十六进制转换</tspan>
+        </text>
+    </g>
+    <g transform="translate(637,925.3)" ed:parentid="154" id="210" ed:height="110.5" ed:width="78">
+        <path stroke="#4486b1" transform="translate(-14.5,66.1)" stroke-linecap="round" id="211" d="M-14.5,-44.4C5.2,-44.4,-13.1,44.4,14.5,44.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,110.5L78,110.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> i = 10</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> bin(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">'0b1010'</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> oct(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">'0o12'</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">>>> hex(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">'0xa'</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,1044.5)" ed:parentid="130" id="212" ed:height="20.5" ed:width="318">
+        <path stroke="#4486b1" transform="translate(-14.5,61.35)" stroke-linecap="round" id="213" d="M-14.5,40.9C4.9,40.9,-12.3,-40.8,14.5,-40.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L318,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="310" lengthAdjust="spacing" x="4" y="15.8">测试一个对象或表达式的执行结果是True还是False。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,1102.9)" ed:parentid="130" id="214" ed:height="125.5" ed:width="127">
+        <path stroke="#4486b1" transform="translate(-14.5,84.65)" stroke-linecap="round" id="215" d="M-14.5,-40.9C4.9,-40.9,-12.3,40.8,14.5,40.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,125.5L127,125.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> bool(1==2)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">False</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> bool(1==1)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> bool(abs(-1))</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> bool(None)</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">False</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,1073.7)" ed:parentid="130" id="216" ed:height="20.5" ed:width="403">
+        <path stroke="#4486b1" transform="translate(-14.5,46.75)" stroke-linecap="round" id="217" d="M-14.5,26.3C2.8,26.3,-7.4,-26.3,14.5,-26.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L403,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="395" lengthAdjust="spacing" x="4" y="15.8">bool是一个类，不是函数，bool()的返回值是一个布尔类型的实例。</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,1237.1)" ed:parentid="146" id="218" ed:height="20.5" ed:width="214">
+        <path stroke="#4486b1" transform="translate(-14.5,42.6)" stroke-linecap="round" id="219" d="M-14.5,22.1C2,22.1,-5.6,-22.1,14.5,-22.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L214,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="206" lengthAdjust="spacing" x="4" y="15.8">实例化一个bytearray类型的对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,1266.3)" ed:parentid="146" id="220" ed:height="20.5" ed:width="307">
+        <path stroke="#4486b1" transform="translate(-14.5,28)" stroke-linecap="round" id="221" d="M-14.5,7.5C-1.1,7.5,1.7,-7.5,14.5,-7.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L307,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="299" lengthAdjust="spacing" x="4" y="15.8">参数可以是字符串、整数或者可迭代对象。使用不多</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,1295.5)" ed:parentid="146" id="222" ed:height="50.5" ed:width="309">
+        <path stroke="#4486b1" transform="translate(-14.5,28.4)" stroke-linecap="round" id="223" d="M-14.5,-22.1C2,-22.1,-5.6,22.1,14.5,22.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L309,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = bytearray("asdff",encoding='utf-8')</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> a</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">bytearray(b'asdff')</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,1354.7)" ed:parentid="148" id="226" ed:height="20.5" ed:width="151">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="227" d="M-14.5,26.1C2.7,26.1,-7.4,-26,14.5,-26" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L151,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="143" lengthAdjust="spacing" x="4" y="15.8">将对象转换成字节类型。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,1383.9)" ed:parentid="148" id="228" ed:height="95.5" ed:width="218">
+        <path stroke="#4486b1" transform="translate(-14.5,69.45)" stroke-linecap="round" id="229" d="M-14.5,-26.1C2.7,-26.1,-7.4,26.1,14.5,26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L218,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> i = 2</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> bytes(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">b'\x00\x00'</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> s = 'haha'</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> bytes(s, encoding='utf-8')</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">b'haha'</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1488.1)" ed:parentid="150" id="230" ed:height="20.5" ed:width="320">
+        <path stroke="#4486b1" transform="translate(-14.5,42.6)" stroke-linecap="round" id="231" d="M-14.5,22.1C2,22.1,-5.6,-22.1,14.5,-22.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L320,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="312" lengthAdjust="spacing" x="4" y="15.8">将对象转换成字符串类型，同样也可以指定编码方式。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1517.3)" ed:parentid="150" id="232" ed:height="50.5" ed:width="204">
+        <path stroke="#4486b1" transform="translate(-14.5,43)" stroke-linecap="round" id="233" d="M-14.5,-7.5C-1.1,-7.5,1.7,7.5,14.5,7.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L204,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> b = b"haha"</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> str(b, encoding='utf-8')</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">'haha'</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1576.5)" ed:parentid="150" id="234" ed:height="20.5" ed:width="483">
+        <path stroke="#4486b1" transform="translate(-14.5,-1.6)" stroke-linecap="round" id="235" d="M-14.5,-22.1C2,-22.1,-5.6,22.1,14.5,22.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L483,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="475" lengthAdjust="spacing" x="4" y="15.8">注意：Bytes和string之间的互相转换，更多使用的是encode()和decode()方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(588,1605.7)" ed:parentid="156" id="236" ed:height="20.5" ed:width="467">
+        <path stroke="#4486b1" transform="translate(-14.5,54.05)" stroke-linecap="round" id="237" d="M-14.5,33.6C4,33.6,-10.2,-33.5,14.5,-33.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L467,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="459" lengthAdjust="spacing" x="4" y="15.8">判断对象是否可以被调用。如果某个对象具有__call__方法，那它就能被调用。</tspan>
+        </text>
+    </g>
+    <g transform="translate(588,1634.9)" ed:parentid="156" id="238" ed:height="125.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,91.95)" stroke-linecap="round" id="239" d="M-14.5,-33.6C4,-33.6,-10.2,33.5,14.5,33.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,125.5L120,125.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> def f1():</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">...     pass</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> callable(f1)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">>>> a = 123</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> callable(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">False</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1769.1)" ed:parentid="158" id="240" ed:height="20.5" ed:width="212">
+        <path stroke="#4486b1" transform="translate(-14.5,50.3)" stroke-linecap="round" id="241" d="M-14.5,29.8C3.4,29.8,-8.9,-29.8,14.5,-29.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L212,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="204" lengthAdjust="spacing" x="4" y="15.8">返回某个十进制数对应的ASCII字符</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1798.3)" ed:parentid="158" id="242" ed:height="110.5" ed:width="246">
+        <path stroke="#4486b1" transform="translate(-14.5,80.7)" stroke-linecap="round" id="243" d="M-14.5,-29.8C3.4,-29.8,-8.9,29.8,14.5,29.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,110.5L246,110.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> import random</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> for i in range(10):</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">...     a = random.randint(65, 90)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">...     c = chr(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">...     print(c, end=', ')</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">Y, F, N, U, N, F, B, D, I, W,</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1917.5)" ed:parentid="160" id="246" ed:height="20.5" ed:width="299">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="247" d="M-14.5,18.6C1.3,18.6,-4,-18.5,14.5,-18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L299,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="291" lengthAdjust="spacing" x="4" y="15.8">与chr()相反，返回某个ASCII字符对应的十进制数</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,1946.7)" ed:parentid="160" id="248" ed:height="65.5" ed:width="92">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="249" d="M-14.5,-18.6C1.3,-18.6,-4,18.5,14.5,18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L92,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> ord('A')</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">65</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> ord('Z')</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">90</tspan>
+        </text>
+    </g>
+    <g transform="translate(791,2020.9)" ed:parentid="162" id="250" ed:height="20.5" ed:width="307">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="251" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L307,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="299" lengthAdjust="spacing" x="4" y="15.8">类机制中，用于生成类方法、静态方法和属性的函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(581,2050.1)" ed:parentid="164" id="258" ed:height="20.5" ed:width="271">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="259" d="M-14.5,26C2.7,26,-7.4,-26.1,14.5,-26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L271,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="263" lengthAdjust="spacing" x="4" y="15.8">将字符串编译成Python能识别或执行的代码。</tspan>
+        </text>
+    </g>
+    <g transform="translate(581,2079.3)" ed:parentid="164" id="260" ed:height="95.5" ed:width="260">
+        <path stroke="#4486b1" transform="translate(-14.5,69.45)" stroke-linecap="round" id="261" d="M-14.5,-26C2.7,-26,-7.4,26.1,14.5,26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L260,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> s = "print('hello world')"</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> r = compile(s,'&lt;string>','exec')</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> exec(r)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">hello world</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> eval(r)</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">hello world</tspan>
+        </text>
+    </g>
+    <g transform="translate(581,2183.5)" ed:parentid="166" id="262" ed:height="20.5" ed:width="216">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="263" d="M-14.5,11.1C-0.3,11.1,-0.2,-11,14.5,-11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L216,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="208" lengthAdjust="spacing" x="4" y="15.8">通过数字或字符串生成复数类型对象</tspan>
+        </text>
+    </g>
+    <g transform="translate(581,2212.7)" ed:parentid="166" id="264" ed:height="35.5" ed:width="127">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="265" d="M-14.5,-11.1C-0.3,-11.1,-0.2,11,14.5,11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L127,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> complex(1, 2)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">(1+2j)</tspan>
+        </text>
+    </g>
+    <g transform="translate(791,2256.9)" ed:parentid="168" id="266" ed:height="20.5" ed:width="307">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="267" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L307,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="299" lengthAdjust="spacing" x="4" y="15.8">类机制中，分别用来删除、设置、获取和判断属性。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,2286.1)" ed:parentid="170" id="268" ed:height="20.5" ed:width="177">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="269" d="M-14.5,11C-0.3,11,-0.2,-11.1,14.5,-11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L177,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="169" lengthAdjust="spacing" x="4" y="15.8">显示对象所有的属性和方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,2315.3)" ed:parentid="170" id="270" ed:height="35.5" ed:width="1023">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="271" d="M-14.5,-11C-0.3,-11,-0.2,11.1,14.5,11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L1023,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> dir()</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'b', 'c', 'f1', 'i', 'r', 'random', 's']</tspan>
+        </text>
+    </g>
+    <g transform="translate(805,2359.5)" ed:parentid="172" id="272" ed:height="20.5" ed:width="420">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="273" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L420,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="412" lengthAdjust="spacing" x="4" y="15.8">与bool()、str()、bytes()一样，它们都是实例化对应数据类型的类。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,2388.7)" ed:parentid="174" id="274" ed:height="20.5" ed:width="203">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="275" d="M-14.5,11.1C-0.3,11.1,-0.2,-11,14.5,-11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L203,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="195" lengthAdjust="spacing" x="4" y="15.8">除法，同时返回商和余数的元组。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,2417.9)" ed:parentid="174" id="276" ed:height="35.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="277" d="M-14.5,-11.1C-0.3,-11.1,-0.2,11,14.5,11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L120,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> divmod(10,3)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">(3, 1)</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,2462.1)" ed:parentid="176" id="278" ed:height="20.5" ed:width="359">
+        <path stroke="#4486b1" transform="translate(-14.5,50.3)" stroke-linecap="round" id="279" d="M-14.5,29.8C3.4,29.8,-8.9,-29.8,14.5,-29.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L359,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="351" lengthAdjust="spacing" x="4" y="15.8">枚举函数，在迭代对象的时候，额外提供一个序列号的输出。</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,2491.3)" ed:parentid="176" id="280" ed:height="110.5" ed:width="246">
+        <path stroke="#4486b1" transform="translate(-14.5,80.7)" stroke-linecap="round" id="281" d="M-14.5,-29.8C3.4,-29.8,-8.9,29.8,14.5,29.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,110.5L246,110.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> dic</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">{'k1': 'v1', 'k2': 'v2'}</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> for k, v  in enumerate(dic,1):</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">...     print(k,v)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">1 k1</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">2 k2</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,2610.5)" ed:parentid="178" id="282" ed:height="20.5" ed:width="164">
+        <path stroke="#4486b1" transform="translate(-14.5,42.8)" stroke-linecap="round" id="283" d="M-14.5,22.3C2,22.3,-5.7,-22.3,14.5,-22.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L164,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="156" lengthAdjust="spacing" x="4" y="15.8">将字符串直接解读并执行。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,2639.7)" ed:parentid="178" id="284" ed:height="80.5" ed:width="99">
+        <path stroke="#4486b1" transform="translate(-14.5,58.2)" stroke-linecap="round" id="285" d="M-14.5,-22.3C2,-22.3,-5.7,22.3,14.5,22.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,80.5L99,80.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> s = '5*8'</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> s</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">'5*8'</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> eval(s)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">40</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,2728.9)" ed:parentid="180" id="286" ed:height="20.5" ed:width="343">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="287" d="M-14.5,18.5C1.3,18.5,-4,-18.6,14.5,-18.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L343,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="335" lengthAdjust="spacing" x="4" y="15.8">执行字符串或compile方法编译过的字符串，没有返回值。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,2758.1)" ed:parentid="180" id="288" ed:height="65.5" ed:width="253">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="289" d="M-14.5,-18.5C1.3,-18.5,-4,18.6,14.5,18.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L253,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> exec("print('this is a test')")</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">this is a test</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> eval("print('this is a test')")</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">this is a test</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,2832.3)" ed:parentid="182" id="290" ed:height="20.5" ed:width="381">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="291" d="M-14.5,18.6C1.3,18.6,-4,-18.5,14.5,-18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L381,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="373" lengthAdjust="spacing" x="4" y="15.8">执行format()，其实就是调用该对象所属类的__format__方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,2861.5)" ed:parentid="182" id="292" ed:height="65.5" ed:width="141">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="293" d="M-14.5,-18.6C1.3,-18.6,-4,18.5,14.5,18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L141,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> format('2222')</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">'2222'</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> format([1,2,3])</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">'[1, 2, 3]'</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,2935.7)" ed:parentid="184" id="294" ed:height="20.5" ed:width="255">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="295" d="M-14.5,18.5C1.3,18.5,-4,-18.6,14.5,-18.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L255,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="247" lengthAdjust="spacing" x="4" y="15.8">返回一个不能增加和修改的集合类型对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,2964.9)" ed:parentid="184" id="296" ed:height="65.5" ed:width="148">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="297" d="M-14.5,-18.5C1.3,-18.5,-4,18.6,14.5,18.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L148,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = [1,2,3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> b = frozenset(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> b</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">frozenset({1, 2, 3})</tspan>
+        </text>
+    </g>
+    <g transform="translate(581,3039.1)" ed:parentid="186" id="298" ed:height="20.5" ed:width="203">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="299" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L203,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="195" lengthAdjust="spacing" x="4" y="15.8">列出当前环境下所有的全局变量。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3068.3)" ed:parentid="188" id="300" ed:height="20.5" ed:width="281">
+        <path stroke="#4486b1" transform="translate(-14.5,38.85)" stroke-linecap="round" id="301" d="M-14.5,18.3C1.2,18.3,-3.9,-18.3,14.5,-18.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L281,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="273" lengthAdjust="spacing" x="4" y="15.8">为不可变对象，例如字符串生成哈希值的函数！</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3126.7)" ed:parentid="188" id="302" ed:height="35.5" ed:width="141">
+        <path stroke="#4486b1" transform="translate(-14.5,17.15)" stroke-linecap="round" id="303" d="M-14.5,-18.3C1.2,-18.3,-3.9,18.3,14.5,18.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L141,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> hash('i am JK')</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">1999405995529697973</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3097.5)" ed:parentid="188" id="304" ed:height="20.5" ed:width="311">
+        <path stroke="#4486b1" transform="translate(-14.5,24.25)" stroke-linecap="round" id="305" d="M-14.5,3.8C-2,3.8,3.7,-3.8,14.5,-3.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L311,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="303" lengthAdjust="spacing" x="4" y="15.8">hash不可以列表类型，hash不能哈希可变类型的对象</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3170.9)" ed:parentid="190" id="306" ed:height="20.5" ed:width="138">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="307" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L138,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="130" lengthAdjust="spacing" x="4" y="15.8">返回对象的帮助文档。</tspan>
+        </text>
+    </g>
+    <g transform="translate(546,3200.1)" ed:parentid="192" id="310" ed:height="20.5" ed:width="405">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="311" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L405,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="397" lengthAdjust="spacing" x="4" y="15.8">返回对象的内存地址,常用来查看变量引用的变化，对象是否相同等。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,3229.3)" ed:parentid="194" id="312" ed:height="20.5" ed:width="242">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="313" d="M-14.5,11C-0.3,11,-0.2,-11.1,14.5,-11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L242,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="234" lengthAdjust="spacing" x="4" y="15.8">接收用户输入，返回一个输入的字符串。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,3258.5)" ed:parentid="194" id="314" ed:height="35.5" ed:width="295">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="315" d="M-14.5,-11C-0.3,-11,-0.2,11.1,14.5,11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L295,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = input("Please input a number:  ")</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">Please input a number:  haha</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3339.8)" ed:parentid="104" id="316" ed:height="20.5" ed:width="92">
+        <path stroke="#4486b1" transform="translate(-14.5,-172.68)" stroke-linecap="round" id="317" d="M-14.5,-193.2C5.8,-193.2,-14.5,193.2,14.5,193.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L92,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="84" lengthAdjust="spacing" x="4" y="15.8">isinstance()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3473.2)" ed:parentid="104" id="320" ed:height="20.5" ed:width="92">
+        <path stroke="#4486b1" transform="translate(-14.5,-239.38)" stroke-linecap="round" id="321" d="M-14.5,-259.9C5.8,-259.9,-14.5,259.9,14.5,259.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L92,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="84" lengthAdjust="spacing" x="4" y="15.8">issubclass()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3621.6)" ed:parentid="104" id="322" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-313.58)" stroke-linecap="round" id="323" d="M-14.5,-334.1C5.8,-334.1,-14.5,334.1,14.5,334.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">iter()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3702.9)" ed:parentid="104" id="324" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,-354.22)" stroke-linecap="round" id="325" d="M-14.5,-374.7C5.8,-374.7,-14.5,374.7,14.5,374.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">len()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3732.1)" ed:parentid="104" id="326" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,-368.82)" stroke-linecap="round" id="327" d="M-14.5,-389.3C5.8,-389.3,-14.5,389.3,14.5,389.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">locals()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3805.9)" ed:parentid="104" id="328" ed:height="20.5" ed:width="85">
+        <path stroke="#4486b1" transform="translate(-14.5,-405.72)" stroke-linecap="round" id="329" d="M-14.5,-426.2C5.8,-426.2,-14.5,426.2,14.5,426.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L85,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="77" lengthAdjust="spacing" x="4" y="15.8">max(),min()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3894.3)" ed:parentid="104" id="330" ed:height="20.5" ed:width="113">
+        <path stroke="#4486b1" transform="translate(-14.5,-449.92)" stroke-linecap="round" id="331" d="M-14.5,-470.4C5.8,-470.4,-14.5,470.4,14.5,470.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L113,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="105" lengthAdjust="spacing" x="4" y="15.8">memoryview(obj)</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3938.1)" ed:parentid="104" id="332" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-471.82)" stroke-linecap="round" id="333" d="M-14.5,-492.3C5.8,-492.3,-14.5,492.3,14.5,492.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">next()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3967.3)" ed:parentid="104" id="334" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,-486.42)" stroke-linecap="round" id="335" d="M-14.5,-506.9C5.8,-506.9,-14.5,506.9,14.5,506.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">object()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,3996.5)" ed:parentid="104" id="336" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-501.02)" stroke-linecap="round" id="337" d="M-14.5,-521.5C5.8,-521.5,-14.5,521.5,14.5,521.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">open()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4047.8)" ed:parentid="104" id="338" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,-526.67)" stroke-linecap="round" id="339" d="M-14.5,-547.2C5.8,-547.2,-14.5,547.2,14.5,547.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">pow()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4099.1)" ed:parentid="104" id="340" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-552.32)" stroke-linecap="round" id="341" d="M-14.5,-572.8C5.8,-572.8,-14.5,572.8,14.5,572.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">print()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4128.3)" ed:parentid="104" id="342" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-566.92)" stroke-linecap="round" id="343" d="M-14.5,-587.4C5.8,-587.4,-14.5,587.4,14.5,587.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">range()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4157.5)" ed:parentid="104" id="344" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-581.52)" stroke-linecap="round" id="345" d="M-14.5,-602C5.8,-602,-14.5,602,14.5,602" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">repr()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4238.8)" ed:parentid="104" id="346" ed:height="20.5" ed:width="78">
+        <path stroke="#4486b1" transform="translate(-14.5,-622.17)" stroke-linecap="round" id="347" d="M-14.5,-642.7C5.8,-642.7,-14.5,642.7,14.5,642.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L78,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="70" lengthAdjust="spacing" x="4" y="15.8">reversed()</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,3302.7)" ed:parentid="316" id="348" ed:height="20.5" ed:width="375">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="349" d="M-14.5,18.6C1.3,18.6,-4,-18.5,14.5,-18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L375,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="367" lengthAdjust="spacing" x="4" y="15.8">判断一个对象是否是某个类的实例。比type()方法适用面更广。</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,3331.9)" ed:parentid="316" id="350" ed:height="65.5" ed:width="197">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="351" d="M-14.5,-18.6C1.3,-18.6,-4,18.5,14.5,18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L197,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> isinstance("haha", str)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">True</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> isinstance(123, str)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">False</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,3406.1)" ed:parentid="320" id="352" ed:height="20.5" ed:width="250">
+        <path stroke="#4486b1" transform="translate(-14.5,54.05)" stroke-linecap="round" id="353" d="M-14.5,33.5C4,33.5,-10.2,-33.6,14.5,-33.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L250,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="242" lengthAdjust="spacing" x="4" y="15.8">ssubclass(a，b),判断a是否是b的子类。</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,3435.3)" ed:parentid="320" id="354" ed:height="125.5" ed:width="169">
+        <path stroke="#4486b1" transform="translate(-14.5,91.95)" stroke-linecap="round" id="355" d="M-14.5,-33.6C4,-33.6,-10.2,33.6,14.5,33.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,125.5L169,125.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> class Foo:</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">...     pass</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> class Goo(Foo):</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">...     pass</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> issubclass(Goo,Foo)</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">True</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3569.5)" ed:parentid="322" id="356" ed:height="20.5" ed:width="245">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="357" d="M-14.5,26.1C2.7,26.1,-7.4,-26.1,14.5,-26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L245,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="237" lengthAdjust="spacing" x="4" y="15.8">制造一个迭代器，使其具备next()能力。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3598.7)" ed:parentid="322" id="358" ed:height="95.5" ed:width="141">
+        <path stroke="#4486b1" transform="translate(-14.5,69.45)" stroke-linecap="round" id="359" d="M-14.5,-26.1C2.7,-26.1,-7.4,26,14.5,26" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L141,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> lis = [1, 2, 3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> i = iter(lis)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> next(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">1</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> next(i)</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">2</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,3702.9)" ed:parentid="324" id="360" ed:height="20.5" ed:width="112">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="361" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L112,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="104" lengthAdjust="spacing" x="4" y="15.8">返回对象的长度。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,3732.1)" ed:parentid="326" id="362" ed:height="20.5" ed:width="164">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="363" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L164,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="156" lengthAdjust="spacing" x="4" y="15.8">返回当前可用的局部变量。</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,3761.3)" ed:parentid="328" id="364" ed:height="20.5" ed:width="372">
+        <path stroke="#4486b1" transform="translate(-14.5,42.8)" stroke-linecap="round" id="365" d="M-14.5,22.3C2,22.3,-5.7,-22.3,14.5,-22.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L372,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="364" lengthAdjust="spacing" x="4" y="15.8">返回给定集合里的最大或者最小的元素。可以指定排序的方法！</tspan>
+        </text>
+    </g>
+    <g transform="translate(595,3790.5)" ed:parentid="328" id="366" ed:height="80.5" ed:width="449">
+        <path stroke="#4486b1" transform="translate(-14.5,58.2)" stroke-linecap="round" id="367" d="M-14.5,-22.3C2,-22.3,-5.7,22.3,14.5,22.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,80.5L449,80.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> lst=['abcdhush8','abc9iujtwertwert','abcdjlas','abcdj897h']</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> max(lst)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">'abcdjlas'</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> max(lst,key=len)</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">'abc9iujtwertwert'</tspan>
+        </text>
+    </g>
+    <g transform="translate(623,3879.7)" ed:parentid="330" id="368" ed:height="20.5" ed:width="376">
+        <path stroke="#4486b1" transform="translate(-14.5,27.8)" stroke-linecap="round" id="369" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L376,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="368" lengthAdjust="spacing" x="4" y="15.8">返回obj的内存视图对象。obj只能是bytes或bytesarray类型。</tspan>
+        </text>
+    </g>
+    <g transform="translate(623,3908.9)" ed:parentid="330" id="370" ed:height="20.5" ed:width="60">
+        <path stroke="#4486b1" transform="translate(-14.5,13.2)" stroke-linecap="round" id="371" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="52" lengthAdjust="spacing" x="4" y="15.8">非常少用</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3938.1)" ed:parentid="332" id="372" ed:height="20.5" ed:width="325">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="373" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L325,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="317" lengthAdjust="spacing" x="4" y="15.8">通过调用迭代器的__next__()方法，获取下一个元素。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,3967.3)" ed:parentid="334" id="374" ed:height="20.5" ed:width="333">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="375" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L333,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="325" lengthAdjust="spacing" x="4" y="15.8">该方法不接收任何参数，返回一个没有任何功能的对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,3996.5)" ed:parentid="336" id="376" ed:height="20.5" ed:width="112">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="377" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L112,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="104" lengthAdjust="spacing" x="4" y="15.8">打开文件的方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4025.7)" ed:parentid="338" id="378" ed:height="20.5" ed:width="60">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="379" d="M-14.5,11.1C-0.3,11.1,-0.2,-11.1,14.5,-11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="52" lengthAdjust="spacing" x="4" y="15.8">幂函数。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4054.9)" ed:parentid="338" id="380" ed:height="35.5" ed:width="92">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="381" d="M-14.5,-11C-0.3,-11,-0.2,11.1,14.5,11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L92,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> pow(3,2)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">9</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4099.1)" ed:parentid="340" id="382" ed:height="20.5" ed:width="47">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="383" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L47,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="39" lengthAdjust="spacing" x="4" y="15.8">子主题</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4128.3)" ed:parentid="342" id="384" ed:height="20.5" ed:width="47">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="385" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L47,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="39" lengthAdjust="spacing" x="4" y="15.8">子主题</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,4157.5)" ed:parentid="344" id="386" ed:height="20.5" ed:width="307">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="387" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L307,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="299" lengthAdjust="spacing" x="4" y="15.8">调用对象所属类的__repr__方法，与print功能类似</tspan>
+        </text>
+    </g>
+    <g transform="translate(588,4186.7)" ed:parentid="346" id="388" ed:height="20.5" ed:width="99">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="389" d="M-14.5,26.1C2.7,26.1,-7.4,-26.1,14.5,-26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L99,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="91" lengthAdjust="spacing" x="4" y="15.8">反转，逆序对象</tspan>
+        </text>
+    </g>
+    <g transform="translate(588,4215.9)" ed:parentid="346" id="390" ed:height="95.5" ed:width="365">
+        <path stroke="#4486b1" transform="translate(-14.5,69.45)" stroke-linecap="round" id="391" d="M-14.5,-26.1C2.7,-26.1,-7.4,26,14.5,26" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L365,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = [1,2,3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> b = reversed(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> b</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">&lt;list_reverseiterator object at 0x0000022828F4B940></tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> list(b)</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">[3, 2, 1]</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4357.2)" ed:parentid="104" id="392" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-681.37)" stroke-linecap="round" id="393" d="M-14.5,-701.9C5.8,-701.9,-14.5,701.9,14.5,701.9" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">round()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4475.6)" ed:parentid="104" id="394" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-740.57)" stroke-linecap="round" id="395" d="M-14.5,-761.1C5.8,-761.1,-14.5,761.1,14.5,761.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">slice()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4579)" ed:parentid="104" id="396" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,-792.27)" stroke-linecap="round" id="397" d="M-14.5,-812.8C5.8,-812.8,-14.5,812.8,14.5,812.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">sum()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4630.3)" ed:parentid="104" id="398" ed:height="20.5" ed:width="57">
+        <path stroke="#4486b1" transform="translate(-14.5,-817.92)" stroke-linecap="round" id="399" d="M-14.5,-838.4C5.8,-838.4,-14.5,838.4,14.5,838.4" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L57,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="49" lengthAdjust="spacing" x="4" y="15.8">super()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4659.5)" ed:parentid="104" id="400" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-832.52)" stroke-linecap="round" id="401" d="M-14.5,-853C5.8,-853,-14.5,853,14.5,853" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">type()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4688.7)" ed:parentid="104" id="402" ed:height="20.5" ed:width="50">
+        <path stroke="#4486b1" transform="translate(-14.5,-847.12)" stroke-linecap="round" id="403" d="M-14.5,-867.6C5.8,-867.6,-14.5,867.6,14.5,867.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L50,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="42" lengthAdjust="spacing" x="4" y="15.8">vars()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,4807.1)" ed:parentid="104" id="404" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,-906.32)" stroke-linecap="round" id="405" d="M-14.5,-926.8C5.8,-926.8,-14.5,926.8,14.5,926.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">map()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,5022.6)" ed:parentid="104" id="406" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,-1014.07)" stroke-linecap="round" id="407" d="M-14.5,-1034.6C5.8,-1034.6,-14.5,1034.6,14.5,1034.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">filter()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,5253.1)" ed:parentid="104" id="408" ed:height="20.5" ed:width="43">
+        <path stroke="#4486b1" transform="translate(-14.5,-1129.32)" stroke-linecap="round" id="409" d="M-14.5,-1149.8C5.8,-1149.8,-14.5,1149.8,14.5,1149.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L43,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="35" lengthAdjust="spacing" x="4" y="15.8">zip()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,5489.9)" ed:parentid="104" id="410" ed:height="20.5" ed:width="64">
+        <path stroke="#4486b1" transform="translate(-14.5,-1247.72)" stroke-linecap="round" id="411" d="M-14.5,-1268.2C5.8,-1268.2,-14.5,1268.2,14.5,1268.2" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="56" lengthAdjust="spacing" x="4" y="15.8">sorted()</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,5652.1)" ed:parentid="104" id="412" ed:height="20.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,-1328.82)" stroke-linecap="round" id="413" d="M-14.5,-1349.3C5.8,-1349.3,-14.5,1349.3,14.5,1349.3" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L120,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="112" lengthAdjust="spacing" x="4" y="15.8">__import__(name)</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4320.1)" ed:parentid="392" id="416" ed:height="20.5" ed:width="60">
+        <path stroke="#4486b1" transform="translate(-14.5,39.05)" stroke-linecap="round" id="417" d="M-14.5,18.6C1.3,18.6,-4,-18.6,14.5,-18.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="52" lengthAdjust="spacing" x="4" y="15.8">四舍五入</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4349.3)" ed:parentid="392" id="418" ed:height="65.5" ed:width="106">
+        <path stroke="#4486b1" transform="translate(-14.5,46.95)" stroke-linecap="round" id="419" d="M-14.5,-18.6C1.3,-18.6,-4,18.5,14.5,18.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,65.5L106,65.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> round(1.5)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">2</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> round(1.4)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">1</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4423.5)" ed:parentid="394" id="420" ed:height="20.5" ed:width="164">
+        <path stroke="#4486b1" transform="translate(-14.5,46.55)" stroke-linecap="round" id="421" d="M-14.5,26.1C2.7,26.1,-7.4,-26.1,14.5,-26.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L164,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="156" lengthAdjust="spacing" x="4" y="15.8">返回一个切片类型的对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4452.7)" ed:parentid="394" id="422" ed:height="95.5" ed:width="232">
+        <path stroke="#4486b1" transform="translate(-14.5,69.45)" stroke-linecap="round" id="423" d="M-14.5,-26.1C2.7,-26.1,-7.4,26,14.5,26" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,95.5L232,95.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> s = slice(1, 10, 2)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> s</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">slice(1, 10, 2)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> lis = [i for i in range(20)]</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> lis[s]</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">[1, 3, 5, 7, 9]</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4556.9)" ed:parentid="396" id="424" ed:height="20.5" ed:width="47">
+        <path stroke="#4486b1" transform="translate(-14.5,31.55)" stroke-linecap="round" id="425" d="M-14.5,11.1C-0.3,11.1,-0.2,-11.1,14.5,-11.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L47,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="39" lengthAdjust="spacing" x="4" y="15.8">求和．</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4586.1)" ed:parentid="396" id="426" ed:height="35.5" ed:width="120">
+        <path stroke="#4486b1" transform="translate(-14.5,24.45)" stroke-linecap="round" id="427" d="M-14.5,-11.1C-0.3,-11.1,-0.2,11,14.5,11" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,35.5L120,35.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> sum([1,2,3])</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">6</tspan>
+        </text>
+    </g>
+    <g transform="translate(567,4630.3)" ed:parentid="398" id="428" ed:height="20.5" ed:width="229">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="429" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L229,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="221" lengthAdjust="spacing" x="4" y="15.8">调用父类。面向对象中类的机制相关。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,4659.5)" ed:parentid="400" id="430" ed:height="20.5" ed:width="164">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="431" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L164,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="156" lengthAdjust="spacing" x="4" y="15.8">显示对象所属的数据类型。</tspan>
+        </text>
+    </g>
+    <g transform="translate(560,4688.7)" ed:parentid="402" id="432" ed:height="20.5" ed:width="587">
+        <path stroke="#4486b1" transform="translate(-14.5,20.5)" stroke-linecap="round" id="433" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L587,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="579" lengthAdjust="spacing" x="4" y="15.8">与dir()方法类似，不过dir()方法返回的是key，vars()方法返回key的同时还把value一起打印了。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4717.9)" ed:parentid="404" id="434" ed:height="20.5" ed:width="737">
+        <path stroke="#4486b1" transform="translate(-14.5,65.1)" stroke-linecap="round" id="435" d="M-14.5,44.6C5.2,44.6,-13.2,-44.6,14.5,-44.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L737,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="729" lengthAdjust="spacing" x="4" y="15.8">映射函数。使用指定的函数，处理可迭代对象，并将结果保存在一个map对象中，本质上和大数据的mapreduce中的map差不多。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4747.1)" ed:parentid="404" id="436" ed:height="20.5" ed:width="547">
+        <path stroke="#4486b1" transform="translate(-14.5,50.5)" stroke-linecap="round" id="437" d="M-14.5,30C3.4,30,-8.9,-30,14.5,-30" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L547,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="539" lengthAdjust="spacing" x="4" y="15.8">使用格式：obj = map(func, iterable),func是某个函数名，iterable是一个可迭代对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,4776.3)" ed:parentid="404" id="438" ed:height="140.5" ed:width="253">
+        <path stroke="#4486b1" transform="translate(-14.5,95.9)" stroke-linecap="round" id="439" d="M-14.5,-44.6C5.2,-44.6,-13.2,44.6,14.5,44.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,140.5L253,140.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> lis = [1,2,3,4,5]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> data = map(lambda x: x*100,lis)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> print(data)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">&lt;map object at 0x0000022916BAAFD0></tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">>>> a = list(data)</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">>>> a</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">[100, 200, 300, 400, 500]</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">>>> print(lis)</tspan>
+            <tspan style="white-space:pre" x="3" y="135.8">[1, 2, 3, 4, 5]</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,4925.5)" ed:parentid="406" id="440" ed:height="20.5" ed:width="159">
+        <path stroke="#4486b1" transform="translate(-14.5,69.05)" stroke-linecap="round" id="441" d="M-14.5,48.6C5.5,48.6,-13.8,-48.6,14.5,-48.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L159,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="151" lengthAdjust="spacing" x="4" y="15.8">过滤器，用法和map类似。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,4954.7)" ed:parentid="406" id="442" ed:height="185.5" ed:width="176">
+        <path stroke="#4486b1" transform="translate(-14.5,136.95)" stroke-linecap="round" id="443" d="M-14.5,-48.5C5.5,-48.5,-13.8,48.6,14.5,48.6" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,185.5L176,185.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> def f1(x):</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">...     if x > 3:</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">...         return True</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">...     else:</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">...         return False</tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">...</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">>>> li = [1,2,3,4,5]</tspan>
+            <tspan style="white-space:pre" x="3" y="120.8">>>> data = filter(f1,li)</tspan>
+            <tspan style="white-space:pre" x="3" y="135.8">>>> print(type(data))</tspan>
+            <tspan style="white-space:pre" x="3" y="150.8">&lt;class 'filter'></tspan>
+            <tspan style="white-space:pre" x="3" y="165.8">>>> print(list(data))</tspan>
+            <tspan style="white-space:pre" x="3" y="180.8">[4, 5]</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,5148.9)" ed:parentid="408" id="444" ed:height="20.5" ed:width="177">
+        <path stroke="#4486b1" transform="translate(-14.5,72.6)" stroke-linecap="round" id="445" d="M-14.5,52.1C5.7,52.1,-14.2,-52.1,14.5,-52.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L177,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="169" lengthAdjust="spacing" x="4" y="15.8">组合对象。将对象逐一配对。</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,5178.1)" ed:parentid="408" id="446" ed:height="110.5" ed:width="246">
+        <path stroke="#4486b1" transform="translate(-14.5,103)" stroke-linecap="round" id="447" d="M-14.5,-7.5C-1.1,-7.5,1.7,7.5,14.5,7.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,110.5L246,110.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> lis1 = [1,2,3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> lis2 = ['a','b','c']</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> s = zip(lis1,lis2)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> s</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">&lt;zip object at 0x0000022916BAF748></tspan>
+            <tspan style="white-space:pre" x="3" y="90.8">>>> print(list(s))</tspan>
+            <tspan style="white-space:pre" x="3" y="105.8">[(1, 'a'), (2, 'b'), (3, 'c')]</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,5386.5)" ed:parentid="410" id="448" ed:height="20.5" ed:width="260">
+        <path stroke="#4486b1" transform="translate(-14.5,72.2)" stroke-linecap="round" id="449" d="M-14.5,51.7C5.7,51.7,-14.2,-51.7,14.5,-51.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L260,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="252" lengthAdjust="spacing" x="4" y="15.8">排序方法。有key和reverse两个重要参数。</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,5415.7)" ed:parentid="410" id="450" ed:height="20.5" ed:width="191">
+        <path stroke="#4486b1" transform="translate(-14.5,57.6)" stroke-linecap="round" id="451" d="M-14.5,37.1C4.4,37.1,-11.3,-37.1,14.5,-37.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L191,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="183" lengthAdjust="spacing" x="4" y="15.8">基础用法: 直接对序列进行排序</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,5444.9)" ed:parentid="410" id="452" ed:height="50.5" ed:width="232">
+        <path stroke="#4486b1" transform="translate(-14.5,58)" stroke-linecap="round" id="453" d="M-14.5,7.5C-1.1,7.5,1.7,-7.5,14.5,-7.5" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L232,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> a = sorted([36,5,-12,9,-21])</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> print(a)</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">[-21, -12, 5, 9, 36]</tspan>
+        </text>
+    </g>
+    <g transform="translate(553,5297.3)" ed:parentid="408" id="454" ed:height="80.5" ed:width="218">
+        <path stroke="#4486b1" transform="translate(-14.5,28.4)" stroke-linecap="round" id="455" d="M-14.5,-52.1C5.7,-52.1,-14.2,52.1,14.5,52.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,80.5L218,80.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> lis1 = [1,2,3]</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> lis2 = ['a','b','c','d']</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">>>> s = zip(lis1,lis2)</tspan>
+            <tspan style="white-space:pre" x="3" y="60.8">>>> print(tuple(s))</tspan>
+            <tspan style="white-space:pre" x="3" y="75.8">((1, 'a'), (2, 'b'), (3, 'c'))</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,5504.1)" ed:parentid="410" id="456" ed:height="50.5" ed:width="288">
+        <path stroke="#4486b1" transform="translate(-14.5,28.4)" stroke-linecap="round" id="457" d="M-14.5,-22.1C2,-22.1,-5.6,22.1,14.5,22.1" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L288,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> b = sorted([36,5,-12,9,-21],key=abs)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> b</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">[5, 9, -12, -21, 36]</tspan>
+        </text>
+    </g>
+    <g transform="translate(574,5563.3)" ed:parentid="410" id="458" ed:height="50.5" ed:width="379">
+        <path stroke="#4486b1" transform="translate(-14.5,-1.2)" stroke-linecap="round" id="459" d="M-14.5,-51.7C5.7,-51.7,-14.2,51.7,14.5,51.7" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L379,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> c = sorted([36,5,-12,9,-21],key=abs,reverse=True)</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> c</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">[36, -21, -12, 9, 5]</tspan>
+        </text>
+    </g>
+    <g transform="translate(630,5622.5)" ed:parentid="412" id="460" ed:height="20.5" ed:width="660">
+        <path stroke="#4486b1" transform="translate(-14.5,35.3)" stroke-linecap="round" id="461" d="M-14.5,14.8C0.5,14.8,-2.1,-14.8,14.5,-14.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,20.5L660,20.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="652" lengthAdjust="spacing" x="4" y="15.8">这个方法为我们提供了一种通过字符串反射包、库或模块的手段。其中的name是你想要导入的库的名称的字符串。</tspan>
+        </text>
+    </g>
+    <g transform="translate(630,5651.7)" ed:parentid="412" id="462" ed:height="50.5" ed:width="190">
+        <path stroke="#4486b1" transform="translate(-14.5,35.7)" stroke-linecap="round" id="463" d="M-14.5,-14.8C0.5,-14.8,-2.1,14.8,14.5,14.8" stroke-linejoin="round" fill="none"/>
+        <path stroke="#4486b1" d="M0,50.5L190,50.5" stroke-linejoin="round" fill="none"/>
+        <text class="st2">
+            <tspan style="white-space:pre" x="3" y="15.8">>>> t = __import__("time")</tspan>
+            <tspan style="white-space:pre" x="3" y="30.8">>>> print(t.time())</tspan>
+            <tspan style="white-space:pre" x="3" y="45.8">1517389366.8156104</tspan>
+        </text>
+    </g>
+    <g transform="translate(153,2895.6)" ed:topictype="mainidea" ed:layout="rightmap" id="101" ed:height="62" ed:width="129">
+        <path stroke="#4486b1" stroke-width="3" d="M8,0L121,0C125.4,0,129,3.6,129,8L129,54C129,58.4,125.4,62,121,62L8,62C3.6,62,0,58.4,0,54L0,8C0,3.6,3.6,0,8,0z" stroke-linejoin="round" fill="#eaf3fc"/>
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="76" lengthAdjust="spacing" x="27" y="38.5">内置函数</tspan>
+        </text>
+    </g>
+    <g transform="translate(283,2920.6)" ed:togtopicid="101">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(485,169.85)" ed:togtopicid="102">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(453,2967.95)" ed:togtopicid="104">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(600,155.25)" ed:togtopicid="114">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(600,184.45)" ed:togtopicid="116">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,272.05)" ed:togtopicid="122">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,390.45)" ed:togtopicid="124">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,553.85)" ed:togtopicid="126">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,731.45)" ed:togtopicid="128">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,1130.45)" ed:togtopicid="130">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(567,1285.55)" ed:togtopicid="146">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,1411.05)" ed:togtopicid="148">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,1536.55)" ed:togtopicid="150">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(609,930.75)" ed:togtopicid="154">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(560,1677.05)" ed:togtopicid="156">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,1832.95)" ed:togtopicid="158">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,1958.85)" ed:togtopicid="160">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(763,2025.15)" ed:togtopicid="162">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(553,2106.45)" ed:togtopicid="164">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(553,2209.85)" ed:togtopicid="166">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(763,2261.15)" ed:togtopicid="168">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,2312.45)" ed:togtopicid="170">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(777,2363.75)" ed:togtopicid="172">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,2415.05)" ed:togtopicid="174">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(567,2525.95)" ed:togtopicid="176">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,2659.35)" ed:togtopicid="178">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,2770.25)" ed:togtopicid="180">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,2873.65)" ed:togtopicid="182">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(567,2977.05)" ed:togtopicid="184">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(553,3043.35)" ed:togtopicid="186">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,3109.25)" ed:togtopicid="188">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,3175.15)" ed:togtopicid="190">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(518,3204.35)" ed:togtopicid="192">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,3255.65)" ed:togtopicid="194">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(574,3344.05)" ed:togtopicid="316">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(574,3477.45)" ed:togtopicid="320">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,3625.85)" ed:togtopicid="322">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,3707.15)" ed:togtopicid="324">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,3736.35)" ed:togtopicid="326">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(567,3810.15)" ed:togtopicid="328">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(595,3898.55)" ed:togtopicid="330">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,3942.35)" ed:togtopicid="332">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,3971.55)" ed:togtopicid="334">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,4000.75)" ed:togtopicid="336">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,4052.05)" ed:togtopicid="338">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,4103.35)" ed:togtopicid="340">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,4132.55)" ed:togtopicid="342">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,4161.75)" ed:togtopicid="344">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(560,4243.05)" ed:togtopicid="346">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,4361.45)" ed:togtopicid="392">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,4479.85)" ed:togtopicid="394">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,4583.25)" ed:togtopicid="396">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(539,4634.55)" ed:togtopicid="398">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,4663.75)" ed:togtopicid="400">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(532,4692.95)" ed:togtopicid="402">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,4811.35)" ed:togtopicid="404">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,5026.85)" ed:togtopicid="406">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(525,5257.35)" ed:togtopicid="408">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(546,5494.15)" ed:togtopicid="410">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(602,5656.35)" ed:togtopicid="412">
+        <use xlink:href="#minus"/>
+    </g>
+    <symbol id="plus">
+        <path d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z" fill="url(#lg1)"/>
+        <path stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6M6,3L6,9" fill="none"/>
+    </symbol>
+    <symbol id="minus">
+        <path d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z" fill="url(#lg1)"/>
+        <path stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6" fill="none"/>
+    </symbol>
+</svg>
+</div>
+        <div id="copyright">Created With  <a href="https://www.edrawsoft.com/" target="_blank" title="edrawsoft">MindMaster</a></div>
+      </div>
+    </div>
+    <script>eval(atob('dmFyIG11YT13aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudDsNCnZhciB1YT0obXVhLmluZGV4T2YoJ3J2OjExJykrbXVhLmluZGV4T2YoJ01TSUUnKSk+PTA7DQpOdW1iZXIucHJvdG90eXBlLnRvc3VpdHN2Zz1mdW5jdGlvbiAoKSB7DQogICAgdmFyIG51bT10aGlzLnZhbHVlT2YoKTsNCiAgICBpZihudW0lMT09PTApew0KICAgICAgICByZXR1cm4gbnVtKzAuNQ0KICAgIH1lbHNlIHJldHVybiBudW07DQp9Ow0KTnVtYmVyLnByb3RvdHlwZS5wbHVzej1mdW5jdGlvbigpIHsNCiAgICB2YXIgbnVtPXRoaXMudmFsdWVPZigpOw0KICAgIHJldHVybiBudW08MTA/JzAnK251bTpudW07DQp9Ow0KZnVuY3Rpb24gcGFyc2VEYXRlKG51bSkgew0KICAgIHZhciBkYXRlID0gbmV3IERhdGUobnVtKTsNCiAgICB2YXIgWSA9IGRhdGUuZ2V0RnVsbFllYXIoKSArICctJzsNCiAgICB2YXIgTSA9IChkYXRlLmdldE1vbnRoKCkrMSkucGx1c3ooKSArICctJzsNCiAgICB2YXIgRCA9IGRhdGUuZ2V0RGF0ZSgpLnBsdXN6KCkgKyAnICc7DQogICAgdmFyIGggPSBkYXRlLmdldEhvdXJzKCkucGx1c3ooKSArICc6JzsNCiAgICB2YXIgbW0gPSBkYXRlLmdldE1pbnV0ZXMoKS5wbHVzeigpICsgJzonOw0KICAgIHZhciBzID0gZGF0ZS5nZXRTZWNvbmRzKCkucGx1c3ooKTsNCiAgICByZXR1cm4gWStNK0QraCttbStzOw0KfQ0KLy8tLXByZWRlZmluZWQNCi8vY29tbWVudC0tDQp2YXIgY29tbWVudHM9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6Y29tbWVudF0nKTsNCmZ1bmN0aW9uIGdldGN3aChwb3B1cCkgew0KICAgIGRvY3VtZW50LmJvZHkuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3N2ZycpWzBdLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICB2YXIgdz1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDsNCiAgICB2YXIgaD1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS5oZWlnaHQ7DQogICAgcmV0dXJuIFt3LGhdDQp9DQpmb3IodmFyIGk9MDtpPGNvbW1lbnRzLmxlbmd0aDtpKyspew0KICAgIHZhciBwb3B1cD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgIHZhciBob3Zlcj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwtb3BhY2l0eScsJzAuNicpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxjb21tZW50c1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICBob3Zlci5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICBjb21tZW50c1tpXS5hcHBlbmRDaGlsZChob3Zlcik7DQogICAgdmFyIGE9SlNPTi5wYXJzZShjb21tZW50c1tpXS5nZXRBdHRyaWJ1dGUoJ2VkOmNvbW1lbnQnKSk7DQogICAgdmFyIGhlaWdodD0wOw0KICAgIHZhciBjYXJyPVtdOw0KICAgIGZvcih2YXIgaj0wO2o8YS5sZW5ndGg7aisrKXsNCiAgICAgICAgdmFyIHN0YW1wPU51bWJlcihhW2pdLkRhdGUpKjEwMDA7DQogICAgICAgIHZhciB0aW1lPXBhcnNlRGF0ZShzdGFtcCk7DQogICAgICAgIHZhciBuYW1lPWFbal0uTmFtZTsNCiAgICAgICAgdmFyIG1lc3NhZ2U9YVtqXS5NZXNzYWdlOw0KICAgICAgICB2YXIgbWVzc2FnZUFycj1tZXNzYWdlLnNwbGl0KC9cbi8pOw0KICAgICAgICB2YXIgbz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgICAgICB2YXIgbj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgdD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgbT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBuLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCd5JywxMik7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmaWxsJywnIzAwNmVmZicpOw0KICAgICAgICBuLnRleHRDb250ZW50PW5hbWUrJ++8mic7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICB0LnNldEF0dHJpYnV0ZSgneCcsMjAwKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ3knLDEyKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjOTY5Njk2Jyk7DQogICAgICAgIHQudGV4dENvbnRlbnQ9dGltZTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZvbnQtc2l6ZScsJzEwJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMjAsMjcpJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICBmb3IodmFyIGs9MDtrPG1lc3NhZ2VBcnIubGVuZ3RoO2srKyl7DQogICAgICAgICAgICB2YXIgdHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3RzcGFuJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3knLGsqMTYpOw0KICAgICAgICAgICAgdHMudGV4dENvbnRlbnQ9bWVzc2FnZUFycltrXTsNCiAgICAgICAgICAgIG0uYXBwZW5kQ2hpbGQodHMpOw0KICAgICAgICB9DQogICAgICAgIG8uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMCwnK2hlaWdodCsnKScpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG4pOw0KICAgICAgICBvLmFwcGVuZENoaWxkKHQpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG0pOw0KICAgICAgICBjYXJyLnB1c2gobyk7DQogICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKG8pOw0KICAgICAgICBoZWlnaHQ9KG1lc3NhZ2VBcnIubGVuZ3RoKzEpKjE2K2hlaWdodDsNCiAgICB9DQogICAgdmFyIHdhcnI9Z2V0Y3doKHBvcHVwKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIHZhciBvdz13YXJyWzBdKzEwLjU7DQogICAgdmFyIG9oPXdhcnJbMV0rMzsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyxvdyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCdoZWlnaHQnLG9oKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCd3aGl0ZScpOw0KICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnIzY1NjU2NScpOw0KICAgIHBvcHVwLmFwcGVuZENoaWxkKG9saW5lKTsNCiAgICB2YXIgbD1jYXJyLmxlbmd0aDsNCiAgICB3aGlsZShsLS0pew0KICAgICAgICBwb3B1cC5hcHBlbmRDaGlsZChjYXJyW2xdKTsNCiAgICB9DQogICAgcG9wdXAub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgfTsNCiAgICB2YXIgY3M9Y29tbWVudHNbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKS5tYXRjaCgvXCgoXFMqfFxTKlxzXFMqKVwpLylbMV0uc3BsaXQoLyB8LC8pOw0KICAgIHZhciBwcz1jb21tZW50c1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgeD1wYXJzZUZsb2F0KGNzWzBdKStwYXJzZUZsb2F0KHBzWzBdKTsNCiAgICB2YXIgeT1wYXJzZUZsb2F0KHBzWzFdKTsNCiAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgeT15LnRvc3VpdHN2ZygpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnY29tbWVudCcsJycpOw0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnZWQ6Y29tbWVudGlkJyxjb21tZW50c1tpXS5wYXJlbnROb2RlLmlkKTsNCiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICBjb21tZW50c1tpXS5vbm1vdXNlb3Zlcj1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBjb21tZW50aWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDpjb21tZW50aWQ9JyIrY29tbWVudGlkKyInXVtjb21tZW50XSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIGNvbW1lbnRzW2ldLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgY29tbWVudGlkPXRoaXMucGFyZW50Tm9kZS5pZDsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmVtb3ZlQWxsUmFuZ2VzKCk7DQogICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6Y29tbWVudGlkPSciK2NvbW1lbnRpZCsiJ11bY29tbWVudF0iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0tY29tbWVudA0KLy9ub3RlLS0NCmlmKCF1YSl7DQogICAgdmFyIG5vdGVzPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2c+Z1tlZFxcOm5vdGVdJyk7DQogICAgZnVuY3Rpb24gZ2V0d2gocyxwKSB7DQogICAgICAgIHZhciBtYWlucD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsNCiAgICAgICAgbWFpbnAuc3R5bGUuY3NzVGV4dD1zOw0KICAgICAgICBtYWlucC5zdHlsZS5kaXNwbGF5PSdpbmxpbmUtYmxvY2snOw0KICAgICAgICBtYWlucC5pbm5lckhUTUw9cDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChtYWlucCk7DQogICAgICAgIHZhciB3PW1haW5wLmNsaWVudFdpZHRoOw0KICAgICAgICB2YXIgaD1tYWlucC5jbGllbnRIZWlnaHQ7DQogICAgICAgIGRvY3VtZW50LmJvZHkucmVtb3ZlQ2hpbGQobWFpbnApOw0KICAgICAgICByZXR1cm4gW3csaF0NCiAgICB9DQogICAgZm9yKHZhciBpPTA7aTxub3Rlcy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGE9bm90ZXNbaV0uZ2V0QXR0cmlidXRlKCdlZDpub3RlJyk7DQogICAgICAgIHZhciBtYWlucD1hLm1hdGNoKC88cChbXFNcc10qKTxcL3A+L2cpWzBdOw0KICAgICAgICB2YXIgbWFpbnM9YS5tYXRjaCgvc3R5bGU9IiguKj8pIi8pWzFdOw0KICAgICAgICB2YXIgb3V0PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdnJyk7DQogICAgICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2ZvcmVpZ25PYmplY3QnKTsNCiAgICAgICAgdmFyIGhvdmVyPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdyZWN0Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3knLCcwJyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbC1vcGFjaXR5JywnMC42Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICAgICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIG5vdGVzW2ldLmFwcGVuZENoaWxkKGhvdmVyKTsNCiAgICAgICAgcG9wdXAuc3R5bGUuY3NzVGV4dD1tYWluczsNCiAgICAgICAgcG9wdXAuaW5uZXJIVE1MPW1haW5wOw0KICAgICAgICB2YXIgd2g9Z2V0d2gobWFpbnMsbWFpbnApOw0KICAgICAgICBwb3B1cC5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyx3aFswXSsxNik7DQogICAgICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jyx3aFsxXSs4KTsNCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoOCw0KScpOw0KICAgICAgICBwb3B1cC5zdHlsZS50ZXh0QWxpZ249J2xlZnQnOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCd3aWR0aCcsd2hbMF0rMTYpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsd2hbMV0rOCk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnI2EyN2EwMCcpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjZmZlNzlkJyk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChvbGluZSk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgICAgIG91dC5zZXRBdHRyaWJ1dGUoJ25vdGUnLCcnKTsNCiAgICAgICAgb3V0LnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBvdXQuc2V0QXR0cmlidXRlKCdlZDpub3RlaWQnLG5vdGVzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgICAgICBvdXQub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIH07DQogICAgICAgIG91dC5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uID8gd2luZG93LmdldFNlbGVjdGlvbigpLnJlbW92ZVJhbmdlKHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZSk6ZG9jdW1lbnQuc2VsZWN0aW9uLmVtcHR5KCk7DQoNCiAgICAgICAgICAgIHRoaXMuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH07DQogICAgICAgIHZhciBjcz1ub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgICAgIHZhciBwcz1ub3Rlc1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgICAgIHZhciB5PXBhcnNlRmxvYXQocHNbMV0pOw0KICAgICAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICAgICAgb3V0LnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKG91dCk7DQogICAgICAgIG5vdGVzW2ldLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICB9Ow0KICAgICAgICBub3Rlc1tpXS5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KLy8gICAgICAgIHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZW1vdmVBbGxSYW5nZXMoKTsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH0NCiAgICB9DQp9ZWxzZXsNCiAgICBjb25zb2xlLmxvZygn5oqx5q2J77yMSUXmtY/op4jlmajkuI3mlK/mjIFub3Rl6Kej5p6Q77yM6K+35L2/55So5YW25LuW5YaF5qC45rWP6KeI5Zmo44CC6LCi6LCi77yBJykNCn0NCi8vLS1ub3RlDQovL2h5cGVybGluay0tDQp2YXIgbGlua3M9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6aHlwZXJsaW5rXScpOw0KZnVuY3Rpb24gZ2V0bWF4bGVuKGFycixicnIpIHsNCiAgICB2YXIgbD0wOw0KICAgIHZhciBsbD0wOw0KICAgIGZvcih2YXIgaj0wO2o8YXJyLmxlbmd0aDtqKyspew0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZighaXNOYU4obGlua2FycltqXSkpew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2FycltqXTsNCiAgICAgICAgfWVsc2V7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWFycltqXTsNCiAgICAgICAgfQ0KICAgICAgICBlLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoZSk7DQogICAgICAgIHZhciBldz1lLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoZSk7DQogICAgICAgIHZhciBoPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCd0ZXh0Jyk7DQogICAgICAgIGgudGV4dENvbnRlbnQ9YnJyW2pdOw0KICAgICAgICBoLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgaC5zdHlsZS5mb250V2VpZ2h0PSdib2xkJzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoaCk7DQogICAgICAgIHZhciBodz1oLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoaCk7DQogICAgICAgIGw9ZXc+aHc/ZXc6aHc7DQogICAgICAgIGxsPWw+bGw/bDpsbDsNCiAgICB9DQogICAgcmV0dXJuIGxsOw0KfQ0KZm9yKHZhciBpPTA7aTxsaW5rcy5sZW5ndGg7aSsrKXsNCiAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2cnKTsNCiAgICB2YXIgaG92ZXI9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3JlY3QnKTsNCiAgICB2YXIgZGVzY2Fycj1bXTsNCiAgICB2YXIgbGlua2Fycj1bXTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjY2RjZGZmJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCdmaWxsLW9wYWNpdHknLCcwLjYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsbGlua3NbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKSk7DQogICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgbGlua3NbaV0uYXBwZW5kQ2hpbGQoaG92ZXIpOw0KICAgIC8vIGNvbnNvbGUubG9nKGxpbmtzW2ldLmdldEF0dHJpYnV0ZSgnZWQ6aHlwZXJsaW5rJykpOw0KICAgIHZhciBhPUpTT04ucGFyc2UobGlua3NbaV0uZ2V0QXR0cmlidXRlKCdlZDpoeXBlcmxpbmsnKSk7DQogICAgdmFyIGNzPWxpbmtzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgcHM9bGlua3NbaV0ucGFyZW50Tm9kZS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgdmFyIHk9cGFyc2VGbG9hdChwc1sxXSk7DQogICAgeD14LnRvc3VpdHN2ZygpOw0KICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICB2YXIgYWw9YS5sZW5ndGg7DQogICAgZm9yKHZhciBqPTA7ajxhbDtqKyspew0KICAgICAgICBsaW5rYXJyLnB1c2goYVtqXS5saW5rKTsNCiAgICAgICAgZGVzY2Fyci5wdXNoKGFbal0uZGVzYyk7DQogICAgfQ0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHZhciBtYXg9Z2V0bWF4bGVuKGxpbmthcnIsZGVzY2Fycik7DQogICAgZm9yKHZhciBrPTA7azxhbDtrKyspew0KICAgICAgICB2YXIgYz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnYScpOw0KICAgICAgICB2YXIgZD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgZj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZihpc05hTihsaW5rYXJyW2tdKSl7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsbGlua2FycltrXSk7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgndGFyZ2V0JywnX2JsYW5rJyk7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWxpbmthcnJba107DQogICAgICAgIH1lbHNlew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2xpbmthcnJba107DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsJyMnK2xpbmthcnJba10pOw0KICAgICAgICB9DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCd3aWR0aCcsbWF4KzEwKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzMzJyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdzdHJva2UnLCcjOTk5OTk5Jyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdmaWxsJywnd2hpdGUnKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3knLDMzKmspOw0KICAgICAgICBmLnRleHRDb250ZW50PWRlc2NhcnJba107DQogICAgICAgIGYuc3R5bGUuZm9udFNpemU9JzEycHgnOw0KICAgICAgICBmLnN0eWxlLmZvbnRXZWlnaHQ9J2JvbGQnOw0KICAgICAgICBmLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIGYuc2V0QXR0cmlidXRlKCd5JywzMyprKzEyKTsNCiAgICAgICAgZS5zdHlsZS5mb250U2l6ZT0nMTJweCc7DQogICAgICAgIGUuc2V0QXR0cmlidXRlKCd5JywzMyprKzI4KTsNCiAgICAgICAgZS5zZXRBdHRyaWJ1dGUoJ3gnLDUpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGQpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGYpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGUpOw0KICAgICAgICBjLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmZpbGw9JyNlMWUxZmYnDQogICAgICAgIH07DQogICAgICAgIGMub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5maWxsPSd3aGl0ZScNCiAgICAgICAgfTsNCiAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQoYyk7DQogICAgfQ0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaHlwZXJsaW5rJywnJyk7DQogICAgcG9wdXAuc2V0QXR0cmlidXRlKCdlZDpsaW5raWQnLGxpbmtzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgIHBvcHVwLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgfTsNCiAgICBwb3B1cC5vbmNsaWNrPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIH07DQogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI3N2Zy1jb250YWluZXIgPiBzdmcnKS5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgbGlua3NbaV0ub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgbGlua2lkPXRoaXMucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6bGlua2lkPSciK2xpbmtpZCsiJ11baHlwZXJsaW5rXSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9DQogICAgbGlua3NbaV0ub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBsaW5raWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmxpbmtpZD0nIitsaW5raWQrIiddW2h5cGVybGlua10iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0taHlwZXJsaW5rDQovL2luaXRpYWxpemUtLQ0KdmFyIHNoYXBlPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2dbZWRcXDp0b2d0b3BpY2lkXScpOw0KdmFyIG1JZD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdnW2VkXFw6dG9waWN0eXBlXScpOw0KdmFyIGRhdGFUcmVlPXt9Ow0KdmFyIGV4dHJhUmVsYT17fTsNCnZhciBjaGVja0lEPScnOw0KZm9yKHZhciBpPTA7aTxtSWQubGVuZ3RoO2krKyl7DQogICAgdmFyIHR5cGU9bUlkW2ldLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIHNpZD1tSWRbaV0uaWQ7DQogICAgaWYodHlwZSE9PSdjYWxsb3V0Jyl7DQogICAgICAgIGluaXQoc2lkLGRhdGFUcmVlKQ0KICAgIH0NCn0NCmZ1bmN0aW9uIGluaXQoaWQsIG9iaikgew0KICAgIHZhciBjaGlsZHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXTpub3QoW2VkXFw6dG9waWN0eXBlXSkiKTsNCiAgICB2YXIgY2FsbHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXVtlZFxcOnRvcGljdHlwZV0iKTsNCiAgICB2YXIgc3VtbWFyeSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoInBhdGhbZWRcXDpwYXJlbnRpZCo9JyIgKyBpZCArICInXVtlZFxcOnR5cGU9J3N1bW1hcnknXSIpOw0KICAgIHZhciBib3VuZGFyeT0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgicGF0aFtlZFxcOnBhcmVudGlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0nYm91bmRhcnknXSIpOw0KICAgIHZhciByZWxhZnJvbT1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6ZnJvbWlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0ncmVsYXRpb24nXSIpOw0KICAgIHZhciByZWxhdG89ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiZ1tlZFxcOnRvaWQqPSciICsgaWQgKyAiJ11bZWRcXDp0eXBlPSdyZWxhdGlvbiddIik7DQogICAgb2JqWyJtIiArIGlkXSA9IHt9Ow0KICAgIHZhciB0eXBlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIGl3PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOndpZHRoJyk7DQogICAgdmFyIGloPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOmhlaWdodCcpOw0KICAgIGlmICh0eXBlKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0udHlwZSA9IHR5cGU7DQogICAgfQ0KICAgIGlmKGl3JiZpaCl7DQogICAgICAgIG9ialsibSIgKyBpZF0ud2lkdGggPWl3Ow0KICAgICAgICBvYmpbIm0iICsgaWRdLmhlaWdodCA9aWg7DQogICAgfQ0KICAgIGlmIChyZWxhZnJvbS5sZW5ndGggIT09IDApIHsNCiAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHJlbGFmcm9tLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZCA9IHJlbGFmcm9tW2ldLmlkOw0KICAgICAgICAgICAgdmFyIHRvaWQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpbmRleGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOnRvaWQnKTsNCiAgICAgICAgICAgIGlmIChleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCkgew0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtpbmRleGlkXSA9IHsNCiAgICAgICAgICAgICAgICAgICAgaWQ6IGluZGV4aWQsDQogICAgICAgICAgICAgICAgICAgIGZyb21pZDogaWQsDQogICAgICAgICAgICAgICAgICAgIHRvaWQ6IHRvaWQsDQogICAgICAgICAgICAgICAgICAgIGlzQzogZmFsc2UNCiAgICAgICAgICAgICAgICB9Ow0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbVtpbmRleGlkXT17fTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYWZyb20uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChyZWxhdG8ubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgcmVsYXRvLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZD1yZWxhdG9baV0uaWQ7DQogICAgICAgICAgICB2YXIgZnJvbWlkPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGluZGV4aWQpLmdldEF0dHJpYnV0ZSgnZWQ6ZnJvbWlkJyk7DQogICAgICAgICAgICBpZihleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCl7DQogICAgICAgICAgICAgICAgZXh0cmFSZWxhW2luZGV4aWRdPXsNCiAgICAgICAgICAgICAgICAgICAgaWQ6aW5kZXhpZCwNCiAgICAgICAgICAgICAgICAgICAgZnJvbWlkOmZyb21pZCwNCiAgICAgICAgICAgICAgICAgICAgdG9pZDppZCwNCiAgICAgICAgICAgICAgICAgICAgaXNDOmZhbHNlDQogICAgICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvW2luZGV4aWRdPXt9Ow0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhdG8uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChjaGlsZHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2hpbGQgPSB7fTsNCiAgICAgICAgaWYgKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKSkgew0KICAgICAgICAgICAgLy8gY29uc29sZS5sb2coZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIgKyBpZCArICInXSIpLmNoaWxkTm9kZXNbMF0uZ2V0QXR0cmlidXRlKCd4bGluazpocmVmJykpOw0KICAgICAgICAgICAgdmFyIHRvZyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKS5jaGlsZHJlblswXS5nZXRBdHRyaWJ1dGUoJ3hsaW5rOmhyZWYnKS5zbGljZSgxKTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0udG9ndHlwZSA9IHRvZzsNCiAgICAgICAgfQ0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNoaWxkcy5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9IGNoaWxkc1tpXS5pZDsNCiAgICAgICAgICAgIGluaXQoY2lkLCBvYmpbIm0iICsgaWRdLmNoaWxkKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoY2FsbHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2FsbCA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNhbGxzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgY2lkID0gY2FsbHNbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5jYWxsKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoYm91bmRhcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uYm91bmRhcnkgPSB7fTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBib3VuZGFyeS5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9Ym91bmRhcnlbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5ib3VuZGFyeSk7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKHN1bW1hcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uc3VtbWFyeSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHN1bW1hcnkubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBjaWQgPSBzdW1tYXJ5W2ldLmlkOw0KICAgICAgICAgICAgaW5pdChjaWQsIG9ialsibSIgKyBpZF0uc3VtbWFyeSk7DQogICAgICAgIH0NCiAgICB9DQp9DQovLy0taW5pdGlhbGl6ZQ0KLy90b2dnbGVkaXNwbGF5LS0NCnZhciBjaGFpbkFycj1bXTsNCmZ1bmN0aW9uIGdldGNoYWluKGlkKXsNCiAgICBjaGFpbkFyci51bnNoaWZ0KCdtJytpZCk7DQogICAgdmFyIHBhcmVudD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuZ2V0QXR0cmlidXRlKCdlZDpwYXJlbnRpZCcpOw0KICAgIGlmKCFwYXJlbnQpew0KICAgICAgICByZXR1cm47DQogICAgfQ0KICAgIGdldGNoYWluKHBhcmVudCk7DQp9DQpmdW5jdGlvbiBnZXRvYmooaWQpIHsNCiAgICBjaGFpbkFycj1bXTsNCiAgICBnZXRjaGFpbihpZCk7DQogICAgdmFyIG1haW49Y2hhaW5BcnJbMF07DQogICAgaWYoY2hhaW5BcnIubGVuZ3RoPjEpew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICAvLyBjb25zb2xlLmxvZyhjaGFpbkFycik7DQogICAgICAgIGZvcih2YXIgaT0xO2k8Y2hhaW5BcnIubGVuZ3RoO2krKykgew0KICAgICAgICAgICAgdmFyIGEgPSBjaGFpbkFycltpXTsNCiAgICAgICAgICAgIGZvcih2YXIgaj0wO2o8T2JqZWN0LmtleXMob2JqKS5sZW5ndGg7aisrKXsNCiAgICAgICAgICAgICAgICB2YXIgY29iaj0gb2JqW09iamVjdC5rZXlzKG9iailbal1dW2FdOw0KICAgICAgICAgICAgICAgIGlmKGNvYmopew0KICAgICAgICAgICAgICAgICAgICBvYmo9Y29iajsNCiAgICAgICAgICAgICAgICAgICAgY29udGludWUNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgIH0NCiAgICAgICAgcmV0dXJuIG9iag0KICAgIH1lbHNlew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICByZXR1cm4gb2JqDQogICAgfQ0KDQp9DQpmb3IodmFyIGk9MDtpPHNoYXBlLmxlbmd0aDtpKyspew0KICAgIHNoYXBlW2ldLm9uY2xpY2s9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgaWQ9TnVtYmVyKHRoaXMuZ2V0QXR0cmlidXRlKCdlZDp0b2d0b3BpY2lkJykpOw0KICAgICAgICB2YXIgb2JqPWdldG9iaihpZCk7DQoNCiAgICAgICAgdmFyIHR5cGU9b2JqLnRvZ3R5cGU9PT0nbWludXMnPydwbHVzJzonbWludXMnOw0KICAgICAgICB2YXIgZGlzcGxheT1vYmoudG9ndHlwZT09PSdtaW51cyc/J25vbmUnOidibG9jayc7DQogICAgICAgIHRoaXMuY2hpbGRyZW5bMF0uc2V0QXR0cmlidXRlKCd4bGluazpocmVmJywnIycrdHlwZSk7DQogICAgICAgIG9iai50b2d0eXBlPXR5cGU7DQogICAgICAgIGNoZWNrSUQ9b2JqOw0KDQogICAgICAgIHV0ZChvYmosaWQsZGlzcGxheSk7DQogICAgICAgIGV4dHJhUmVsYUZpbigpOw0KICAgIH0NCn0NCmZ1bmN0aW9uIHV0ZChvYmosaWQsc2hvdyxvYykgew0KDQogICAgdmFyIHBzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5zdHlsZS5kaXNwbGF5IT09ICdub25lJz8nYmxvY2snOidub25lJzsNCiAgICBpZiAob2JqLnJlbGFmcm9tKXsNCiAgICAgICAgaWYob2JqLnJlbGFmcm9tLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhvYmoucmVsYWZyb20pOw0KICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgZm9yKHZhciBrPTA7azxyZWxhZnJvbXMubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgdmFyIGQ9cmVsYWZyb21zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhZnJvbS5kaXNwbGF5ID0gcHNob3c7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKG9iai5yZWxhdG8pew0KICAgICAgICBpZihvYmoucmVsYXRvLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMob2JqLnJlbGF0byk7DQogICAgICAgICAgICByZWxhdG9zLnNwbGljZShyZWxhdG9zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICB2YXIgZD1yZWxhdG9zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhdG8uZGlzcGxheSA9IHBzaG93Ow0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5jYWxsKXsNCiAgICAgICAgdmFyIGNhbGxzPU9iamVjdC5rZXlzKG9iai5jYWxsKTsNCiAgICAgICAgaWYoY2hlY2tJRCE9PW9iail7DQogICAgICAgICAgICBmb3IodmFyIGk9MDtpIDwgY2FsbHMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Y2FsbHNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLmNhbGxbY2FsbHNbaV1dOw0KICAgICAgICAgICAgICAgIHZhciBjPWIudG9ndHlwZTsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChhKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgaWYgKGIucmVsYWZyb20mJiFjKXsNCiAgICAgICAgICAgICAgICAgICAgaWYoYi5yZWxhZnJvbS5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIHJlbGFmcm9tcy5zcGxpY2UocmVsYWZyb21zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYWZyb21zLmxlbmd0aDtrKyspew0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgICAgICBpZihiLnJlbGF0by5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMoYi5yZWxhdG8pOw0KICAgICAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGF0b3MubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQ9cmVsYXRvc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGF0by5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihjKXsNCiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIrYSsiJ10iKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBpZiAoKGIuY2FsbHx8Yi5ib3VuZGFyeXx8Yi5zdW1tYXJ5KSYmYz09PSdwbHVzJykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3csdHJ1ZSkNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYgKGIuc3VtbWFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZiAoYi5ib3VuZGFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5zdW1tYXJ5KXsNCiAgICAgICAgdmFyIHN1bW1hcnlzPU9iamVjdC5rZXlzKG9iai5zdW1tYXJ5KTsNCiAgICAgICAgaWYoKGNoZWNrSUQhPT1vYmomJihvYmoudG9ndHlwZT09PSdtaW51cyd8fCFvYmoudG9ndHlwZSkpfHxjaGVja0lEPT09b2JqKXsNCiAgICAgICAgICAgIGZvcih2YXIgaT0wO2k8c3VtbWFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9c3VtbWFyeXNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLnN1bW1hcnlbc3VtbWFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZihvYmouYm91bmRhcnkpew0KICAgICAgICB2YXIgYm91bmRhcnlzPU9iamVjdC5rZXlzKG9iai5ib3VuZGFyeSk7DQogICAgICAgIGlmKGNoZWNrSUQhPT1vYmopew0KICAgICAgICAgICAgZm9yKHZhciBpPTA7aTxib3VuZGFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Ym91bmRhcnlzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgICAgIHZhciBiPW9iai5ib3VuZGFyeVtib3VuZGFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZighb2MmJm9iai5jaGlsZCkgew0KICAgICAgICB2YXIgY2hpbGRzID0gT2JqZWN0LmtleXMob2JqLmNoaWxkKTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjaGlsZHMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBhID0gY2hpbGRzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgdmFyIGIgPSBvYmouY2hpbGRbY2hpbGRzW2ldXTsNCiAgICAgICAgICAgIHZhciBjID0gYi50b2d0eXBlOw0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYSkuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICBpZiAoYi5yZWxhZnJvbSYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYWZyb20uZGlzcGxheSE9PSBzaG93KXsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGFmcm9tcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYXRvLmRpc3BsYXkhPT0gc2hvdyl7DQogICAgICAgICAgICAgICAgICAgIHZhciByZWxhdG9zPU9iamVjdC5rZXlzKGIucmVsYXRvKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGF0b3Nba107DQogICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgYi5yZWxhdG8uZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgaWYgKGMpIHsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIiArIGEgKyAiJ10iKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICBpZiAoYyA9PT0gJ21pbnVzJykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3cpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmICgoYi5jYWxsfHxiLmJvdW5kYXJ5fHxiLnN1bW1hcnkpJiZjPT09J3BsdXMnKSB7DQogICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdyx0cnVlKQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmNhbGwmJiFjKSB7DQogICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5zdW1tYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmJvdW5kYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCn0NCg0KZnVuY3Rpb24gZXh0cmFSZWxhRmluKCkgew0KICAgIHZhciBleHRyYWtleXM9T2JqZWN0LmtleXMoZXh0cmFSZWxhKTsNCiAgICBmb3IodmFyIGk9MDtpPGV4dHJha2V5cy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGV4dHJhT2JqPWV4dHJhUmVsYVtleHRyYWtleXNbaV1dOw0KICAgICAgICBpZihleHRyYU9iai5pc0MgPT09IHRydWUpew0KICAgICAgICAgICAgdmFyIGZzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmZyb21pZCkuc3R5bGUuZGlzcGxheSAhPT0nbm9uZSc/IHRydWU6IGZhbHNlOw0KICAgICAgICAgICAgdmFyIHRzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLnRvaWQpLnN0eWxlLmRpc3BsYXkgIT09J25vbmUnPyB0cnVlOiBmYWxzZTsNCiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmlkKS5zdHlsZS5kaXNwbGF5PWZzaG93ICYmIHRzaG93PyAnYmxvY2snOiAnbm9uZSc7DQogICAgICAgICAgICBleHRyYVJlbGFbZXh0cmFrZXlzW2ldXS5pc0MgPSBmYWxzZTsNCiAgICAgICAgfQ0KICAgIH0NCn0='))</script>
+  </body>
+</html>

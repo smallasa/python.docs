@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>python.文件读写</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            width: auto;
+            height: auto;
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            overflow-x: scroll;
+            min-width: 0px;
+            margin: 0 10px;
+        }
+        #nav-thumbs{
+            overflow-y: scroll;
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            display: block;
+            margin:10px auto;
+            margin-bottom: 0;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #08a1ef;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+            #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+            #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+            #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info">
+        <div id="content-info">
+          <div id="title">python.文件读写</div>
+        </div>
+        <div id="author-info">
+          <div id="author-name" class="text">admin</div>
+          <div id="share-time" class="text">2018-02-24</div>
+        </div>
+      </div>
+      <div id="main-content">
+        <div id="svg-container"><svg height="2326" ed:name="Page-1" xmlns="http://www.w3.org/2000/svg" ed:hSpacing="30" xmlns:ed="http://www.edrawsoft.cn/xml/2017/SVGExtensions/" preserveAspectRadio="xMinYMin meet" viewBox="0 0 1850 2326" width="1850" id="page1" ed:vSpacing="30" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+    <style type="text/css"><![CDATA[
+g[ed\:togtopicid],g[ed\:hyperlink],g[ed\:comment],g[ed\:note] {cursor:pointer;}
+g[id] {-moz-user-select: none;-ms-user-select: none;user-select: none;}
+svg text::selection,svg tspan::selection{background-color: #4285f4;color: #ffffff;fill: #ffffff;}
+.st2 {fill:#303030;font-family:宋体;font-size:10pt}
+.st1 {fill:#303030;font-family:宋体;font-size:12pt}
+.st3 {fill:#303030;font-family:宋体;font-size:14pt}
+]]></style>
+    <defs>
+        <linearGradient x1="0%" y2="100%" y1="0%" id="lg1" x2="0%">
+            <stop stop-color="#ffffff" offset="0"/>
+            <stop stop-color="#f0f5f0" offset="0.25"/>
+            <stop stop-color="#e1ebe1" offset="0.75"/>
+            <stop stop-color="#c8d7c8" offset="1"/>
+        </linearGradient>
+    </defs>
+    <rect height="2326" x="0" y="0" fill="#ffffff" width="1850"/>
+    <g transform="translate(345,339.35)" ed:width="139" ed:height="40" id="102" ed:parentid="101">
+        <path stroke="#4486b1" d="M4,0L135,0C137.2,0,139,1.8,139,4L139,36C139,38.2,137.2,40,135,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" fill="#f5f9fe" stroke-linejoin="round"/>
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-63.75,421.9)" d="M-38.9,370.9C7.4,223.2,-48.7,-401.9,63.8,-401.9" fill="none" id="103" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" y="26.5" lengthAdjust="spacing" textLength="96">文件读写简介</tspan>
+        </text>
+    </g>
+    <g transform="translate(345,705.15)" ed:width="139" ed:height="40" id="104" ed:parentid="101">
+        <path stroke="#4486b1" d="M4,0L135,0C137.2,0,139,1.8,139,4L139,36C139,38.2,137.2,40,135,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" fill="#f5f9fe" stroke-linejoin="round"/>
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-63.75,239)" d="M-32.8,188C2.1,88.1,-41.2,-219,63.8,-219" fill="none" id="105" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" y="26.5" lengthAdjust="spacing" textLength="96">关键模式讲解</tspan>
+        </text>
+    </g>
+    <g transform="translate(345,939.15)" ed:width="107" ed:height="40" id="106" ed:parentid="101">
+        <path stroke="#4486b1" d="M4,0L103,0C105.2,0,107,1.8,107,4L107,36C107,38.2,105.2,40,103,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" fill="#f5f9fe" stroke-linejoin="round"/>
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-63.75,122)" d="M-26,71C-0.6,13.9,-4.6,-102,63.8,-102" fill="none" id="107" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" y="26.5" lengthAdjust="spacing" textLength="64">编码问题</tspan>
+        </text>
+    </g>
+    <g transform="translate(345,1494.35)" ed:width="139" ed:height="40" id="108" ed:parentid="101">
+        <path stroke="#4486b1" d="M4,0L135,0C137.2,0,139,1.8,139,4L139,36C139,38.2,137.2,40,135,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" fill="#f5f9fe" stroke-linejoin="round"/>
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-63.75,-155.6)" d="M-31,-144.6C0.2,-58.8,-31.9,175.6,63.8,175.6" fill="none" id="109" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" y="26.5" lengthAdjust="spacing" textLength="96">文件对象操作</tspan>
+        </text>
+    </g>
+    <g transform="translate(345,2064.15)" ed:width="123" ed:height="40" id="110" ed:parentid="101">
+        <path stroke="#4486b1" d="M4,0L119,0C121.2,0,123,1.8,123,4L123,36C123,38.2,121.2,40,119,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z" fill="#f5f9fe" stroke-linejoin="round"/>
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-63.75,-440.5)" d="M-40.2,-429.5C8.5,-269,-49.7,460.5,63.8,460.5" fill="none" id="111" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" y="26.5" lengthAdjust="spacing" textLength="80">with关键字</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,151)" ed:width="352" ed:height="20.5" id="112" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,114.42)" d="M-14.5,93.9C5.8,93.9,-14.5,-93.9,14.5,-93.9" fill="none" id="113" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L352,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="344">Python内置了一个open()方法，用于对文件进行读写操作。</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,180.2)" ed:width="674" ed:height="20.5" id="114" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,99.83)" d="M-14.5,79.3C5.8,79.3,-14.5,-79.3,14.5,-79.3" fill="none" id="115" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L674,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="666">使用open()方法操作文件就像把大象塞进冰箱一样，可以分三步走：一是打开文件，二是操作文件，三是关闭文件。</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,224)" ed:width="267" ed:height="20.5" id="116" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,77.92)" d="M-14.5,57.4C5.8,57.4,-14.5,-57.4,14.5,-57.4" fill="none" id="117" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L267,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="259">基本语法格式：f = open(filename, mode)</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,267.8)" ed:width="1186" ed:height="20.5" id="118" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,56.02)" d="M-14.5,35.5C4.2,35.5,-10.9,-35.5,14.5,-35.5" fill="none" id="119" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L1186,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="1178">注意：Python中，所有具有read和write方法的对象，都可以归类为file类型。而所有的file类型对象都可以使用open方法打开，close方法结束和被with上下文管理器管理。这是Python的设计哲学之一。</tspan>
+        </text>
+    </g>
+    <g transform="translate(809,209.4)" ed:width="467" ed:height="20.5" id="120" ed:parentid="116">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="121" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L467,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="459">filename：一个包含了你要访问的文件名称的字符串值，通常是一个文件路径。</tspan>
+        </text>
+    </g>
+    <g transform="translate(809,238.6)" ed:width="329" ed:height="20.5" id="122" ed:parentid="116">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="123" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L329,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="321">mode：打开文件的模式，有很多种，默认是只读方式r。</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,370)" ed:width="60" ed:height="20.5" id="124" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,4.92)" d="M-14.5,-15.6C0.7,-15.6,-2.5,15.6,14.5,15.6" fill="none" id="125" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="52">打开模式</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,297)" ed:width="15" ed:height="20.5" id="126" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,57)" d="M-14.5,36.5C4.4,36.5,-11.2,-36.5,14.5,-36.5" fill="none" id="127" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">r</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,326.2)" ed:width="15" ed:height="20.5" id="128" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,42.4)" d="M-14.5,21.9C2,21.9,-5.5,-21.9,14.5,-21.9" fill="none" id="129" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">w</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,355.4)" ed:width="15" ed:height="20.5" id="130" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="131" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">a</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,384.6)" ed:width="15" ed:height="20.5" id="132" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="133" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">x</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,413.8)" ed:width="15" ed:height="20.5" id="134" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-1.4)" d="M-14.5,-21.9C2,-21.9,-5.5,21.9,14.5,21.9" fill="none" id="135" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">b</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,472.2)" ed:width="387" ed:height="95.5" id="136" ed:parentid="102">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-8.67)" d="M-14.5,-104.2C5.8,-104.2,-14.5,104.2,14.5,104.2" fill="none" id="137" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,95.5L387,95.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8"># 打开一个文件</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">f = open("/tmp/foo.txt", "w")</tspan>
+            <tspan x="3" style="white-space:pre" y="45.8"># 在文件中写入内容</tspan>
+            <tspan x="3" style="white-space:pre" y="60.8">f.write("Python 是一种非常好的语言。\n我喜欢Python!!\n")</tspan>
+            <tspan x="3" style="white-space:pre" y="75.8"># 关闭打开的文件</tspan>
+            <tspan x="3" style="white-space:pre" y="90.8">f.close()</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,443)" ed:width="15" ed:height="20.5" id="138" ed:parentid="124">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-16)" d="M-14.5,-36.5C4.4,-36.5,-11.2,36.5,14.5,36.5" fill="none" id="139" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L15,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="7">+</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,297)" ed:width="34" ed:height="20.5" id="140" ed:parentid="126">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="141" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L34,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="26">只读</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,326.2)" ed:width="34" ed:height="20.5" id="142" ed:parentid="128">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="143" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L34,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="26">只写</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,355.4)" ed:width="34" ed:height="20.5" id="144" ed:parentid="130">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="145" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L34,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="26">追加</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,384.6)" ed:width="34" ed:height="20.5" id="146" ed:parentid="132">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="147" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L34,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="26">新建</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,413.8)" ed:width="73" ed:height="20.5" id="148" ed:parentid="134">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="149" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L73,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="65">二进制模式</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,443)" ed:width="60" ed:height="20.5" id="150" ed:parentid="138">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="151" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="52">读写模式</tspan>
+        </text>
+    </g>
+    <g transform="translate(709,297)" ed:width="320" ed:height="20.5" id="152" ed:parentid="140">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="153" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L320,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="312">默认模式，如果文件不存在就报错，存在就正常读取。</tspan>
+        </text>
+    </g>
+    <g transform="translate(709,326.2)" ed:width="450" ed:height="20.5" id="154" ed:parentid="142">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="155" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L450,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="442">如果文件不存在，新建文件然后写入；如果存在，先清空文件内容，再写入。</tspan>
+        </text>
+    </g>
+    <g transform="translate(709,355.4)" ed:width="450" ed:height="20.5" id="156" ed:parentid="144">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="157" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L450,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="442">如果文件不存在，新建文件，然后写入；如果存在，在文件的最后追加写入。</tspan>
+        </text>
+    </g>
+    <g transform="translate(709,384.6)" ed:width="470" ed:height="20.5" id="158" ed:parentid="146">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="159" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L470,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="462">如果文件存在则报错，如果不存在就新建文件，然后写入内容，比w模式更安全。</tspan>
+        </text>
+    </g>
+    <g transform="translate(748,413.8)" ed:width="241" ed:height="20.5" id="160" ed:parentid="148">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="161" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L241,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="233">比如rb、wb、ab，以bytes类型操作数据</tspan>
+        </text>
+    </g>
+    <g transform="translate(735,443)" ed:width="102" ed:height="20.5" id="162" ed:parentid="150">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="163" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L102,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="94">比如r+、w+、a+</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,671.1)" ed:width="41" ed:height="20.5" id="164" ed:parentid="104">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,37.28)" d="M-14.5,16.8C0.9,16.8,-3.1,-16.8,14.5,-16.8" fill="none" id="165" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L41,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="33">b模式</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,787.9)" ed:width="41" ed:height="20.5" id="166" ed:parentid="104">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-21.12)" d="M-14.5,-41.6C5,-41.6,-12.5,41.6,14.5,41.6" fill="none" id="167" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L41,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="33">+模式</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,612.7)" ed:width="320" ed:height="20.5" id="168" ed:parentid="164">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,49.7)" d="M-14.5,29.2C3.3,29.2,-8.6,-29.2,14.5,-29.2" fill="none" id="169" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L320,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="312">二进制模式，通常用来读取图片、视频等二进制文件。</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,641.9)" ed:width="533" ed:height="20.5" id="170" ed:parentid="164">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="171" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L533,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="525">注意：它在读写的时候是以bytes类型读写的，因此获得的是一个bytes对象而不是字符串。</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,671.1)" ed:width="268" ed:height="20.5" id="172" ed:parentid="164">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="173" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L268,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="260">在这个读写过程中，需要自己指定编码格式。</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,700.3)" ed:width="401" ed:height="20.5" id="174" ed:parentid="164">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="175" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L401,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="393">在使用带b的模式时一定要注意传入的数据类型，确保为bytes类型。</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,758.7)" ed:width="373" ed:height="20.5" id="176" ed:parentid="166">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="177" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L373,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="365">对于w+模式，在读写之前都会清空文件的内容，建议不要使用！</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,787.9)" ed:width="412" ed:height="20.5" id="178" ed:parentid="166">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="179" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L412,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="404">对于a+模式，永远只能在文件的末尾写入，有局限性，建议不要使用！</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,817.1)" ed:width="470" ed:height="20.5" id="180" ed:parentid="166">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="181" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L470,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="462">对于r+模式，也就是读写模式，配合seek()和tell()方法，可以实现更多操作。</tspan>
+        </text>
+    </g>
+    <g transform="translate(583,729.5)" ed:width="34" ed:height="20.5" id="182" ed:parentid="164">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-8.7)" d="M-14.5,-29.2C3.3,-29.2,-8.6,29.2,14.5,29.2" fill="none" id="183" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L34,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="26">示例</tspan>
+        </text>
+    </g>
+    <g transform="translate(646,729.5)" ed:width="47" ed:height="20.5" id="184" ed:parentid="182">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="185" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L47,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="39">子主题</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,882.6)" ed:width="388" ed:height="20.5" id="186" ed:parentid="106">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,48.53)" d="M-14.5,28C3.1,28,-8.2,-28,14.5,-28" fill="none" id="187" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L388,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="380">要读取非UTF-8编码的文件，需要给open()函数传入encoding参数</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,911.8)" ed:width="316" ed:height="50.5" id="188" ed:parentid="106">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,48.93)" d="M-14.5,-1.6C-2.5,-1.6,4.9,1.6,14.5,1.6" fill="none" id="189" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,50.5L316,50.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">>>> f = open('gbk.txt', 'r', encoding='gbk')</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">>>> f.read()</tspan>
+            <tspan x="3" style="white-space:pre" y="45.8">'GBK'</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,971)" ed:width="732" ed:height="35.5" id="190" ed:parentid="106">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,11.83)" d="M-14.5,-23.7C2.3,-23.7,-6.3,23.7,14.5,23.7" fill="none" id="191" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,35.5L732,35.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">注意：遇到有些编码不规范的文件，可能会抛出UnicodeDecodeError异常，这表示在文件中可能夹杂了一些非法编码的字符。</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">遇到这种情况，可以提供errors参数，表示如果遇到编码错误后如何处理。</tspan>
+        </text>
+    </g>
+    <g transform="translate(481,1015.2)" ed:width="435" ed:height="20.5" id="192" ed:parentid="106">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-17.77)" d="M-14.5,-38.3C4.6,-38.3,-11.7,38.3,14.5,38.3" fill="none" id="193" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L435,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="427">>>> f = open('gbk.txt', 'r', encoding='gbk', errors='ignore')</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1124.5)" ed:width="92" ed:height="20.5" id="194" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,205.18)" d="M-14.5,184.7C5.8,184.7,-14.5,-184.7,14.5,-184.7" fill="none" id="195" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L92,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="84">f.read(size)</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1226.7)" ed:width="92" ed:height="20.5" id="196" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,154.08)" d="M-14.5,133.6C5.8,133.6,-14.5,-133.6,14.5,-133.6" fill="none" id="197" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L92,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="84">f.readline()</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1299.7)" ed:width="99" ed:height="20.5" id="198" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,117.58)" d="M-14.5,97.1C5.8,97.1,-14.5,-97.1,14.5,-97.1" fill="none" id="199" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L99,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="91">f.readlines()</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1401.9)" ed:width="60" ed:height="20.5" id="200" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,66.48)" d="M-14.5,46C5.3,46,-13.4,-46,14.5,-46" fill="none" id="201" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L60,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="52">遍历文件</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1518.7)" ed:width="71" ed:height="20.5" id="202" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,8.08)" d="M-14.5,-12.4C-0,-12.4,-0.9,12.4,14.5,12.4" fill="none" id="203" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="63">f.write()</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1591.7)" ed:width="64" ed:height="20.5" id="204" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-28.42)" d="M-14.5,-48.9C5.5,-48.9,-13.9,48.9,14.5,48.9" fill="none" id="205" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="56">f.tell()</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1080.7)" ed:width="334" ed:height="20.5" id="206" ed:parentid="194">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,42.4)" d="M-14.5,21.9C2,21.9,-5.5,-21.9,14.5,-21.9" fill="none" id="207" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L334,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="326">读取一定大小的数据, 然后作为字符串或字节对象返回。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1109.9)" ed:width="361" ed:height="20.5" id="208" ed:parentid="194">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="209" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L361,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="353">size是一个可选的数字类型的参数，用于指定读取的数据量。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1139.1)" ed:width="439" ed:height="20.5" id="210" ed:parentid="194">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="211" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L439,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="431">当size被忽略了或者为负值，那么该文件的所有内容都将被读取并且返回。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1168.3)" ed:width="607" ed:height="20.5" id="212" ed:parentid="194">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-1.4)" d="M-14.5,-21.9C2,-21.9,-5.5,21.9,14.5,21.9" fill="none" id="213" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L607,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="599">注意：如果文件体积较大，请不要使用read()方法一次性读入内存，而是read(512)这种一点一点的读。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1197.5)" ed:width="251" ed:height="20.5" id="214" ed:parentid="196">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="215" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L251,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="243">从文件中读取一行n内容。换行符为'\n'。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1226.7)" ed:width="333" ed:height="20.5" id="216" ed:parentid="196">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="217" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L333,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="325">如果返回一个空字符串，说明已经已经读取到最后一行。</tspan>
+        </text>
+    </g>
+    <g transform="translate(634,1255.9)" ed:width="515" ed:height="20.5" id="218" ed:parentid="196">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="219" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L515,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="507">这种方法，通常是读一行，处理一行，并且不能回头，只能前进，读过的行不能再读了。</tspan>
+        </text>
+    </g>
+    <g transform="translate(641,1285.1)" ed:width="606" ed:height="20.5" id="222" ed:parentid="198">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="223" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L606,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="598">将文件中所有的行，一行一行全部读入一个列表内，按顺序一个一个作为列表的元素，并返回这个列表。</tspan>
+        </text>
+    </g>
+    <g transform="translate(641,1314.3)" ed:width="747" ed:height="20.5" id="224" ed:parentid="198">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="225" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L747,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="739">readlines方法会一次性将文件全部读入内存，所以也存在一定的风险。但是它有个好处，每行都保存在列表里，可以随意存取。</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,1343.5)" ed:width="372" ed:height="20.5" id="228" ed:parentid="200">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,49.7)" d="M-14.5,29.2C3.3,29.2,-8.6,-29.2,14.5,-29.2" fill="none" id="229" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L372,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="364">实际上，更多的时候，我们将文件对象作为一个迭代器来使用。</tspan>
+        </text>
+    </g>
+    <g transform="translate(602,1416.5)" ed:width="229" ed:height="20.5" id="230" ed:parentid="200">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="231" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L229,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="221">几种不同的读取和遍历文件的方法比较</tspan>
+        </text>
+    </g>
+    <g transform="translate(860,1372.7)" ed:width="258" ed:height="20.5" id="234" ed:parentid="230">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,42.4)" d="M-14.5,21.9C2,21.9,-5.5,-21.9,14.5,-21.9" fill="none" id="235" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L258,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="250">如果文件很小，read()一次性读取最方便；</tspan>
+        </text>
+    </g>
+    <g transform="translate(860,1401.9)" ed:width="338" ed:height="20.5" id="236" ed:parentid="230">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="237" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L338,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="330">如果不能确定文件大小，反复调用read(size)比较保险；</tspan>
+        </text>
+    </g>
+    <g transform="translate(860,1431.1)" ed:width="267" ed:height="20.5" id="238" ed:parentid="230">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="239" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L267,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="259">如果是配置文件，调用readlines()最方便。</tspan>
+        </text>
+    </g>
+    <g transform="translate(860,1460.3)" ed:width="250" ed:height="20.5" id="240" ed:parentid="230">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-1.4)" d="M-14.5,-21.9C2,-21.9,-5.5,21.9,14.5,21.9" fill="none" id="241" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L250,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="242">普通情况，使用for循环更好，速度更快。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1489.5)" ed:width="251" ed:height="20.5" id="242" ed:parentid="202">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="243" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L251,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="243">将字符串或bytes类型的数据写入文件内。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1518.7)" ed:width="860" ed:height="20.5" id="244" ed:parentid="202">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="245" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L860,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="852">write()动作可以多次重复进行，其实都是在内存中的操作，并不会立刻写回硬盘，直到执行close()方法后，才会将所有的写入操作反映到硬盘上。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1547.9)" ed:width="669" ed:height="20.5" id="246" ed:parentid="202">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="247" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L669,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="661">在这过程中，如果想将内存中的修改，立刻保存到硬盘上，可以使用f.flush()方法，但这可能造成数据的不一致。</tspan>
+        </text>
+    </g>
+    <g transform="translate(606,1577.1)" ed:width="418" ed:height="20.5" id="250" ed:parentid="204">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="251" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L418,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="410">返回文件读写指针当前所处的位置,它是从文件开头开始算起的字节数。</tspan>
+        </text>
+    </g>
+    <g transform="translate(606,1606.3)" ed:width="242" ed:height="20.5" id="252" ed:parentid="204">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="253" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L242,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="234">一定要注意了，是字节数，不是字符数。</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1723.1)" ed:width="64" ed:height="20.5" id="256" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-94.12)" d="M-14.5,-114.6C5.8,-114.6,-14.5,114.6,14.5,114.6" fill="none" id="257" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L64,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="56">f.seek()</tspan>
+        </text>
+    </g>
+    <g transform="translate(513,1883.7)" ed:width="71" ed:height="20.5" id="258" ed:parentid="108">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-174.42)" d="M-14.5,-194.9C5.8,-194.9,-14.5,194.9,14.5,194.9" fill="none" id="259" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L71,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="63">f.close()</tspan>
+        </text>
+    </g>
+    <g transform="translate(606,1708.5)" ed:width="444" ed:height="20.5" id="260" ed:parentid="256">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="261" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L444,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="436">如果要改变位置指针的位置, 可以使用f.seek(offset, from_what)方法。</tspan>
+        </text>
+    </g>
+    <g transform="translate(606,1810.7)" ed:width="222" ed:height="20.5" id="262" ed:parentid="256">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-23.3)" d="M-14.5,-43.8C5.2,-43.8,-13,43.8,14.5,43.8" fill="none" id="263" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L222,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="214">seek()经常和tell()方法配合使用。</tspan>
+        </text>
+    </g>
+    <g transform="translate(1079,1664.7)" ed:width="97" ed:height="20.5" id="268" ed:parentid="260">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,42.4)" d="M-14.5,21.9C2,21.9,-5.5,-21.9,14.5,-21.9" fill="none" id="269" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L97,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="89">from_what的值</tspan>
+        </text>
+    </g>
+    <g transform="translate(1205,1635.5)" ed:width="230" ed:height="20.5" id="270" ed:parentid="268">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="271" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L230,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="222">如果是0表示从文件开头计算，默认为0</tspan>
+        </text>
+    </g>
+    <g transform="translate(1205,1664.7)" ed:width="288" ed:height="20.5" id="272" ed:parentid="268">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="273" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L288,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="280">如果是1表示从文件读写指针的当前位置开始计算</tspan>
+        </text>
+    </g>
+    <g transform="translate(1205,1693.9)" ed:width="210" ed:height="20.5" id="274" ed:parentid="268">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="275" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L210,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="202">如果是2表示从文件的结尾开始计算</tspan>
+        </text>
+    </g>
+    <g transform="translate(1079,1752.3)" ed:width="128" ed:height="20.5" id="276" ed:parentid="260">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-1.4)" d="M-14.5,-21.9C2,-21.9,-5.5,21.9,14.5,21.9" fill="none" id="277" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L128,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="120">offset：表示偏移量</tspan>
+        </text>
+    </g>
+    <g transform="translate(1236,1723.1)" ed:width="379" ed:height="20.5" id="278" ed:parentid="276">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,35.1)" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" fill="none" id="279" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L379,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="371">seek(x,0) ： 从起始位置即文件首行首字符开始移动 x 个字符</tspan>
+        </text>
+    </g>
+    <g transform="translate(1236,1752.3)" ed:width="287" ed:height="20.5" id="280" ed:parentid="276">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,20.5)" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" fill="none" id="281" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L287,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="279">seek(x,1) ： 表示从当前位置往后移动x个字符</tspan>
+        </text>
+    </g>
+    <g transform="translate(1236,1781.5)" ed:width="293" ed:height="20.5" id="282" ed:parentid="276">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,5.9)" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" fill="none" id="283" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L293,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="285">seek(-x,2)：表示从文件的结尾往前移动x个字符</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1839.9)" ed:width="99" ed:height="20.5" id="284" ed:parentid="258">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,42.4)" d="M-14.5,21.9C2,21.9,-5.5,-21.9,14.5,-21.9" fill="none" id="285" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L99,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="91">关闭文件对象。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1869.1)" ed:width="409" ed:height="20.5" id="286" ed:parentid="258">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,27.8)" d="M-14.5,7.3C-1.2,7.3,1.8,-7.3,14.5,-7.3" fill="none" id="287" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L409,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="401">当处理完一个文件后，调用f.close()来关闭文件并释放系统的资源。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1898.3)" ed:width="359" ed:height="20.5" id="288" ed:parentid="258">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,13.2)" d="M-14.5,-7.3C-1.2,-7.3,1.8,7.3,14.5,7.3" fill="none" id="289" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L359,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="351">文件关闭后，如果尝试再次调用该文件对象，则会抛出异常。</tspan>
+        </text>
+    </g>
+    <g transform="translate(613,1927.5)" ed:width="551" ed:height="20.5" id="290" ed:parentid="258">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,-1.4)" d="M-14.5,-21.9C2,-21.9,-5.5,21.9,14.5,21.9" fill="none" id="291" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L551,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="543">忘记调用close()的后果是数据可能只写了一部分到磁盘，剩下的丢失了，或者更糟糕的结果。</tspan>
+        </text>
+    </g>
+    <g transform="translate(497,1993)" ed:width="273" ed:height="20.5" id="294" ed:parentid="110">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,55.83)" d="M-14.5,35.3C4.2,35.3,-10.8,-35.3,14.5,-35.3" fill="none" id="295" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L273,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="265">with关键字用于Python的上下文管理器机制。</tspan>
+        </text>
+    </g>
+    <g transform="translate(497,2022.2)" ed:width="877" ed:height="20.5" id="296" ed:parentid="110">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,41.22)" d="M-14.5,20.7C1.7,20.7,-5,-20.7,14.5,-20.7" fill="none" id="297" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L877,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="869">为了防止诸如open这一类文件打开方法在操作过程出现异常或错误，或者最后忘了执行close方法，文件非正常关闭等可能导致文件泄露、破坏的问题。</tspan>
+        </text>
+    </g>
+    <g transform="translate(497,2051.4)" ed:width="403" ed:height="20.5" id="298" ed:parentid="110">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,26.63)" d="M-14.5,6.1C-1.5,6.1,2.4,-6.1,14.5,-6.1" fill="none" id="299" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,20.5L403,20.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" y="15.8" lengthAdjust="spacing" textLength="395">Python提供了with这个上下文管理器机制，保证文件会被正常关闭。</tspan>
+        </text>
+    </g>
+    <g transform="translate(497,2080.6)" ed:width="232" ed:height="35.5" id="300" ed:parentid="110">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,19.52)" d="M-14.5,-16C0.7,-16,-2.7,16,14.5,16" fill="none" id="301" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,35.5L232,35.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">with open('test.txt', 'w') as f:</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">    f.write('Hello, world!')</tspan>
+        </text>
+    </g>
+    <g transform="translate(497,2124.8)" ed:width="372" ed:height="50.5" id="302" ed:parentid="110">
+        <path stroke="#4486b1" stroke-linecap="round" transform="translate(-14.5,4.92)" d="M-14.5,-45.6C5.3,-45.6,-13.4,45.6,14.5,45.6" fill="none" id="303" stroke-linejoin="round"/>
+        <path stroke="#4486b1" d="M0,50.5L372,50.5" fill="none" stroke-linejoin="round"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">with open('log1') as obj1, open('log2','w') as obj2:</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">    s=obj1.read()</tspan>
+            <tspan x="3" style="white-space:pre" y="45.8">    obj2.write(s)</tspan>
+        </text>
+    </g>
+    <g transform="translate(153,1132.15)" ed:width="129" ed:layout="rightmap" ed:height="62" id="101" ed:topictype="mainidea">
+        <path stroke="#4486b1" stroke-width="3" d="M8,0L121,0C125.4,0,129,3.6,129,8L129,54C129,58.4,125.4,62,121,62L8,62C3.6,62,0,58.4,0,54L0,8C0,3.6,3.6,0,8,0z" fill="#eaf3fc" stroke-linejoin="round"/>
+        <text class="st3">
+            <tspan x="27" style="white-space:pre" y="38.5" lengthAdjust="spacing" textLength="76">文件读写</tspan>
+        </text>
+    </g>
+    <g transform="translate(283,1157.15)" ed:togtopicid="101">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(485,353.35)" ed:togtopicid="102">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(485,719.15)" ed:togtopicid="104">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(453,953.15)" ed:togtopicid="106">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(485,1508.35)" ed:togtopicid="108">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(469,2078.15)" ed:togtopicid="110">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(781,228.25)" ed:togtopicid="116">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(574,374.25)" ed:togtopicid="124">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,301.25)" ed:togtopicid="126">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,330.45)" ed:togtopicid="128">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,359.65)" ed:togtopicid="130">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,388.85)" ed:togtopicid="132">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,418.05)" ed:togtopicid="134">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,447.25)" ed:togtopicid="138">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(681,301.25)" ed:togtopicid="140">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(681,330.45)" ed:togtopicid="142">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(681,359.65)" ed:togtopicid="144">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(681,388.85)" ed:togtopicid="146">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(720,418.05)" ed:togtopicid="148">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(707,447.25)" ed:togtopicid="150">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(555,675.35)" ed:togtopicid="164">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(555,792.15)" ed:togtopicid="166">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(618,733.75)" ed:togtopicid="182">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(606,1128.75)" ed:togtopicid="194">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(606,1230.95)" ed:togtopicid="196">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(613,1303.95)" ed:togtopicid="198">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(574,1406.15)" ed:togtopicid="200">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(585,1522.95)" ed:togtopicid="202">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(578,1595.95)" ed:togtopicid="204">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(832,1420.75)" ed:togtopicid="230">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(578,1727.35)" ed:togtopicid="256">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(585,1887.95)" ed:togtopicid="258">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(1051,1712.75)" ed:togtopicid="260">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(1177,1668.95)" ed:togtopicid="268">
+        <use xlink:href="#minus"/>
+    </g>
+    <g transform="translate(1208,1756.55)" ed:togtopicid="276">
+        <use xlink:href="#minus"/>
+    </g>
+    <symbol id="plus">
+        <path d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z" fill="url(#lg1)"/>
+        <path stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6M6,3L6,9" fill="none"/>
+    </symbol>
+    <symbol id="minus">
+        <path d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z" fill="url(#lg1)"/>
+        <path stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6" fill="none"/>
+    </symbol>
+</svg>
+</div>
+        <div id="copyright">Created With  <a href="https://www.edrawsoft.com/" target="_blank" title="edrawsoft">MindMaster</a></div>
+      </div>
+    </div>
+    <script>eval(atob('dmFyIG11YT13aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudDsNCnZhciB1YT0obXVhLmluZGV4T2YoJ3J2OjExJykrbXVhLmluZGV4T2YoJ01TSUUnKSk+PTA7DQpOdW1iZXIucHJvdG90eXBlLnRvc3VpdHN2Zz1mdW5jdGlvbiAoKSB7DQogICAgdmFyIG51bT10aGlzLnZhbHVlT2YoKTsNCiAgICBpZihudW0lMT09PTApew0KICAgICAgICByZXR1cm4gbnVtKzAuNQ0KICAgIH1lbHNlIHJldHVybiBudW07DQp9Ow0KTnVtYmVyLnByb3RvdHlwZS5wbHVzej1mdW5jdGlvbigpIHsNCiAgICB2YXIgbnVtPXRoaXMudmFsdWVPZigpOw0KICAgIHJldHVybiBudW08MTA/JzAnK251bTpudW07DQp9Ow0KZnVuY3Rpb24gcGFyc2VEYXRlKG51bSkgew0KICAgIHZhciBkYXRlID0gbmV3IERhdGUobnVtKTsNCiAgICB2YXIgWSA9IGRhdGUuZ2V0RnVsbFllYXIoKSArICctJzsNCiAgICB2YXIgTSA9IChkYXRlLmdldE1vbnRoKCkrMSkucGx1c3ooKSArICctJzsNCiAgICB2YXIgRCA9IGRhdGUuZ2V0RGF0ZSgpLnBsdXN6KCkgKyAnICc7DQogICAgdmFyIGggPSBkYXRlLmdldEhvdXJzKCkucGx1c3ooKSArICc6JzsNCiAgICB2YXIgbW0gPSBkYXRlLmdldE1pbnV0ZXMoKS5wbHVzeigpICsgJzonOw0KICAgIHZhciBzID0gZGF0ZS5nZXRTZWNvbmRzKCkucGx1c3ooKTsNCiAgICByZXR1cm4gWStNK0QraCttbStzOw0KfQ0KLy8tLXByZWRlZmluZWQNCi8vY29tbWVudC0tDQp2YXIgY29tbWVudHM9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6Y29tbWVudF0nKTsNCmZ1bmN0aW9uIGdldGN3aChwb3B1cCkgew0KICAgIGRvY3VtZW50LmJvZHkuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3N2ZycpWzBdLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICB2YXIgdz1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDsNCiAgICB2YXIgaD1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS5oZWlnaHQ7DQogICAgcmV0dXJuIFt3LGhdDQp9DQpmb3IodmFyIGk9MDtpPGNvbW1lbnRzLmxlbmd0aDtpKyspew0KICAgIHZhciBwb3B1cD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgIHZhciBob3Zlcj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwtb3BhY2l0eScsJzAuNicpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxjb21tZW50c1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICBob3Zlci5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICBjb21tZW50c1tpXS5hcHBlbmRDaGlsZChob3Zlcik7DQogICAgdmFyIGE9SlNPTi5wYXJzZShjb21tZW50c1tpXS5nZXRBdHRyaWJ1dGUoJ2VkOmNvbW1lbnQnKSk7DQogICAgdmFyIGhlaWdodD0wOw0KICAgIHZhciBjYXJyPVtdOw0KICAgIGZvcih2YXIgaj0wO2o8YS5sZW5ndGg7aisrKXsNCiAgICAgICAgdmFyIHN0YW1wPU51bWJlcihhW2pdLkRhdGUpKjEwMDA7DQogICAgICAgIHZhciB0aW1lPXBhcnNlRGF0ZShzdGFtcCk7DQogICAgICAgIHZhciBuYW1lPWFbal0uTmFtZTsNCiAgICAgICAgdmFyIG1lc3NhZ2U9YVtqXS5NZXNzYWdlOw0KICAgICAgICB2YXIgbWVzc2FnZUFycj1tZXNzYWdlLnNwbGl0KC9cbi8pOw0KICAgICAgICB2YXIgbz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgICAgICB2YXIgbj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgdD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgbT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBuLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCd5JywxMik7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmaWxsJywnIzAwNmVmZicpOw0KICAgICAgICBuLnRleHRDb250ZW50PW5hbWUrJ++8mic7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICB0LnNldEF0dHJpYnV0ZSgneCcsMjAwKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ3knLDEyKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjOTY5Njk2Jyk7DQogICAgICAgIHQudGV4dENvbnRlbnQ9dGltZTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZvbnQtc2l6ZScsJzEwJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMjAsMjcpJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICBmb3IodmFyIGs9MDtrPG1lc3NhZ2VBcnIubGVuZ3RoO2srKyl7DQogICAgICAgICAgICB2YXIgdHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3RzcGFuJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3knLGsqMTYpOw0KICAgICAgICAgICAgdHMudGV4dENvbnRlbnQ9bWVzc2FnZUFycltrXTsNCiAgICAgICAgICAgIG0uYXBwZW5kQ2hpbGQodHMpOw0KICAgICAgICB9DQogICAgICAgIG8uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMCwnK2hlaWdodCsnKScpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG4pOw0KICAgICAgICBvLmFwcGVuZENoaWxkKHQpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG0pOw0KICAgICAgICBjYXJyLnB1c2gobyk7DQogICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKG8pOw0KICAgICAgICBoZWlnaHQ9KG1lc3NhZ2VBcnIubGVuZ3RoKzEpKjE2K2hlaWdodDsNCiAgICB9DQogICAgdmFyIHdhcnI9Z2V0Y3doKHBvcHVwKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIHZhciBvdz13YXJyWzBdKzEwLjU7DQogICAgdmFyIG9oPXdhcnJbMV0rMzsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyxvdyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCdoZWlnaHQnLG9oKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCd3aGl0ZScpOw0KICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnIzY1NjU2NScpOw0KICAgIHBvcHVwLmFwcGVuZENoaWxkKG9saW5lKTsNCiAgICB2YXIgbD1jYXJyLmxlbmd0aDsNCiAgICB3aGlsZShsLS0pew0KICAgICAgICBwb3B1cC5hcHBlbmRDaGlsZChjYXJyW2xdKTsNCiAgICB9DQogICAgcG9wdXAub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgfTsNCiAgICB2YXIgY3M9Y29tbWVudHNbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKS5tYXRjaCgvXCgoXFMqfFxTKlxzXFMqKVwpLylbMV0uc3BsaXQoLyB8LC8pOw0KICAgIHZhciBwcz1jb21tZW50c1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgeD1wYXJzZUZsb2F0KGNzWzBdKStwYXJzZUZsb2F0KHBzWzBdKTsNCiAgICB2YXIgeT1wYXJzZUZsb2F0KHBzWzFdKTsNCiAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgeT15LnRvc3VpdHN2ZygpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnY29tbWVudCcsJycpOw0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnZWQ6Y29tbWVudGlkJyxjb21tZW50c1tpXS5wYXJlbnROb2RlLmlkKTsNCiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICBjb21tZW50c1tpXS5vbm1vdXNlb3Zlcj1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBjb21tZW50aWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDpjb21tZW50aWQ9JyIrY29tbWVudGlkKyInXVtjb21tZW50XSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIGNvbW1lbnRzW2ldLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgY29tbWVudGlkPXRoaXMucGFyZW50Tm9kZS5pZDsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmVtb3ZlQWxsUmFuZ2VzKCk7DQogICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6Y29tbWVudGlkPSciK2NvbW1lbnRpZCsiJ11bY29tbWVudF0iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0tY29tbWVudA0KLy9ub3RlLS0NCmlmKCF1YSl7DQogICAgdmFyIG5vdGVzPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2c+Z1tlZFxcOm5vdGVdJyk7DQogICAgZnVuY3Rpb24gZ2V0d2gocyxwKSB7DQogICAgICAgIHZhciBtYWlucD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsNCiAgICAgICAgbWFpbnAuc3R5bGUuY3NzVGV4dD1zOw0KICAgICAgICBtYWlucC5zdHlsZS5kaXNwbGF5PSdpbmxpbmUtYmxvY2snOw0KICAgICAgICBtYWlucC5pbm5lckhUTUw9cDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChtYWlucCk7DQogICAgICAgIHZhciB3PW1haW5wLmNsaWVudFdpZHRoOw0KICAgICAgICB2YXIgaD1tYWlucC5jbGllbnRIZWlnaHQ7DQogICAgICAgIGRvY3VtZW50LmJvZHkucmVtb3ZlQ2hpbGQobWFpbnApOw0KICAgICAgICByZXR1cm4gW3csaF0NCiAgICB9DQogICAgZm9yKHZhciBpPTA7aTxub3Rlcy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGE9bm90ZXNbaV0uZ2V0QXR0cmlidXRlKCdlZDpub3RlJyk7DQogICAgICAgIHZhciBtYWlucD1hLm1hdGNoKC88cChbXFNcc10qKTxcL3A+L2cpWzBdOw0KICAgICAgICB2YXIgbWFpbnM9YS5tYXRjaCgvc3R5bGU9IiguKj8pIi8pWzFdOw0KICAgICAgICB2YXIgb3V0PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdnJyk7DQogICAgICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2ZvcmVpZ25PYmplY3QnKTsNCiAgICAgICAgdmFyIGhvdmVyPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdyZWN0Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3knLCcwJyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbC1vcGFjaXR5JywnMC42Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICAgICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIG5vdGVzW2ldLmFwcGVuZENoaWxkKGhvdmVyKTsNCiAgICAgICAgcG9wdXAuc3R5bGUuY3NzVGV4dD1tYWluczsNCiAgICAgICAgcG9wdXAuaW5uZXJIVE1MPW1haW5wOw0KICAgICAgICB2YXIgd2g9Z2V0d2gobWFpbnMsbWFpbnApOw0KICAgICAgICBwb3B1cC5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyx3aFswXSsxNik7DQogICAgICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jyx3aFsxXSs4KTsNCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoOCw0KScpOw0KICAgICAgICBwb3B1cC5zdHlsZS50ZXh0QWxpZ249J2xlZnQnOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCd3aWR0aCcsd2hbMF0rMTYpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsd2hbMV0rOCk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnI2EyN2EwMCcpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjZmZlNzlkJyk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChvbGluZSk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgICAgIG91dC5zZXRBdHRyaWJ1dGUoJ25vdGUnLCcnKTsNCiAgICAgICAgb3V0LnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBvdXQuc2V0QXR0cmlidXRlKCdlZDpub3RlaWQnLG5vdGVzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgICAgICBvdXQub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIH07DQogICAgICAgIG91dC5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uID8gd2luZG93LmdldFNlbGVjdGlvbigpLnJlbW92ZVJhbmdlKHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZSk6ZG9jdW1lbnQuc2VsZWN0aW9uLmVtcHR5KCk7DQoNCiAgICAgICAgICAgIHRoaXMuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH07DQogICAgICAgIHZhciBjcz1ub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgICAgIHZhciBwcz1ub3Rlc1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgICAgIHZhciB5PXBhcnNlRmxvYXQocHNbMV0pOw0KICAgICAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICAgICAgb3V0LnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKG91dCk7DQogICAgICAgIG5vdGVzW2ldLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICB9Ow0KICAgICAgICBub3Rlc1tpXS5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KLy8gICAgICAgIHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZW1vdmVBbGxSYW5nZXMoKTsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH0NCiAgICB9DQp9ZWxzZXsNCiAgICBjb25zb2xlLmxvZygn5oqx5q2J77yMSUXmtY/op4jlmajkuI3mlK/mjIFub3Rl6Kej5p6Q77yM6K+35L2/55So5YW25LuW5YaF5qC45rWP6KeI5Zmo44CC6LCi6LCi77yBJykNCn0NCi8vLS1ub3RlDQovL2h5cGVybGluay0tDQp2YXIgbGlua3M9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6aHlwZXJsaW5rXScpOw0KZnVuY3Rpb24gZ2V0bWF4bGVuKGFycixicnIpIHsNCiAgICB2YXIgbD0wOw0KICAgIHZhciBsbD0wOw0KICAgIGZvcih2YXIgaj0wO2o8YXJyLmxlbmd0aDtqKyspew0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZighaXNOYU4obGlua2FycltqXSkpew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2FycltqXTsNCiAgICAgICAgfWVsc2V7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWFycltqXTsNCiAgICAgICAgfQ0KICAgICAgICBlLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoZSk7DQogICAgICAgIHZhciBldz1lLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoZSk7DQogICAgICAgIHZhciBoPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCd0ZXh0Jyk7DQogICAgICAgIGgudGV4dENvbnRlbnQ9YnJyW2pdOw0KICAgICAgICBoLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgaC5zdHlsZS5mb250V2VpZ2h0PSdib2xkJzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoaCk7DQogICAgICAgIHZhciBodz1oLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoaCk7DQogICAgICAgIGw9ZXc+aHc/ZXc6aHc7DQogICAgICAgIGxsPWw+bGw/bDpsbDsNCiAgICB9DQogICAgcmV0dXJuIGxsOw0KfQ0KZm9yKHZhciBpPTA7aTxsaW5rcy5sZW5ndGg7aSsrKXsNCiAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2cnKTsNCiAgICB2YXIgaG92ZXI9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3JlY3QnKTsNCiAgICB2YXIgZGVzY2Fycj1bXTsNCiAgICB2YXIgbGlua2Fycj1bXTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjY2RjZGZmJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCdmaWxsLW9wYWNpdHknLCcwLjYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsbGlua3NbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKSk7DQogICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgbGlua3NbaV0uYXBwZW5kQ2hpbGQoaG92ZXIpOw0KICAgIC8vIGNvbnNvbGUubG9nKGxpbmtzW2ldLmdldEF0dHJpYnV0ZSgnZWQ6aHlwZXJsaW5rJykpOw0KICAgIHZhciBhPUpTT04ucGFyc2UobGlua3NbaV0uZ2V0QXR0cmlidXRlKCdlZDpoeXBlcmxpbmsnKSk7DQogICAgdmFyIGNzPWxpbmtzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgcHM9bGlua3NbaV0ucGFyZW50Tm9kZS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgdmFyIHk9cGFyc2VGbG9hdChwc1sxXSk7DQogICAgeD14LnRvc3VpdHN2ZygpOw0KICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICB2YXIgYWw9YS5sZW5ndGg7DQogICAgZm9yKHZhciBqPTA7ajxhbDtqKyspew0KICAgICAgICBsaW5rYXJyLnB1c2goYVtqXS5saW5rKTsNCiAgICAgICAgZGVzY2Fyci5wdXNoKGFbal0uZGVzYyk7DQogICAgfQ0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHZhciBtYXg9Z2V0bWF4bGVuKGxpbmthcnIsZGVzY2Fycik7DQogICAgZm9yKHZhciBrPTA7azxhbDtrKyspew0KICAgICAgICB2YXIgYz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnYScpOw0KICAgICAgICB2YXIgZD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgZj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZihpc05hTihsaW5rYXJyW2tdKSl7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsbGlua2FycltrXSk7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgndGFyZ2V0JywnX2JsYW5rJyk7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWxpbmthcnJba107DQogICAgICAgIH1lbHNlew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2xpbmthcnJba107DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsJyMnK2xpbmthcnJba10pOw0KICAgICAgICB9DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCd3aWR0aCcsbWF4KzEwKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzMzJyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdzdHJva2UnLCcjOTk5OTk5Jyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdmaWxsJywnd2hpdGUnKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3knLDMzKmspOw0KICAgICAgICBmLnRleHRDb250ZW50PWRlc2NhcnJba107DQogICAgICAgIGYuc3R5bGUuZm9udFNpemU9JzEycHgnOw0KICAgICAgICBmLnN0eWxlLmZvbnRXZWlnaHQ9J2JvbGQnOw0KICAgICAgICBmLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIGYuc2V0QXR0cmlidXRlKCd5JywzMyprKzEyKTsNCiAgICAgICAgZS5zdHlsZS5mb250U2l6ZT0nMTJweCc7DQogICAgICAgIGUuc2V0QXR0cmlidXRlKCd5JywzMyprKzI4KTsNCiAgICAgICAgZS5zZXRBdHRyaWJ1dGUoJ3gnLDUpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGQpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGYpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGUpOw0KICAgICAgICBjLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmZpbGw9JyNlMWUxZmYnDQogICAgICAgIH07DQogICAgICAgIGMub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5maWxsPSd3aGl0ZScNCiAgICAgICAgfTsNCiAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQoYyk7DQogICAgfQ0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaHlwZXJsaW5rJywnJyk7DQogICAgcG9wdXAuc2V0QXR0cmlidXRlKCdlZDpsaW5raWQnLGxpbmtzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgIHBvcHVwLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgfTsNCiAgICBwb3B1cC5vbmNsaWNrPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIH07DQogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI3N2Zy1jb250YWluZXIgPiBzdmcnKS5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgbGlua3NbaV0ub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgbGlua2lkPXRoaXMucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6bGlua2lkPSciK2xpbmtpZCsiJ11baHlwZXJsaW5rXSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9DQogICAgbGlua3NbaV0ub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBsaW5raWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmxpbmtpZD0nIitsaW5raWQrIiddW2h5cGVybGlua10iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0taHlwZXJsaW5rDQovL2luaXRpYWxpemUtLQ0KdmFyIHNoYXBlPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2dbZWRcXDp0b2d0b3BpY2lkXScpOw0KdmFyIG1JZD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdnW2VkXFw6dG9waWN0eXBlXScpOw0KdmFyIGRhdGFUcmVlPXt9Ow0KdmFyIGV4dHJhUmVsYT17fTsNCnZhciBjaGVja0lEPScnOw0KZm9yKHZhciBpPTA7aTxtSWQubGVuZ3RoO2krKyl7DQogICAgdmFyIHR5cGU9bUlkW2ldLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIHNpZD1tSWRbaV0uaWQ7DQogICAgaWYodHlwZSE9PSdjYWxsb3V0Jyl7DQogICAgICAgIGluaXQoc2lkLGRhdGFUcmVlKQ0KICAgIH0NCn0NCmZ1bmN0aW9uIGluaXQoaWQsIG9iaikgew0KICAgIHZhciBjaGlsZHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXTpub3QoW2VkXFw6dG9waWN0eXBlXSkiKTsNCiAgICB2YXIgY2FsbHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXVtlZFxcOnRvcGljdHlwZV0iKTsNCiAgICB2YXIgc3VtbWFyeSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoInBhdGhbZWRcXDpwYXJlbnRpZCo9JyIgKyBpZCArICInXVtlZFxcOnR5cGU9J3N1bW1hcnknXSIpOw0KICAgIHZhciBib3VuZGFyeT0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgicGF0aFtlZFxcOnBhcmVudGlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0nYm91bmRhcnknXSIpOw0KICAgIHZhciByZWxhZnJvbT1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6ZnJvbWlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0ncmVsYXRpb24nXSIpOw0KICAgIHZhciByZWxhdG89ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiZ1tlZFxcOnRvaWQqPSciICsgaWQgKyAiJ11bZWRcXDp0eXBlPSdyZWxhdGlvbiddIik7DQogICAgb2JqWyJtIiArIGlkXSA9IHt9Ow0KICAgIHZhciB0eXBlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIGl3PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOndpZHRoJyk7DQogICAgdmFyIGloPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOmhlaWdodCcpOw0KICAgIGlmICh0eXBlKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0udHlwZSA9IHR5cGU7DQogICAgfQ0KICAgIGlmKGl3JiZpaCl7DQogICAgICAgIG9ialsibSIgKyBpZF0ud2lkdGggPWl3Ow0KICAgICAgICBvYmpbIm0iICsgaWRdLmhlaWdodCA9aWg7DQogICAgfQ0KICAgIGlmIChyZWxhZnJvbS5sZW5ndGggIT09IDApIHsNCiAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHJlbGFmcm9tLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZCA9IHJlbGFmcm9tW2ldLmlkOw0KICAgICAgICAgICAgdmFyIHRvaWQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpbmRleGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOnRvaWQnKTsNCiAgICAgICAgICAgIGlmIChleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCkgew0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtpbmRleGlkXSA9IHsNCiAgICAgICAgICAgICAgICAgICAgaWQ6IGluZGV4aWQsDQogICAgICAgICAgICAgICAgICAgIGZyb21pZDogaWQsDQogICAgICAgICAgICAgICAgICAgIHRvaWQ6IHRvaWQsDQogICAgICAgICAgICAgICAgICAgIGlzQzogZmFsc2UNCiAgICAgICAgICAgICAgICB9Ow0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbVtpbmRleGlkXT17fTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYWZyb20uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChyZWxhdG8ubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgcmVsYXRvLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZD1yZWxhdG9baV0uaWQ7DQogICAgICAgICAgICB2YXIgZnJvbWlkPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGluZGV4aWQpLmdldEF0dHJpYnV0ZSgnZWQ6ZnJvbWlkJyk7DQogICAgICAgICAgICBpZihleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCl7DQogICAgICAgICAgICAgICAgZXh0cmFSZWxhW2luZGV4aWRdPXsNCiAgICAgICAgICAgICAgICAgICAgaWQ6aW5kZXhpZCwNCiAgICAgICAgICAgICAgICAgICAgZnJvbWlkOmZyb21pZCwNCiAgICAgICAgICAgICAgICAgICAgdG9pZDppZCwNCiAgICAgICAgICAgICAgICAgICAgaXNDOmZhbHNlDQogICAgICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvW2luZGV4aWRdPXt9Ow0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhdG8uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChjaGlsZHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2hpbGQgPSB7fTsNCiAgICAgICAgaWYgKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKSkgew0KICAgICAgICAgICAgLy8gY29uc29sZS5sb2coZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIgKyBpZCArICInXSIpLmNoaWxkTm9kZXNbMF0uZ2V0QXR0cmlidXRlKCd4bGluazpocmVmJykpOw0KICAgICAgICAgICAgdmFyIHRvZyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKS5jaGlsZHJlblswXS5nZXRBdHRyaWJ1dGUoJ3hsaW5rOmhyZWYnKS5zbGljZSgxKTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0udG9ndHlwZSA9IHRvZzsNCiAgICAgICAgfQ0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNoaWxkcy5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9IGNoaWxkc1tpXS5pZDsNCiAgICAgICAgICAgIGluaXQoY2lkLCBvYmpbIm0iICsgaWRdLmNoaWxkKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoY2FsbHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2FsbCA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNhbGxzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgY2lkID0gY2FsbHNbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5jYWxsKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoYm91bmRhcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uYm91bmRhcnkgPSB7fTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBib3VuZGFyeS5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9Ym91bmRhcnlbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5ib3VuZGFyeSk7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKHN1bW1hcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uc3VtbWFyeSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHN1bW1hcnkubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBjaWQgPSBzdW1tYXJ5W2ldLmlkOw0KICAgICAgICAgICAgaW5pdChjaWQsIG9ialsibSIgKyBpZF0uc3VtbWFyeSk7DQogICAgICAgIH0NCiAgICB9DQp9DQovLy0taW5pdGlhbGl6ZQ0KLy90b2dnbGVkaXNwbGF5LS0NCnZhciBjaGFpbkFycj1bXTsNCmZ1bmN0aW9uIGdldGNoYWluKGlkKXsNCiAgICBjaGFpbkFyci51bnNoaWZ0KCdtJytpZCk7DQogICAgdmFyIHBhcmVudD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuZ2V0QXR0cmlidXRlKCdlZDpwYXJlbnRpZCcpOw0KICAgIGlmKCFwYXJlbnQpew0KICAgICAgICByZXR1cm47DQogICAgfQ0KICAgIGdldGNoYWluKHBhcmVudCk7DQp9DQpmdW5jdGlvbiBnZXRvYmooaWQpIHsNCiAgICBjaGFpbkFycj1bXTsNCiAgICBnZXRjaGFpbihpZCk7DQogICAgdmFyIG1haW49Y2hhaW5BcnJbMF07DQogICAgaWYoY2hhaW5BcnIubGVuZ3RoPjEpew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICAvLyBjb25zb2xlLmxvZyhjaGFpbkFycik7DQogICAgICAgIGZvcih2YXIgaT0xO2k8Y2hhaW5BcnIubGVuZ3RoO2krKykgew0KICAgICAgICAgICAgdmFyIGEgPSBjaGFpbkFycltpXTsNCiAgICAgICAgICAgIGZvcih2YXIgaj0wO2o8T2JqZWN0LmtleXMob2JqKS5sZW5ndGg7aisrKXsNCiAgICAgICAgICAgICAgICB2YXIgY29iaj0gb2JqW09iamVjdC5rZXlzKG9iailbal1dW2FdOw0KICAgICAgICAgICAgICAgIGlmKGNvYmopew0KICAgICAgICAgICAgICAgICAgICBvYmo9Y29iajsNCiAgICAgICAgICAgICAgICAgICAgY29udGludWUNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgIH0NCiAgICAgICAgcmV0dXJuIG9iag0KICAgIH1lbHNlew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICByZXR1cm4gb2JqDQogICAgfQ0KDQp9DQpmb3IodmFyIGk9MDtpPHNoYXBlLmxlbmd0aDtpKyspew0KICAgIHNoYXBlW2ldLm9uY2xpY2s9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgaWQ9TnVtYmVyKHRoaXMuZ2V0QXR0cmlidXRlKCdlZDp0b2d0b3BpY2lkJykpOw0KICAgICAgICB2YXIgb2JqPWdldG9iaihpZCk7DQoNCiAgICAgICAgdmFyIHR5cGU9b2JqLnRvZ3R5cGU9PT0nbWludXMnPydwbHVzJzonbWludXMnOw0KICAgICAgICB2YXIgZGlzcGxheT1vYmoudG9ndHlwZT09PSdtaW51cyc/J25vbmUnOidibG9jayc7DQogICAgICAgIHRoaXMuY2hpbGRyZW5bMF0uc2V0QXR0cmlidXRlKCd4bGluazpocmVmJywnIycrdHlwZSk7DQogICAgICAgIG9iai50b2d0eXBlPXR5cGU7DQogICAgICAgIGNoZWNrSUQ9b2JqOw0KDQogICAgICAgIHV0ZChvYmosaWQsZGlzcGxheSk7DQogICAgICAgIGV4dHJhUmVsYUZpbigpOw0KICAgIH0NCn0NCmZ1bmN0aW9uIHV0ZChvYmosaWQsc2hvdyxvYykgew0KDQogICAgdmFyIHBzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5zdHlsZS5kaXNwbGF5IT09ICdub25lJz8nYmxvY2snOidub25lJzsNCiAgICBpZiAob2JqLnJlbGFmcm9tKXsNCiAgICAgICAgaWYob2JqLnJlbGFmcm9tLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhvYmoucmVsYWZyb20pOw0KICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgZm9yKHZhciBrPTA7azxyZWxhZnJvbXMubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgdmFyIGQ9cmVsYWZyb21zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhZnJvbS5kaXNwbGF5ID0gcHNob3c7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKG9iai5yZWxhdG8pew0KICAgICAgICBpZihvYmoucmVsYXRvLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMob2JqLnJlbGF0byk7DQogICAgICAgICAgICByZWxhdG9zLnNwbGljZShyZWxhdG9zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICB2YXIgZD1yZWxhdG9zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhdG8uZGlzcGxheSA9IHBzaG93Ow0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5jYWxsKXsNCiAgICAgICAgdmFyIGNhbGxzPU9iamVjdC5rZXlzKG9iai5jYWxsKTsNCiAgICAgICAgaWYoY2hlY2tJRCE9PW9iail7DQogICAgICAgICAgICBmb3IodmFyIGk9MDtpIDwgY2FsbHMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Y2FsbHNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLmNhbGxbY2FsbHNbaV1dOw0KICAgICAgICAgICAgICAgIHZhciBjPWIudG9ndHlwZTsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChhKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgaWYgKGIucmVsYWZyb20mJiFjKXsNCiAgICAgICAgICAgICAgICAgICAgaWYoYi5yZWxhZnJvbS5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIHJlbGFmcm9tcy5zcGxpY2UocmVsYWZyb21zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYWZyb21zLmxlbmd0aDtrKyspew0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgICAgICBpZihiLnJlbGF0by5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMoYi5yZWxhdG8pOw0KICAgICAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGF0b3MubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQ9cmVsYXRvc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGF0by5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihjKXsNCiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIrYSsiJ10iKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBpZiAoKGIuY2FsbHx8Yi5ib3VuZGFyeXx8Yi5zdW1tYXJ5KSYmYz09PSdwbHVzJykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3csdHJ1ZSkNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYgKGIuc3VtbWFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZiAoYi5ib3VuZGFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5zdW1tYXJ5KXsNCiAgICAgICAgdmFyIHN1bW1hcnlzPU9iamVjdC5rZXlzKG9iai5zdW1tYXJ5KTsNCiAgICAgICAgaWYoKGNoZWNrSUQhPT1vYmomJihvYmoudG9ndHlwZT09PSdtaW51cyd8fCFvYmoudG9ndHlwZSkpfHxjaGVja0lEPT09b2JqKXsNCiAgICAgICAgICAgIGZvcih2YXIgaT0wO2k8c3VtbWFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9c3VtbWFyeXNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLnN1bW1hcnlbc3VtbWFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZihvYmouYm91bmRhcnkpew0KICAgICAgICB2YXIgYm91bmRhcnlzPU9iamVjdC5rZXlzKG9iai5ib3VuZGFyeSk7DQogICAgICAgIGlmKGNoZWNrSUQhPT1vYmopew0KICAgICAgICAgICAgZm9yKHZhciBpPTA7aTxib3VuZGFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Ym91bmRhcnlzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgICAgIHZhciBiPW9iai5ib3VuZGFyeVtib3VuZGFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZighb2MmJm9iai5jaGlsZCkgew0KICAgICAgICB2YXIgY2hpbGRzID0gT2JqZWN0LmtleXMob2JqLmNoaWxkKTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjaGlsZHMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBhID0gY2hpbGRzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgdmFyIGIgPSBvYmouY2hpbGRbY2hpbGRzW2ldXTsNCiAgICAgICAgICAgIHZhciBjID0gYi50b2d0eXBlOw0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYSkuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICBpZiAoYi5yZWxhZnJvbSYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYWZyb20uZGlzcGxheSE9PSBzaG93KXsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGFmcm9tcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYXRvLmRpc3BsYXkhPT0gc2hvdyl7DQogICAgICAgICAgICAgICAgICAgIHZhciByZWxhdG9zPU9iamVjdC5rZXlzKGIucmVsYXRvKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGF0b3Nba107DQogICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgYi5yZWxhdG8uZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgaWYgKGMpIHsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIiArIGEgKyAiJ10iKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICBpZiAoYyA9PT0gJ21pbnVzJykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3cpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmICgoYi5jYWxsfHxiLmJvdW5kYXJ5fHxiLnN1bW1hcnkpJiZjPT09J3BsdXMnKSB7DQogICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdyx0cnVlKQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmNhbGwmJiFjKSB7DQogICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5zdW1tYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmJvdW5kYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCn0NCg0KZnVuY3Rpb24gZXh0cmFSZWxhRmluKCkgew0KICAgIHZhciBleHRyYWtleXM9T2JqZWN0LmtleXMoZXh0cmFSZWxhKTsNCiAgICBmb3IodmFyIGk9MDtpPGV4dHJha2V5cy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGV4dHJhT2JqPWV4dHJhUmVsYVtleHRyYWtleXNbaV1dOw0KICAgICAgICBpZihleHRyYU9iai5pc0MgPT09IHRydWUpew0KICAgICAgICAgICAgdmFyIGZzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmZyb21pZCkuc3R5bGUuZGlzcGxheSAhPT0nbm9uZSc/IHRydWU6IGZhbHNlOw0KICAgICAgICAgICAgdmFyIHRzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLnRvaWQpLnN0eWxlLmRpc3BsYXkgIT09J25vbmUnPyB0cnVlOiBmYWxzZTsNCiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmlkKS5zdHlsZS5kaXNwbGF5PWZzaG93ICYmIHRzaG93PyAnYmxvY2snOiAnbm9uZSc7DQogICAgICAgICAgICBleHRyYVJlbGFbZXh0cmFrZXlzW2ldXS5pc0MgPSBmYWxzZTsNCiAgICAgICAgfQ0KICAgIH0NCn0='))</script>
+  </body>
+</html>

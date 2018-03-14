@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <title>python.os模块</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            width: auto;
+            height: auto;
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            overflow-x: scroll;
+            min-width: 0px;
+            margin: 0 10px;
+        }
+        #nav-thumbs{
+            overflow-y: scroll;
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            display: block;
+            margin:10px auto;
+            margin-bottom: 0;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #08a1ef;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+            #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+            #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+            #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info">
+        <div id="content-info">
+          <div id="title">python.os模块</div>
+        </div>
+        <div id="author-info">
+          <div id="author-name" class="text">admin</div>
+          <div id="share-time" class="text">2018-03-13</div>
+        </div>
+      </div>
+      <div id="main-content">
+        <div id="svg-container"><svg ed:vSpacing="30" ed:hSpacing="30" xmlns:xlink="http://www.w3.org/1999/xlink" id="page1" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:ed="http://www.edrawsoft.cn/xml/2017/SVGExtensions/" height="2145" ed:name="Page-1" xmlns="http://www.w3.org/2000/svg" width="2127" viewBox="0 0 2127 2145" preserveAspectRadio="xMinYMin meet">
+    <style type="text/css"><![CDATA[
+g[ed\:togtopicid],g[ed\:hyperlink],g[ed\:comment],g[ed\:note] {cursor:pointer;}
+g[id] {-moz-user-select: none;-ms-user-select: none;user-select: none;}
+svg text::selection,svg tspan::selection{background-color: #4285f4;color: #ffffff;fill: #ffffff;}
+.st2 {fill:#303030;font-family:宋体;font-size:10pt}
+.st1 {fill:#303030;font-family:宋体;font-size:12pt}
+.st3 {fill:#303030;font-family:宋体;font-size:14pt}
+]]></style>
+    <defs>
+        <linearGradient y1="0%" id="lg1" x1="0%" x2="0%" y2="100%">
+            <stop stop-color="#ffffff" offset="0"/>
+            <stop stop-color="#f0f5f0" offset="0.25"/>
+            <stop stop-color="#e1ebe1" offset="0.75"/>
+            <stop stop-color="#c8d7c8" offset="1"/>
+        </linearGradient>
+    </defs>
+    <rect x="0" fill="#ffffff" y="0" height="2145" width="2127"/>
+    <g id="281" ed:height="40" ed:parentid="101" transform="translate(327,155.85)" ed:width="123">
+        <path fill="#f5f9fe" stroke="#4486b1" stroke-linejoin="round" d="M4,0L119,0C121.2,0,123,1.8,123,4L123,36C123,38.2,121.2,40,119,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z"/>
+        <path fill="none" stroke="#4486b1" id="282" stroke-linejoin="round" stroke-linecap="round" d="M-37.2,417.1C7.7,259.2,-46,-448.1,59.3,-448.1" transform="translate(-59.25,468.07)"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" lengthAdjust="spacing" y="26.5" textLength="80">os模块简介</tspan>
+        </text>
+    </g>
+    <g id="283" ed:height="40" ed:parentid="101" transform="translate(327,1099.35)" ed:width="123">
+        <path fill="#f5f9fe" stroke="#4486b1" stroke-linejoin="round" d="M4,0L119,0C121.2,0,123,1.8,123,4L123,36C123,38.2,121.2,40,119,40L4,40C1.8,40,0,38.2,0,36L0,4C0,1.8,1.8,0,4,0z"/>
+        <path fill="none" stroke="#4486b1" id="284" stroke-linejoin="round" stroke-linecap="round" d="M-3.8,-3.8C15.2,9.2,32.4,23.7,59.3,23.7" transform="translate(-59.25,-3.67)"/>
+        <text class="st1">
+            <tspan x="22" style="white-space:pre" lengthAdjust="spacing" y="26.5" textLength="80">os主要功能</tspan>
+        </text>
+    </g>
+    <g id="293" ed:height="20.5" ed:parentid="281" transform="translate(479,151)" ed:width="715">
+        <path fill="none" stroke="#4486b1" id="294" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,2.2C-2.4,2.2,4.6,-2.2,14.5,-2.2" transform="translate(-14.5,22.68)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L715,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="707">os模块是Python标准库中的一个用于访问操作系统相关功能的模块，os模块提供了一种可移植的使用操作系统功能的方法。</tspan>
+        </text>
+    </g>
+    <g id="295" ed:height="20.5" ed:parentid="281" transform="translate(479,180.2)" ed:width="412">
+        <path fill="none" stroke="#4486b1" id="296" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-12.4C-0,-12.4,-0.9,12.4,14.5,12.4" transform="translate(-14.5,8.07)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L412,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="404">os模块的主要功能：系统相关、目录及文件操作、执行命令和管理进程</tspan>
+        </text>
+    </g>
+    <g id="297" ed:height="20.5" ed:parentid="283" transform="translate(479,362.5)" ed:width="60">
+        <path fill="none" stroke="#4486b1" id="298" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,368.2C5.8,368.2,-14.5,-368.2,14.5,-368.2" transform="translate(-14.5,388.68)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L60,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="52">系统相关</tspan>
+        </text>
+    </g>
+    <g id="299" ed:height="20.5" ed:parentid="283" transform="translate(479,1049.9)" ed:width="112">
+        <path fill="none" stroke="#4486b1" id="300" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,24.5C2.5,24.5,-6.7,-24.5,14.5,-24.5" transform="translate(-14.5,44.98)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L112,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="104">目录和文件的操作</tspan>
+        </text>
+    </g>
+    <g id="301" ed:height="20.5" ed:parentid="283" transform="translate(479,1781.9)" ed:width="60">
+        <path fill="none" stroke="#4486b1" id="302" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-341.5C5.8,-341.5,-14.5,341.5,14.5,341.5" transform="translate(-14.5,-321.03)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L60,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="52">执行命令</tspan>
+        </text>
+    </g>
+    <g id="305" ed:height="20.5" ed:parentid="297" transform="translate(568,245.7)" ed:width="57">
+        <path fill="none" stroke="#4486b1" id="306" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,58.4C5.8,58.4,-14.5,-58.4,14.5,-58.4" transform="translate(-14.5,78.9)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L57,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="49">os.name</tspan>
+        </text>
+    </g>
+    <g id="307" ed:height="20.5" ed:parentid="297" transform="translate(568,274.9)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="308" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,43.8C5.2,43.8,-13,-43.8,14.5,-43.8" transform="translate(-14.5,64.3)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">os.environ</tspan>
+        </text>
+    </g>
+    <g id="309" ed:height="20.5" ed:parentid="297" transform="translate(568,304.1)" ed:width="50">
+        <path fill="none" stroke="#4486b1" id="310" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,29.2C3.3,29.2,-8.6,-29.2,14.5,-29.2" transform="translate(-14.5,49.7)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L50,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="42">os.sep</tspan>
+        </text>
+    </g>
+    <g id="311" ed:height="20.5" ed:parentid="297" transform="translate(568,333.3)" ed:width="71">
+        <path fill="none" stroke="#4486b1" id="312" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" transform="translate(-14.5,35.1)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L71,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="63">os.altsep</tspan>
+        </text>
+    </g>
+    <g id="313" ed:height="20.5" ed:parentid="297" transform="translate(568,362.5)" ed:width="71">
+        <path fill="none" stroke="#4486b1" id="314" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L71,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="63">os.extsep</tspan>
+        </text>
+    </g>
+    <g id="315" ed:height="20.5" ed:parentid="297" transform="translate(568,391.7)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="316" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" transform="translate(-14.5,5.9)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">os.pathsep</tspan>
+        </text>
+    </g>
+    <g id="317" ed:height="20.5" ed:parentid="305" transform="translate(654,245.7)" ed:width="466">
+        <path fill="none" stroke="#4486b1" id="318" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L466,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="458">查看当前操作系统的名称。windows平台下返回‘nt’，Linux则返回‘posix’</tspan>
+        </text>
+    </g>
+    <g id="319" ed:height="20.5" ed:parentid="307" transform="translate(675,274.9)" ed:width="112">
+        <path fill="none" stroke="#4486b1" id="320" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L112,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="104">获取系统环境变量</tspan>
+        </text>
+    </g>
+    <g id="321" ed:height="20.5" ed:parentid="297" transform="translate(568,420.9)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="322" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-29.2C3.3,-29.2,-8.6,29.2,14.5,29.2" transform="translate(-14.5,-8.7)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">os.linesep</tspan>
+        </text>
+    </g>
+    <g id="323" ed:height="20.5" ed:parentid="297" transform="translate(568,450.1)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="324" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-43.8C5.2,-43.8,-13,43.8,14.5,43.8" transform="translate(-14.5,-23.3)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">os.devnull</tspan>
+        </text>
+    </g>
+    <g id="325" ed:height="20.5" ed:parentid="297" transform="translate(568,479.3)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="326" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-58.4C5.8,-58.4,-14.5,58.4,14.5,58.4" transform="translate(-14.5,-37.9)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">os.defpath</tspan>
+        </text>
+    </g>
+    <g id="327" ed:height="20.5" ed:parentid="309" transform="translate(647,304.1)" ed:width="457">
+        <path fill="none" stroke="#4486b1" id="328" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L457,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="449">当前平台的路径分隔符。在windows下，为‘\’，在POSIX系统中，为‘/’。</tspan>
+        </text>
+    </g>
+    <g id="329" ed:height="20.5" ed:parentid="311" transform="translate(668,333.3)" ed:width="272">
+        <path fill="none" stroke="#4486b1" id="330" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L272,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="264">可替代的路径分隔符，在Windows中为‘/’。</tspan>
+        </text>
+    </g>
+    <g id="331" ed:height="20.5" ed:parentid="313" transform="translate(668,362.5)" ed:width="363">
+        <path fill="none" stroke="#4486b1" id="332" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L363,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="355">文件名和文件扩展名之间分隔的符号，在Windows下为‘.’。</tspan>
+        </text>
+    </g>
+    <g id="333" ed:height="20.5" ed:parentid="315" transform="translate(675,391.7)" ed:width="446">
+        <path fill="none" stroke="#4486b1" id="334" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L446,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="438">PATH环境变量中的分隔符，在POSIX系统中为‘:’，在Windows中为‘;’。</tspan>
+        </text>
+    </g>
+    <g id="335" ed:height="20.5" ed:parentid="321" transform="translate(675,420.9)" ed:width="475">
+        <path fill="none" stroke="#4486b1" id="336" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L475,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="467">行结束符。在不同的系统中行尾的结束符是不同的，例如在Windows下为‘\r\n’</tspan>
+        </text>
+    </g>
+    <g id="337" ed:height="20.5" ed:parentid="323" transform="translate(675,450.1)" ed:width="529">
+        <path fill="none" stroke="#4486b1" id="338" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L529,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="521">在不同的系统上null设备的路径，在Windows下为‘nul’，在POSIX下为‘/dev/null’。</tspan>
+        </text>
+    </g>
+    <g id="339" ed:height="20.5" ed:parentid="325" transform="translate(675,479.3)" ed:width="656">
+        <path fill="none" stroke="#4486b1" id="340" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L656,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="648">当使用exec函数族的时候，如果没有指定PATH环境变量，则默认会查找os.defpath中的值作为子进程PATH的值。</tspan>
+        </text>
+    </g>
+    <g id="343" ed:height="20.5" ed:parentid="299" transform="translate(620,508.5)" ed:width="85">
+        <path fill="none" stroke="#4486b1" id="344" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,270.7C5.8,270.7,-14.5,-270.7,14.5,-270.7" transform="translate(-14.5,291.2)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L85,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="77">os.getcwd()</tspan>
+        </text>
+    </g>
+    <g id="345" ed:height="20.5" ed:parentid="299" transform="translate(620,537.7)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="346" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,256.1C5.8,256.1,-14.5,-256.1,14.5,-256.1" transform="translate(-14.5,276.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.chdir("dirname")</tspan>
+        </text>
+    </g>
+    <g id="347" ed:height="20.5" ed:parentid="299" transform="translate(620,566.9)" ed:width="71">
+        <path fill="none" stroke="#4486b1" id="348" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,241.5C5.8,241.5,-14.5,-241.5,14.5,-241.5" transform="translate(-14.5,262)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L71,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="63">os.curdir</tspan>
+        </text>
+    </g>
+    <g id="349" ed:height="20.5" ed:parentid="299" transform="translate(620,596.1)" ed:width="71">
+        <path fill="none" stroke="#4486b1" id="350" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,226.9C5.8,226.9,-14.5,-226.9,14.5,-226.9" transform="translate(-14.5,247.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L71,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="63">os.pardir</tspan>
+        </text>
+    </g>
+    <g id="351" ed:height="20.5" ed:parentid="299" transform="translate(620,625.3)" ed:width="176">
+        <path fill="none" stroke="#4486b1" id="352" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,212.3C5.8,212.3,-14.5,-212.3,14.5,-212.3" transform="translate(-14.5,232.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L176,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="168">os.makedirs('dir1/dir2')</tspan>
+        </text>
+    </g>
+    <g id="353" ed:height="20.5" ed:parentid="299" transform="translate(620,654.5)" ed:width="195">
+        <path fill="none" stroke="#4486b1" id="354" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,197.7C5.8,197.7,-14.5,-197.7,14.5,-197.7" transform="translate(-14.5,218.2)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L195,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="187">os.removedirs(‘dirname1’)</tspan>
+        </text>
+    </g>
+    <g id="355" ed:height="20.5" ed:parentid="299" transform="translate(620,683.7)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="356" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,183.1C5.8,183.1,-14.5,-183.1,14.5,-183.1" transform="translate(-14.5,203.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.mkdir('dirname')</tspan>
+        </text>
+    </g>
+    <g id="357" ed:height="20.5" ed:parentid="299" transform="translate(620,712.9)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="358" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,168.5C5.8,168.5,-14.5,-168.5,14.5,-168.5" transform="translate(-14.5,189)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.rmdir('dirname')</tspan>
+        </text>
+    </g>
+    <g id="359" ed:height="20.5" ed:parentid="299" transform="translate(620,742.1)" ed:width="155">
+        <path fill="none" stroke="#4486b1" id="360" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,153.9C5.8,153.9,-14.5,-153.9,14.5,-153.9" transform="translate(-14.5,174.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L155,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="147">os.listdir('dirname')</tspan>
+        </text>
+    </g>
+    <g id="361" ed:height="20.5" ed:parentid="299" transform="translate(620,771.3)" ed:width="155">
+        <path fill="none" stroke="#4486b1" id="362" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,139.3C5.8,139.3,-14.5,-139.3,14.5,-139.3" transform="translate(-14.5,159.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L155,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="147">os.remove('filename')</tspan>
+        </text>
+    </g>
+    <g id="363" ed:height="20.5" ed:parentid="299" transform="translate(620,800.5)" ed:width="190">
+        <path fill="none" stroke="#4486b1" id="364" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,124.7C5.8,124.7,-14.5,-124.7,14.5,-124.7" transform="translate(-14.5,145.2)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L190,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="182">os.rename("oldname","new")</tspan>
+        </text>
+    </g>
+    <g id="365" ed:height="20.5" ed:parentid="299" transform="translate(620,829.7)" ed:width="176">
+        <path fill="none" stroke="#4486b1" id="366" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,110.1C5.8,110.1,-14.5,-110.1,14.5,-110.1" transform="translate(-14.5,130.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L176,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="168">os.stat('path/filename')</tspan>
+        </text>
+    </g>
+    <g id="367" ed:height="20.5" ed:parentid="299" transform="translate(620,858.9)" ed:width="155">
+        <path fill="none" stroke="#4486b1" id="368" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,95.5C5.8,95.5,-14.5,-95.5,14.5,-95.5" transform="translate(-14.5,116)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L155,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="147">os.path.abspath(path)</tspan>
+        </text>
+    </g>
+    <g id="369" ed:height="20.5" ed:parentid="299" transform="translate(620,888.1)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="370" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,80.9C5.8,80.9,-14.5,-80.9,14.5,-80.9" transform="translate(-14.5,101.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.path.split(path)</tspan>
+        </text>
+    </g>
+    <g id="371" ed:height="20.5" ed:parentid="299" transform="translate(620,917.3)" ed:width="155">
+        <path fill="none" stroke="#4486b1" id="372" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,66.3C5.8,66.3,-14.5,-66.3,14.5,-66.3" transform="translate(-14.5,86.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L155,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="147">os.path.dirname(path)</tspan>
+        </text>
+    </g>
+    <g id="373" ed:height="20.5" ed:parentid="299" transform="translate(620,946.5)" ed:width="162">
+        <path fill="none" stroke="#4486b1" id="374" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,51.7C5.7,51.7,-14.2,-51.7,14.5,-51.7" transform="translate(-14.5,72.2)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L162,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="154">os.path.basename(path)</tspan>
+        </text>
+    </g>
+    <g id="375" ed:height="20.5" ed:parentid="343" transform="translate(734,508.5)" ed:width="323">
+        <path fill="none" stroke="#4486b1" id="376" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L323,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="315">获取当前工作目录，即当前python脚本工作的目录路径</tspan>
+        </text>
+    </g>
+    <g id="377" ed:height="20.5" ed:parentid="345" transform="translate(790,537.7)" ed:width="252">
+        <path fill="none" stroke="#4486b1" id="378" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L252,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="244">改变当前脚本工作目录；相当于shell下cd</tspan>
+        </text>
+    </g>
+    <g id="379" ed:height="20.5" ed:parentid="347" transform="translate(720,566.9)" ed:width="135">
+        <path fill="none" stroke="#4486b1" id="380" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L135,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="127">返回当前目录: ('.')</tspan>
+        </text>
+    </g>
+    <g id="381" ed:height="20.5" ed:parentid="349" transform="translate(720,596.1)" ed:width="245">
+        <path fill="none" stroke="#4486b1" id="382" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L245,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="237">获取当前目录的父目录字符串名：('..')</tspan>
+        </text>
+    </g>
+    <g id="383" ed:height="20.5" ed:parentid="351" transform="translate(825,625.3)" ed:width="125">
+        <path fill="none" stroke="#4486b1" id="384" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L125,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="117">可生成多层递归目录</tspan>
+        </text>
+    </g>
+    <g id="385" ed:height="20.5" ed:parentid="353" transform="translate(844,654.5)" ed:width="164">
+        <path fill="none" stroke="#4486b1" id="386" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L164,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="156">递归删除空目录（要小心）</tspan>
+        </text>
+    </g>
+    <g id="387" ed:height="20.5" ed:parentid="355" transform="translate(790,683.7)" ed:width="86">
+        <path fill="none" stroke="#4486b1" id="388" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L86,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="78">生成单级目录</tspan>
+        </text>
+    </g>
+    <g id="389" ed:height="20.5" ed:parentid="357" transform="translate(790,712.9)" ed:width="294">
+        <path fill="none" stroke="#4486b1" id="390" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L294,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="286">删除单级空目录，若目录不为空则无法删除并报错</tspan>
+        </text>
+    </g>
+    <g id="391" ed:height="20.5" ed:parentid="359" transform="translate(804,742.1)" ed:width="307">
+        <path fill="none" stroke="#4486b1" id="392" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L307,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="299">列出指定目录下的所有文件和子目录，包括隐藏文件</tspan>
+        </text>
+    </g>
+    <g id="393" ed:height="20.5" ed:parentid="361" transform="translate(804,771.3)" ed:width="86">
+        <path fill="none" stroke="#4486b1" id="394" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L86,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="78">删除一个文件</tspan>
+        </text>
+    </g>
+    <g id="395" ed:height="20.5" ed:parentid="363" transform="translate(839,800.5)" ed:width="106">
+        <path fill="none" stroke="#4486b1" id="396" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L106,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="98">重命名文件/目录</tspan>
+        </text>
+    </g>
+    <g id="397" ed:height="20.5" ed:parentid="365" transform="translate(825,829.7)" ed:width="119">
+        <path fill="none" stroke="#4486b1" id="398" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L119,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="111">获取文件/目录信息</tspan>
+        </text>
+    </g>
+    <g id="399" ed:height="20.5" ed:parentid="367" transform="translate(804,858.9)" ed:width="166">
+        <path fill="none" stroke="#4486b1" id="400" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L166,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="158">返回path规范化的绝对路径</tspan>
+        </text>
+    </g>
+    <g id="401" ed:height="20.5" ed:parentid="299" transform="translate(620,975.7)" ed:width="202">
+        <path fill="none" stroke="#4486b1" id="402" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,37.1C4.4,37.1,-11.3,-37.1,14.5,-37.1" transform="translate(-14.5,57.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L202,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="194">os.path.exists(path或者file)</tspan>
+        </text>
+    </g>
+    <g id="533" ed:height="20.5" ed:parentid="299" transform="translate(620,1004.9)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="534" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,22.5C2.1,22.5,-5.8,-22.5,14.5,-22.5" transform="translate(-14.5,43)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.path.isabs(path)</tspan>
+        </text>
+    </g>
+    <g id="535" ed:height="20.5" ed:parentid="299" transform="translate(620,1034.1)" ed:width="148">
+        <path fill="none" stroke="#4486b1" id="536" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,7.9C-1.1,7.9,1.5,-7.9,14.5,-7.9" transform="translate(-14.5,28.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L148,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="140">os.path.isfile(path)</tspan>
+        </text>
+    </g>
+    <g id="537" ed:height="20.5" ed:parentid="299" transform="translate(620,1063.3)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="538" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-6.7C-1.3,-6.7,2.1,6.7,14.5,6.7" transform="translate(-14.5,13.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">os.path.isdir(path)</tspan>
+        </text>
+    </g>
+    <g id="539" ed:height="20.5" ed:parentid="299" transform="translate(620,1092.5)" ed:width="253">
+        <path fill="none" stroke="#4486b1" id="540" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-21.3C1.8,-21.3,-5.3,21.3,14.5,21.3" transform="translate(-14.5,-0.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L253,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="245">os.path.join(path1[, path2[, ...]])</tspan>
+        </text>
+    </g>
+    <g id="541" ed:height="20.5" ed:parentid="299" transform="translate(620,1121.7)" ed:width="162">
+        <path fill="none" stroke="#4486b1" id="542" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-35.9C4.3,-35.9,-11,35.9,14.5,35.9" transform="translate(-14.5,-15.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L162,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="154">os.path.getatime(path)</tspan>
+        </text>
+    </g>
+    <g id="543" ed:height="20.5" ed:parentid="299" transform="translate(620,1150.9)" ed:width="162">
+        <path fill="none" stroke="#4486b1" id="544" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-50.5C5.6,-50.5,-14.1,50.5,14.5,50.5" transform="translate(-14.5,-30)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L162,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="154">os.path.getmtime(path)</tspan>
+        </text>
+    </g>
+    <g id="547" ed:height="20.5" ed:parentid="369" transform="translate(790,888.1)" ed:width="231">
+        <path fill="none" stroke="#4486b1" id="548" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L231,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="223">将path分割成目录和文件名二元组返回</tspan>
+        </text>
+    </g>
+    <g id="549" ed:height="20.5" ed:parentid="371" transform="translate(804,917.3)" ed:width="377">
+        <path fill="none" stroke="#4486b1" id="550" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L377,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="369">返回path的目录。其实就是os.path.split(path)的第一个元素</tspan>
+        </text>
+    </g>
+    <g id="551" ed:height="20.5" ed:parentid="373" transform="translate(811,946.5)" ed:width="409">
+        <path fill="none" stroke="#4486b1" id="552" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L409,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="401">返回path最后的文件名。如果path以／或\结尾，那么就会返回空值。</tspan>
+        </text>
+    </g>
+    <g id="553" ed:height="20.5" ed:parentid="401" transform="translate(851,975.7)" ed:width="335">
+        <path fill="none" stroke="#4486b1" id="554" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L335,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="327">如果path存在，返回True；如果path不存在，返回False</tspan>
+        </text>
+    </g>
+    <g id="555" ed:height="20.5" ed:parentid="533" transform="translate(790,1004.9)" ed:width="194">
+        <path fill="none" stroke="#4486b1" id="556" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L194,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="186">如果path是绝对路径，返回True</tspan>
+        </text>
+    </g>
+    <g id="557" ed:height="20.5" ed:parentid="535" transform="translate(797,1034.1)" ed:width="333">
+        <path fill="none" stroke="#4486b1" id="558" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L333,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="325">如果path是一个存在的文件，返回True。否则返回False</tspan>
+        </text>
+    </g>
+    <g id="559" ed:height="20.5" ed:parentid="537" transform="translate(790,1063.3)" ed:width="346">
+        <path fill="none" stroke="#4486b1" id="560" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L346,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="338">如果path是一个存在的目录，则返回True。否则返回False</tspan>
+        </text>
+    </g>
+    <g id="561" ed:height="20.5" ed:parentid="539" transform="translate(902,1092.5)" ed:width="359">
+        <path fill="none" stroke="#4486b1" id="562" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L359,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="351">将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</tspan>
+        </text>
+    </g>
+    <g id="563" ed:height="20.5" ed:parentid="541" transform="translate(811,1121.7)" ed:width="283">
+        <path fill="none" stroke="#4486b1" id="564" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L283,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="275">返回path所指向的文件或者目录的最后存取时间</tspan>
+        </text>
+    </g>
+    <g id="565" ed:height="20.5" ed:parentid="543" transform="translate(811,1150.9)" ed:width="283">
+        <path fill="none" stroke="#4486b1" id="566" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L283,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="275">返回path所指向的文件或者目录的最后修改时间</tspan>
+        </text>
+    </g>
+    <g id="567" ed:height="20.5" ed:parentid="299" transform="translate(620,1180.1)" ed:width="183">
+        <path fill="none" stroke="#4486b1" id="568" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-65.1C5.8,-65.1,-14.5,65.1,14.5,65.1" transform="translate(-14.5,-44.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L183,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="175">os.path.getsize(filename)</tspan>
+        </text>
+    </g>
+    <g id="577" ed:height="20.5" ed:parentid="567" transform="translate(832,1180.1)" ed:width="151">
+        <path fill="none" stroke="#4486b1" id="578" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L151,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="143">返回文件包含的字符数量</tspan>
+        </text>
+    </g>
+    <g id="579" ed:height="20.5" ed:parentid="299" transform="translate(620,1400.3)" ed:width="421">
+        <path fill="none" stroke="#4486b1" id="580" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-175.2C5.8,-175.2,-14.5,175.2,14.5,175.2" transform="translate(-14.5,-154.7)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L421,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="413">os.walk(top, topdown=True, onerror=None, followlinks=False)</tspan>
+        </text>
+    </g>
+    <g id="581" ed:height="20.5" ed:parentid="579" transform="translate(1070,1209.3)" ed:width="881">
+        <path fill="none" stroke="#4486b1" id="582" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,95.5C5.8,95.5,-14.5,-95.5,14.5,-95.5" transform="translate(-14.5,116)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L881,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="873">可以帮助我们非常便捷地以递归方式自顶向下或者自底向上的方式遍历目录树，对每一个目录都返回一个三元元组(dirpath, dirnames, filenames)。</tspan>
+        </text>
+    </g>
+    <g id="583" ed:height="20.5" ed:parentid="579" transform="translate(1070,1267.7)" ed:width="268">
+        <path fill="none" stroke="#4486b1" id="584" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,66.3C5.8,66.3,-14.5,-66.3,14.5,-66.3" transform="translate(-14.5,86.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L268,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="260">三元元组(dirpath，dirnames，filenames)</tspan>
+        </text>
+    </g>
+    <g id="585" ed:height="20.5" ed:parentid="583" transform="translate(1367,1238.5)" ed:width="57">
+        <path fill="none" stroke="#4486b1" id="586" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,14.6C0.5,14.6,-2,-14.6,14.5,-14.6" transform="translate(-14.5,35.1)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L57,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="49">dirpath</tspan>
+        </text>
+    </g>
+    <g id="587" ed:height="20.5" ed:parentid="583" transform="translate(1367,1267.7)" ed:width="64">
+        <path fill="none" stroke="#4486b1" id="588" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L64,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="56">dirnames</tspan>
+        </text>
+    </g>
+    <g id="589" ed:height="20.5" ed:parentid="583" transform="translate(1367,1296.9)" ed:width="71">
+        <path fill="none" stroke="#4486b1" id="590" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-14.6C0.5,-14.6,-2,14.6,14.5,14.6" transform="translate(-14.5,5.9)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L71,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="63">filenames</tspan>
+        </text>
+    </g>
+    <g id="591" ed:height="20.5" ed:parentid="585" transform="translate(1453,1238.5)" ed:width="255">
+        <path fill="none" stroke="#4486b1" id="592" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L255,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="247">遍历所在目录树的位置，是一个字符串对象</tspan>
+        </text>
+    </g>
+    <g id="593" ed:height="20.5" ed:parentid="587" transform="translate(1460,1267.7)" ed:width="305">
+        <path fill="none" stroke="#4486b1" id="594" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L305,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="297">目录树中的子目录组成的列表，不包括("."和"..")</tspan>
+        </text>
+    </g>
+    <g id="595" ed:height="20.5" ed:parentid="589" transform="translate(1467,1296.9)" ed:width="164">
+        <path fill="none" stroke="#4486b1" id="596" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L164,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="156">目录树中的文件组成的列表</tspan>
+        </text>
+    </g>
+    <g id="597" ed:height="20.5" ed:parentid="579" transform="translate(1070,1326.1)" ed:width="29">
+        <path fill="none" stroke="#4486b1" id="598" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,37.1C4.4,37.1,-11.3,-37.1,14.5,-37.1" transform="translate(-14.5,57.6)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L29,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="21">top</tspan>
+        </text>
+    </g>
+    <g id="599" ed:height="20.5" ed:parentid="579" transform="translate(1070,1355.3)" ed:width="191">
+        <path fill="none" stroke="#4486b1" id="600" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,22.5C2.1,22.5,-5.8,-22.5,14.5,-22.5" transform="translate(-14.5,43)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L191,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="183">topdown = True 或者没有指定</tspan>
+        </text>
+    </g>
+    <g id="601" ed:height="20.5" ed:parentid="597" transform="translate(1128,1326.1)" ed:width="138">
+        <path fill="none" stroke="#4486b1" id="602" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L138,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="130">表示要遍历的顶层目录</tspan>
+        </text>
+    </g>
+    <g id="603" ed:height="20.5" ed:parentid="599" transform="translate(1290,1355.3)" ed:width="450">
+        <path fill="none" stroke="#4486b1" id="604" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L450,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="442">则采用自顶向下的方式进行目录遍历，也就是从父目录向子目录逐步深入遍历</tspan>
+        </text>
+    </g>
+    <g id="605" ed:height="20.5" ed:parentid="579" transform="translate(1070,1384.5)" ed:width="113">
+        <path fill="none" stroke="#4486b1" id="606" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,7.9C-1.1,7.9,1.5,-7.9,14.5,-7.9" transform="translate(-14.5,28.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L113,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="105">topdown = False</tspan>
+        </text>
+    </g>
+    <g id="607" ed:height="20.5" ed:parentid="579" transform="translate(1070,1413.7)" ed:width="96">
+        <path fill="none" stroke="#4486b1" id="608" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-6.7C-1.3,-6.7,2.1,6.7,14.5,6.7" transform="translate(-14.5,13.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L96,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="88">onerror被指定</tspan>
+        </text>
+    </g>
+    <g id="609" ed:height="20.5" ed:parentid="605" transform="translate(1212,1384.5)" ed:width="450">
+        <path fill="none" stroke="#4486b1" id="610" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L450,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="442">则采用自底向上的方式遍历目录，也就是先打印子目录再打印父目录的方式。</tspan>
+        </text>
+    </g>
+    <g id="611" ed:height="20.5" ed:parentid="607" transform="translate(1195,1413.7)" ed:width="564">
+        <path fill="none" stroke="#4486b1" id="612" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L564,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="556">则onerror必须是一个函数。通俗的讲，就是定义这个参数用于指定当发生了错误时的处理方法。</tspan>
+        </text>
+    </g>
+    <g id="613" ed:height="20.5" ed:parentid="579" transform="translate(1070,1442.9)" ed:width="141">
+        <path fill="none" stroke="#4486b1" id="614" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-21.3C1.8,-21.3,-5.3,21.3,14.5,21.3" transform="translate(-14.5,-0.8)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L141,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="133">followlinks = False</tspan>
+        </text>
+    </g>
+    <g id="615" ed:height="20.5" ed:parentid="613" transform="translate(1240,1442.9)" ed:width="318">
+        <path fill="none" stroke="#4486b1" id="616" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L318,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="310">默认情况下，os.walk()遍历的时候不会进入符号链接</tspan>
+        </text>
+    </g>
+    <g id="617" ed:height="20.5" ed:parentid="579" transform="translate(1070,1472.1)" ed:width="134">
+        <path fill="none" stroke="#4486b1" id="618" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-35.9C4.3,-35.9,-11,35.9,14.5,35.9" transform="translate(-14.5,-15.4)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L134,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="126">followlinks = True</tspan>
+        </text>
+    </g>
+    <g id="619" ed:height="20.5" ed:parentid="617" transform="translate(1233,1472.1)" ed:width="567">
+        <path fill="none" stroke="#4486b1" id="620" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L567,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="559">会进入符号链接，注意，这可能会出现遍历死循环，因为符号链接可能会出现自己链接自己的情况</tspan>
+        </text>
+    </g>
+    <g id="621" ed:height="110.5" ed:parentid="579" transform="translate(1070,1501.3)" ed:width="477">
+        <path fill="none" stroke="#4486b1" id="622" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-95.5C5.8,-95.5,-14.5,95.5,14.5,95.5" transform="translate(-14.5,15)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,110.5L477,110.5"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">for root, dirs, files in os.walk(r'C:\Python36\Lib\email'):</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">    print(root, '使用了', end=' ')</tspan>
+            <tspan x="3" style="white-space:pre" y="45.8">    print(sum(getsize(join(root,name)) for name in files), end=' ')</tspan>
+            <tspan x="3" style="white-space:pre" y="60.8">    print('字节.')</tspan>
+            <tspan x="3" style="white-space:pre" y="90.8">    if 'mime' in dirs:</tspan>
+            <tspan x="3" style="white-space:pre" y="105.8">        dirs.remove('mime')</tspan>
+        </text>
+    </g>
+    <g id="623" ed:height="20.5" ed:parentid="301" transform="translate(568,1657.2)" ed:width="134">
+        <path fill="none" stroke="#4486b1" id="624" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,62.3C5.8,62.3,-14.5,-62.4,14.5,-62.4" transform="translate(-14.5,82.85)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L134,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="126">os.system(command)</tspan>
+        </text>
+    </g>
+    <g id="625" ed:height="20.5" ed:parentid="301" transform="translate(568,1781.9)" ed:width="260">
+        <path fill="none" stroke="#4486b1" id="626" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,-0,14.5,-0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L260,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="252">os.popen(command, [mode, [bufsize]])</tspan>
+        </text>
+    </g>
+    <g id="627" ed:height="20.5" ed:parentid="301" transform="translate(568,1906.6)" ed:width="78">
+        <path fill="none" stroke="#4486b1" id="628" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-62.3C5.8,-62.3,-14.5,62.3,14.5,62.3" transform="translate(-14.5,-41.85)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L78,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="70">subprocess</tspan>
+        </text>
+    </g>
+    <g id="629" ed:height="20.5" ed:parentid="623" transform="translate(731,1620.5)" ed:width="510">
+        <path fill="none" stroke="#4486b1" id="630" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,18.4C1.2,18.4,-3.9,-18.3,14.5,-18.3" transform="translate(-14.5,38.85)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L510,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="502">运行操作系统命令，直接显示结果。但返回值是0或-1，不能获得显示在屏幕上的数据。</tspan>
+        </text>
+    </g>
+    <g id="631" ed:height="20.5" ed:parentid="623" transform="translate(731,1649.7)" ed:width="86">
+        <path fill="none" stroke="#4486b1" id="632" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,3.8C-2,3.8,3.7,-3.8,14.5,-3.8" transform="translate(-14.5,24.25)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L86,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="78">不推荐在使用</tspan>
+        </text>
+    </g>
+    <g id="633" ed:height="20.5" ed:parentid="625" transform="translate(857,1723.1)" ed:width="670">
+        <path fill="none" stroke="#4486b1" id="634" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,29.4C3.3,29.4,-8.7,-29.4,14.5,-29.4" transform="translate(-14.5,49.9)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L670,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="662">开启一个子进程执行command参数指定的命令，在父进程和子进程之间建立一个管道pipe，用于在父子进程间通信。</tspan>
+        </text>
+    </g>
+    <g id="635" ed:height="20.5" ed:parentid="625" transform="translate(857,1752.3)" ed:width="1119">
+        <path fill="none" stroke="#4486b1" id="636" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,14.8C0.5,14.8,-2.1,-14.8,14.5,-14.8" transform="translate(-14.5,35.3)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L1119,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="1111">该方法返回一个文件对象，可以对这个文件对象进行读或写，取决于参数mode，如果mode指定了只读，那么只能对文件对象进行读，如果mode参数指定了只写，那么只能对文件对象进行写操作。</tspan>
+        </text>
+    </g>
+    <g id="637" ed:height="35.5" ed:parentid="623" transform="translate(731,1678.9)" ed:width="183">
+        <path fill="none" stroke="#4486b1" id="638" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-18.4C1.2,-18.4,-3.9,18.3,14.5,18.3" transform="translate(-14.5,17.15)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,35.5L183,35.5"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">>>> import os</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">>>> os.system('ipconfig')</tspan>
+        </text>
+    </g>
+    <g id="639" ed:height="20.5" ed:parentid="625" transform="translate(857,1781.5)" ed:width="647">
+        <path fill="none" stroke="#4486b1" id="640" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0.2C-2.9,0.2,5.8,-0.2,14.5,-0.2" transform="translate(-14.5,20.7)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L647,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="639">popen也可以运行操作系统命令，并通过read()方法将命令的结果返回，不像system只能看不能存，这个能存！</tspan>
+        </text>
+    </g>
+    <g id="641" ed:height="50.5" ed:parentid="625" transform="translate(857,1810.7)" ed:width="218">
+        <path fill="none" stroke="#4486b1" id="642" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-29.4C3.3,-29.4,-8.7,29.4,14.5,29.4" transform="translate(-14.5,21.1)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,50.5L218,50.5"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">>>> import os</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">>>> ret = os.popen('ipconfig')</tspan>
+            <tspan x="3" style="white-space:pre" y="45.8">>>> ret.read()</tspan>
+        </text>
+    </g>
+    <g id="643" ed:height="20.5" ed:parentid="627" transform="translate(675,1869.9)" ed:width="633">
+        <path fill="none" stroke="#4486b1" id="644" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,18.3C1.2,18.3,-3.9,-18.4,14.5,-18.4" transform="translate(-14.5,38.85)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L633,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="625">subprocess通过子进程来执行外部指令，并通过input/output/error管道，获取子进程的执行的返回信息。</tspan>
+        </text>
+    </g>
+    <g id="645" ed:height="20.5" ed:parentid="627" transform="translate(675,1899.1)" ed:width="47">
+        <path fill="none" stroke="#4486b1" id="646" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,3.8C-2,3.8,3.7,-3.8,14.5,-3.8" transform="translate(-14.5,24.25)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L47,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="39">子主题</tspan>
+        </text>
+    </g>
+    <g id="647" ed:height="20.5" ed:parentid="283" transform="translate(479,1972.5)" ed:width="60">
+        <path fill="none" stroke="#4486b1" id="648" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-436.8C5.8,-436.8,-14.5,436.8,14.5,436.8" transform="translate(-14.5,-416.33)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L60,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="52">管理进程</tspan>
+        </text>
+    </g>
+    <g id="649" ed:height="20.5" ed:parentid="647" transform="translate(568,1972.5)" ed:width="125">
+        <path fill="none" stroke="#4486b1" id="650" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,0C-2.9,0,5.8,0,14.5,0" transform="translate(-14.5,20.5)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,20.5L125,20.5"/>
+        <text class="st2">
+            <tspan x="4" style="white-space:pre" lengthAdjust="spacing" y="15.8" textLength="117">很少使用，不用考虑</tspan>
+        </text>
+    </g>
+    <g id="651" ed:height="35.5" ed:parentid="627" transform="translate(675,1928.3)" ed:width="330">
+        <path fill="none" stroke="#4486b1" id="652" stroke-linejoin="round" stroke-linecap="round" d="M-14.5,-18.3C1.2,-18.3,-3.9,18.4,14.5,18.4" transform="translate(-14.5,17.15)"/>
+        <path fill="none" stroke="#4486b1" stroke-linejoin="round" d="M0,35.5L330,35.5"/>
+        <text class="st2">
+            <tspan x="3" style="white-space:pre" y="15.8">>>> import subprocess</tspan>
+            <tspan x="3" style="white-space:pre" y="30.8">>>> a = subprocess.call('ipconfig',shell=True)</tspan>
+        </text>
+    </g>
+    <g ed:topictype="mainidea" id="101" ed:height="62" ed:layout="rightmap" transform="translate(153,1041)" ed:width="111">
+        <path fill="#eaf3fc" stroke="#4486b1" stroke-width="3" stroke-linejoin="round" d="M8,0L103,0C107.4,0,111,3.6,111,8L111,54C111,58.4,107.4,62,103,62L8,62C3.6,62,0,58.4,0,54L0,8C0,3.6,3.6,0,8,0z"/>
+        <text class="st3">
+            <tspan x="27" style="white-space:pre" lengthAdjust="spacing" y="38.5" textLength="58">OS模块</tspan>
+        </text>
+    </g>
+    <g ed:togtopicid="101" transform="translate(265,1066)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="281" transform="translate(451,169.85)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="283" transform="translate(451,1113.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="297" transform="translate(540,366.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="299" transform="translate(592,1054.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="301" transform="translate(540,1786.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="305" transform="translate(626,249.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="307" transform="translate(647,279.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="309" transform="translate(619,308.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="311" transform="translate(640,337.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="313" transform="translate(640,366.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="315" transform="translate(647,395.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="321" transform="translate(647,425.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="323" transform="translate(647,454.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="325" transform="translate(647,483.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="343" transform="translate(706,512.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="345" transform="translate(762,541.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="347" transform="translate(692,571.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="349" transform="translate(692,600.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="351" transform="translate(797,629.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="353" transform="translate(816,658.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="355" transform="translate(762,687.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="357" transform="translate(762,717.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="359" transform="translate(776,746.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="361" transform="translate(776,775.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="363" transform="translate(811,804.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="365" transform="translate(797,833.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="367" transform="translate(776,863.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="369" transform="translate(762,892.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="371" transform="translate(776,921.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="373" transform="translate(783,950.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="401" transform="translate(823,979.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="533" transform="translate(762,1009.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="535" transform="translate(769,1038.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="537" transform="translate(762,1067.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="539" transform="translate(874,1096.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="541" transform="translate(783,1125.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="543" transform="translate(783,1155.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="567" transform="translate(804,1184.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="579" transform="translate(1042,1404.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="583" transform="translate(1339,1271.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="585" transform="translate(1425,1242.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="587" transform="translate(1432,1271.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="589" transform="translate(1439,1301.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="597" transform="translate(1100,1330.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="599" transform="translate(1262,1359.55)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="605" transform="translate(1184,1388.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="607" transform="translate(1167,1417.95)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="613" transform="translate(1212,1447.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="617" transform="translate(1205,1476.35)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="623" transform="translate(703,1661.45)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="625" transform="translate(829,1786.15)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="627" transform="translate(647,1910.85)">
+        <use xlink:href="#minus"/>
+    </g>
+    <g ed:togtopicid="647" transform="translate(540,1976.75)">
+        <use xlink:href="#minus"/>
+    </g>
+    <symbol id="plus">
+        <path fill="url(#lg1)" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z"/>
+        <path fill="none" stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6M6,3L6,9"/>
+    </symbol>
+    <symbol id="minus">
+        <path fill="url(#lg1)" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6z"/>
+        <path fill="none" stroke="#46a000" d="M11,6C11,8.8,8.8,11,6,11C3.2,11,1,8.8,1,6C1,3.2,3.2,1,6,1C8.8,1,11,3.2,11,6zM3,6L9,6"/>
+    </symbol>
+</svg>
+</div>
+        <div id="copyright">Created With  <a href="https://www.edrawsoft.com/" target="_blank" title="edrawsoft">MindMaster</a></div>
+      </div>
+    </div>
+    <script>eval(atob('dmFyIG11YT13aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudDsNCnZhciB1YT0obXVhLmluZGV4T2YoJ3J2OjExJykrbXVhLmluZGV4T2YoJ01TSUUnKSk+PTA7DQpOdW1iZXIucHJvdG90eXBlLnRvc3VpdHN2Zz1mdW5jdGlvbiAoKSB7DQogICAgdmFyIG51bT10aGlzLnZhbHVlT2YoKTsNCiAgICBpZihudW0lMT09PTApew0KICAgICAgICByZXR1cm4gbnVtKzAuNQ0KICAgIH1lbHNlIHJldHVybiBudW07DQp9Ow0KTnVtYmVyLnByb3RvdHlwZS5wbHVzej1mdW5jdGlvbigpIHsNCiAgICB2YXIgbnVtPXRoaXMudmFsdWVPZigpOw0KICAgIHJldHVybiBudW08MTA/JzAnK251bTpudW07DQp9Ow0KZnVuY3Rpb24gcGFyc2VEYXRlKG51bSkgew0KICAgIHZhciBkYXRlID0gbmV3IERhdGUobnVtKTsNCiAgICB2YXIgWSA9IGRhdGUuZ2V0RnVsbFllYXIoKSArICctJzsNCiAgICB2YXIgTSA9IChkYXRlLmdldE1vbnRoKCkrMSkucGx1c3ooKSArICctJzsNCiAgICB2YXIgRCA9IGRhdGUuZ2V0RGF0ZSgpLnBsdXN6KCkgKyAnICc7DQogICAgdmFyIGggPSBkYXRlLmdldEhvdXJzKCkucGx1c3ooKSArICc6JzsNCiAgICB2YXIgbW0gPSBkYXRlLmdldE1pbnV0ZXMoKS5wbHVzeigpICsgJzonOw0KICAgIHZhciBzID0gZGF0ZS5nZXRTZWNvbmRzKCkucGx1c3ooKTsNCiAgICByZXR1cm4gWStNK0QraCttbStzOw0KfQ0KLy8tLXByZWRlZmluZWQNCi8vY29tbWVudC0tDQp2YXIgY29tbWVudHM9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6Y29tbWVudF0nKTsNCmZ1bmN0aW9uIGdldGN3aChwb3B1cCkgew0KICAgIGRvY3VtZW50LmJvZHkuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3N2ZycpWzBdLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICB2YXIgdz1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDsNCiAgICB2YXIgaD1wb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS5oZWlnaHQ7DQogICAgcmV0dXJuIFt3LGhdDQp9DQpmb3IodmFyIGk9MDtpPGNvbW1lbnRzLmxlbmd0aDtpKyspew0KICAgIHZhciBwb3B1cD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgIHZhciBob3Zlcj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywnMTYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwtb3BhY2l0eScsJzAuNicpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxjb21tZW50c1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICBob3Zlci5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICBjb21tZW50c1tpXS5hcHBlbmRDaGlsZChob3Zlcik7DQogICAgdmFyIGE9SlNPTi5wYXJzZShjb21tZW50c1tpXS5nZXRBdHRyaWJ1dGUoJ2VkOmNvbW1lbnQnKSk7DQogICAgdmFyIGhlaWdodD0wOw0KICAgIHZhciBjYXJyPVtdOw0KICAgIGZvcih2YXIgaj0wO2o8YS5sZW5ndGg7aisrKXsNCiAgICAgICAgdmFyIHN0YW1wPU51bWJlcihhW2pdLkRhdGUpKjEwMDA7DQogICAgICAgIHZhciB0aW1lPXBhcnNlRGF0ZShzdGFtcCk7DQogICAgICAgIHZhciBuYW1lPWFbal0uTmFtZTsNCiAgICAgICAgdmFyIG1lc3NhZ2U9YVtqXS5NZXNzYWdlOw0KICAgICAgICB2YXIgbWVzc2FnZUFycj1tZXNzYWdlLnNwbGl0KC9cbi8pOw0KICAgICAgICB2YXIgbz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnZycpOw0KICAgICAgICB2YXIgbj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgdD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgbT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBuLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCd5JywxMik7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmaWxsJywnIzAwNmVmZicpOw0KICAgICAgICBuLnRleHRDb250ZW50PW5hbWUrJ++8mic7DQogICAgICAgIG4uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICB0LnNldEF0dHJpYnV0ZSgneCcsMjAwKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ3knLDEyKTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjOTY5Njk2Jyk7DQogICAgICAgIHQudGV4dENvbnRlbnQ9dGltZTsNCiAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZvbnQtc2l6ZScsJzEwJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMjAsMjcpJyk7DQogICAgICAgIG0uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCcxMicpOw0KICAgICAgICBmb3IodmFyIGs9MDtrPG1lc3NhZ2VBcnIubGVuZ3RoO2srKyl7DQogICAgICAgICAgICB2YXIgdHM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3RzcGFuJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3knLGsqMTYpOw0KICAgICAgICAgICAgdHMudGV4dENvbnRlbnQ9bWVzc2FnZUFycltrXTsNCiAgICAgICAgICAgIG0uYXBwZW5kQ2hpbGQodHMpOw0KICAgICAgICB9DQogICAgICAgIG8uc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoMCwnK2hlaWdodCsnKScpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG4pOw0KICAgICAgICBvLmFwcGVuZENoaWxkKHQpOw0KICAgICAgICBvLmFwcGVuZENoaWxkKG0pOw0KICAgICAgICBjYXJyLnB1c2gobyk7DQogICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKG8pOw0KICAgICAgICBoZWlnaHQ9KG1lc3NhZ2VBcnIubGVuZ3RoKzEpKjE2K2hlaWdodDsNCiAgICB9DQogICAgdmFyIHdhcnI9Z2V0Y3doKHBvcHVwKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCd5JywnMCcpOw0KICAgIHZhciBvdz13YXJyWzBdKzEwLjU7DQogICAgdmFyIG9oPXdhcnJbMV0rMzsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyxvdyk7DQogICAgb2xpbmUuc2V0QXR0cmlidXRlKCdoZWlnaHQnLG9oKTsNCiAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCd3aGl0ZScpOw0KICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnIzY1NjU2NScpOw0KICAgIHBvcHVwLmFwcGVuZENoaWxkKG9saW5lKTsNCiAgICB2YXIgbD1jYXJyLmxlbmd0aDsNCiAgICB3aGlsZShsLS0pew0KICAgICAgICBwb3B1cC5hcHBlbmRDaGlsZChjYXJyW2xdKTsNCiAgICB9DQogICAgcG9wdXAub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgfTsNCiAgICB2YXIgY3M9Y29tbWVudHNbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKS5tYXRjaCgvXCgoXFMqfFxTKlxzXFMqKVwpLylbMV0uc3BsaXQoLyB8LC8pOw0KICAgIHZhciBwcz1jb21tZW50c1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgeD1wYXJzZUZsb2F0KGNzWzBdKStwYXJzZUZsb2F0KHBzWzBdKTsNCiAgICB2YXIgeT1wYXJzZUZsb2F0KHBzWzFdKTsNCiAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgeT15LnRvc3VpdHN2ZygpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnY29tbWVudCcsJycpOw0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnZWQ6Y29tbWVudGlkJyxjb21tZW50c1tpXS5wYXJlbnROb2RlLmlkKTsNCiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICBjb21tZW50c1tpXS5vbm1vdXNlb3Zlcj1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBjb21tZW50aWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDpjb21tZW50aWQ9JyIrY29tbWVudGlkKyInXVtjb21tZW50XSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9Ow0KICAgIGNvbW1lbnRzW2ldLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgY29tbWVudGlkPXRoaXMucGFyZW50Tm9kZS5pZDsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmVtb3ZlQWxsUmFuZ2VzKCk7DQogICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6Y29tbWVudGlkPSciK2NvbW1lbnRpZCsiJ11bY29tbWVudF0iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0tY29tbWVudA0KLy9ub3RlLS0NCmlmKCF1YSl7DQogICAgdmFyIG5vdGVzPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2c+Z1tlZFxcOm5vdGVdJyk7DQogICAgZnVuY3Rpb24gZ2V0d2gocyxwKSB7DQogICAgICAgIHZhciBtYWlucD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsNCiAgICAgICAgbWFpbnAuc3R5bGUuY3NzVGV4dD1zOw0KICAgICAgICBtYWlucC5zdHlsZS5kaXNwbGF5PSdpbmxpbmUtYmxvY2snOw0KICAgICAgICBtYWlucC5pbm5lckhUTUw9cDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChtYWlucCk7DQogICAgICAgIHZhciB3PW1haW5wLmNsaWVudFdpZHRoOw0KICAgICAgICB2YXIgaD1tYWlucC5jbGllbnRIZWlnaHQ7DQogICAgICAgIGRvY3VtZW50LmJvZHkucmVtb3ZlQ2hpbGQobWFpbnApOw0KICAgICAgICByZXR1cm4gW3csaF0NCiAgICB9DQogICAgZm9yKHZhciBpPTA7aTxub3Rlcy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGE9bm90ZXNbaV0uZ2V0QXR0cmlidXRlKCdlZDpub3RlJyk7DQogICAgICAgIHZhciBtYWlucD1hLm1hdGNoKC88cChbXFNcc10qKTxcL3A+L2cpWzBdOw0KICAgICAgICB2YXIgbWFpbnM9YS5tYXRjaCgvc3R5bGU9IiguKj8pIi8pWzFdOw0KICAgICAgICB2YXIgb3V0PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdnJyk7DQogICAgICAgIHZhciBvbGluZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2ZvcmVpZ25PYmplY3QnKTsNCiAgICAgICAgdmFyIGhvdmVyPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCdyZWN0Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsJyNjZGNkZmYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3knLCcwJyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywnMTYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbC1vcGFjaXR5JywnMC42Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJyxub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICAgICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIG5vdGVzW2ldLmFwcGVuZENoaWxkKGhvdmVyKTsNCiAgICAgICAgcG9wdXAuc3R5bGUuY3NzVGV4dD1tYWluczsNCiAgICAgICAgcG9wdXAuaW5uZXJIVE1MPW1haW5wOw0KICAgICAgICB2YXIgd2g9Z2V0d2gobWFpbnMsbWFpbnApOw0KICAgICAgICBwb3B1cC5zZXRBdHRyaWJ1dGUoJ3dpZHRoJyx3aFswXSsxNik7DQogICAgICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jyx3aFsxXSs4KTsNCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCd0cmFuc2xhdGUoOCw0KScpOw0KICAgICAgICBwb3B1cC5zdHlsZS50ZXh0QWxpZ249J2xlZnQnOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3gnLCcwJyk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCd3aWR0aCcsd2hbMF0rMTYpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsd2hbMV0rOCk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnc3Ryb2tlJywnI2EyN2EwMCcpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjZmZlNzlkJyk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChvbGluZSk7DQogICAgICAgIG91dC5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgICAgIG91dC5zZXRBdHRyaWJ1dGUoJ25vdGUnLCcnKTsNCiAgICAgICAgb3V0LnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICBvdXQuc2V0QXR0cmlidXRlKCdlZDpub3RlaWQnLG5vdGVzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgICAgICBvdXQub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgICAgIH07DQogICAgICAgIG91dC5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCi8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uID8gd2luZG93LmdldFNlbGVjdGlvbigpLnJlbW92ZVJhbmdlKHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZSk6ZG9jdW1lbnQuc2VsZWN0aW9uLmVtcHR5KCk7DQoNCiAgICAgICAgICAgIHRoaXMuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH07DQogICAgICAgIHZhciBjcz1ub3Rlc1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgICAgIHZhciBwcz1ub3Rlc1tpXS5wYXJlbnROb2RlLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgICAgIHZhciB5PXBhcnNlRmxvYXQocHNbMV0pOw0KICAgICAgICB4PXgudG9zdWl0c3ZnKCk7DQogICAgICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICAgICAgb3V0LnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZycpLmFwcGVuZENoaWxkKG91dCk7DQogICAgICAgIG5vdGVzW2ldLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICB9Ow0KICAgICAgICBub3Rlc1tpXS5vbm1vdXNlb3V0PWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHZhciBub3RlaWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KLy8gICAgICAgIHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZW1vdmVBbGxSYW5nZXMoKTsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOm5vdGVpZD0nIitub3RlaWQrIiddW25vdGVdIikuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgICAgIH0NCiAgICB9DQp9ZWxzZXsNCiAgICBjb25zb2xlLmxvZygn5oqx5q2J77yMSUXmtY/op4jlmajkuI3mlK/mjIFub3Rl6Kej5p6Q77yM6K+35L2/55So5YW25LuW5YaF5qC45rWP6KeI5Zmo44CC6LCi6LCi77yBJykNCn0NCi8vLS1ub3RlDQovL2h5cGVybGluay0tDQp2YXIgbGlua3M9ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnZz5nW2VkXFw6aHlwZXJsaW5rXScpOw0KZnVuY3Rpb24gZ2V0bWF4bGVuKGFycixicnIpIHsNCiAgICB2YXIgbD0wOw0KICAgIHZhciBsbD0wOw0KICAgIGZvcih2YXIgaj0wO2o8YXJyLmxlbmd0aDtqKyspew0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZighaXNOYU4obGlua2FycltqXSkpew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2FycltqXTsNCiAgICAgICAgfWVsc2V7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWFycltqXTsNCiAgICAgICAgfQ0KICAgICAgICBlLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoZSk7DQogICAgICAgIHZhciBldz1lLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoZSk7DQogICAgICAgIHZhciBoPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCd0ZXh0Jyk7DQogICAgICAgIGgudGV4dENvbnRlbnQ9YnJyW2pdOw0KICAgICAgICBoLnN0eWxlLmZvbnRTaXplPScxMnB4JzsNCiAgICAgICAgaC5zdHlsZS5mb250V2VpZ2h0PSdib2xkJzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoaCk7DQogICAgICAgIHZhciBodz1oLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoaCk7DQogICAgICAgIGw9ZXc+aHc/ZXc6aHc7DQogICAgICAgIGxsPWw+bGw/bDpsbDsNCiAgICB9DQogICAgcmV0dXJuIGxsOw0KfQ0KZm9yKHZhciBpPTA7aTxsaW5rcy5sZW5ndGg7aSsrKXsNCiAgICB2YXIgcG9wdXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ2cnKTsNCiAgICB2YXIgaG92ZXI9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsJ3JlY3QnKTsNCiAgICB2YXIgZGVzY2Fycj1bXTsNCiAgICB2YXIgbGlua2Fycj1bXTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCcjY2RjZGZmJyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywnMCcpOw0KICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgneScsJzAnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsJzE2Jyk7DQogICAgaG92ZXIuc2V0QXR0cmlidXRlKCdmaWxsLW9wYWNpdHknLCcwLjYnKTsNCiAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsbGlua3NbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKSk7DQogICAgaG92ZXIuc3R5bGUuZGlzcGxheT0nbm9uZSc7DQogICAgbGlua3NbaV0uYXBwZW5kQ2hpbGQoaG92ZXIpOw0KICAgIC8vIGNvbnNvbGUubG9nKGxpbmtzW2ldLmdldEF0dHJpYnV0ZSgnZWQ6aHlwZXJsaW5rJykpOw0KICAgIHZhciBhPUpTT04ucGFyc2UobGlua3NbaV0uZ2V0QXR0cmlidXRlKCdlZDpoeXBlcmxpbmsnKSk7DQogICAgdmFyIGNzPWxpbmtzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICB2YXIgcHM9bGlua3NbaV0ucGFyZW50Tm9kZS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgdmFyIHg9cGFyc2VGbG9hdChjc1swXSkrcGFyc2VGbG9hdChwc1swXSk7DQogICAgdmFyIHk9cGFyc2VGbG9hdChwc1sxXSk7DQogICAgeD14LnRvc3VpdHN2ZygpOw0KICAgIHk9eS50b3N1aXRzdmcoKTsNCiAgICB2YXIgYWw9YS5sZW5ndGg7DQogICAgZm9yKHZhciBqPTA7ajxhbDtqKyspew0KICAgICAgICBsaW5rYXJyLnB1c2goYVtqXS5saW5rKTsNCiAgICAgICAgZGVzY2Fyci5wdXNoKGFbal0uZGVzYyk7DQogICAgfQ0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywndHJhbnNsYXRlKCcreCsnLCcreSsnKScpOw0KICAgIHZhciBtYXg9Z2V0bWF4bGVuKGxpbmthcnIsZGVzY2Fycik7DQogICAgZm9yKHZhciBrPTA7azxhbDtrKyspew0KICAgICAgICB2YXIgYz1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywnYScpOw0KICAgICAgICB2YXIgZD1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywncmVjdCcpOw0KICAgICAgICB2YXIgZT1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICB2YXIgZj1kb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywndGV4dCcpOw0KICAgICAgICBpZihpc05hTihsaW5rYXJyW2tdKSl7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsbGlua2FycltrXSk7DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgndGFyZ2V0JywnX2JsYW5rJyk7DQogICAgICAgICAgICBlLnRleHRDb250ZW50PWxpbmthcnJba107DQogICAgICAgIH1lbHNlew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudD0nUGFnZS0nK2xpbmthcnJba107DQogICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgnaHJlZicsJyMnK2xpbmthcnJba10pOw0KICAgICAgICB9DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCd3aWR0aCcsbWF4KzEwKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsJzMzJyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdzdHJva2UnLCcjOTk5OTk5Jyk7DQogICAgICAgIGQuc2V0QXR0cmlidXRlKCdmaWxsJywnd2hpdGUnKTsNCiAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3knLDMzKmspOw0KICAgICAgICBmLnRleHRDb250ZW50PWRlc2NhcnJba107DQogICAgICAgIGYuc3R5bGUuZm9udFNpemU9JzEycHgnOw0KICAgICAgICBmLnN0eWxlLmZvbnRXZWlnaHQ9J2JvbGQnOw0KICAgICAgICBmLnNldEF0dHJpYnV0ZSgneCcsNSk7DQogICAgICAgIGYuc2V0QXR0cmlidXRlKCd5JywzMyprKzEyKTsNCiAgICAgICAgZS5zdHlsZS5mb250U2l6ZT0nMTJweCc7DQogICAgICAgIGUuc2V0QXR0cmlidXRlKCd5JywzMyprKzI4KTsNCiAgICAgICAgZS5zZXRBdHRyaWJ1dGUoJ3gnLDUpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGQpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGYpOw0KICAgICAgICBjLmFwcGVuZENoaWxkKGUpOw0KICAgICAgICBjLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmZpbGw9JyNlMWUxZmYnDQogICAgICAgIH07DQogICAgICAgIGMub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5maWxsPSd3aGl0ZScNCiAgICAgICAgfTsNCiAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQoYyk7DQogICAgfQ0KICAgIHBvcHVwLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaHlwZXJsaW5rJywnJyk7DQogICAgcG9wdXAuc2V0QXR0cmlidXRlKCdlZDpsaW5raWQnLGxpbmtzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgIHBvcHVwLm9ubW91c2VvdmVyPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdibG9jayc7DQogICAgfTsNCiAgICBwb3B1cC5vbmNsaWNrPWZ1bmN0aW9uICgpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9Ow0KICAgIHBvcHVwLm9ubW91c2VvdXQ9ZnVuY3Rpb24gKCkgew0KICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXk9J25vbmUnOw0KICAgIH07DQogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI3N2Zy1jb250YWluZXIgPiBzdmcnKS5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgbGlua3NbaV0ub25tb3VzZW92ZXI9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgbGlua2lkPXRoaXMucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheT0nYmxvY2snOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6bGlua2lkPSciK2xpbmtpZCsiJ11baHlwZXJsaW5rXSIpLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsNCiAgICB9DQogICAgbGlua3NbaV0ub25tb3VzZW91dD1mdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBsaW5raWQ9dGhpcy5wYXJlbnROb2RlLmlkOw0KICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmxpbmtpZD0nIitsaW5raWQrIiddW2h5cGVybGlua10iKS5zdHlsZS5kaXNwbGF5PSdub25lJzsNCiAgICB9DQp9DQovLy0taHlwZXJsaW5rDQovL2luaXRpYWxpemUtLQ0KdmFyIHNoYXBlPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2dbZWRcXDp0b2d0b3BpY2lkXScpOw0KdmFyIG1JZD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdnW2VkXFw6dG9waWN0eXBlXScpOw0KdmFyIGRhdGFUcmVlPXt9Ow0KdmFyIGV4dHJhUmVsYT17fTsNCnZhciBjaGVja0lEPScnOw0KZm9yKHZhciBpPTA7aTxtSWQubGVuZ3RoO2krKyl7DQogICAgdmFyIHR5cGU9bUlkW2ldLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIHNpZD1tSWRbaV0uaWQ7DQogICAgaWYodHlwZSE9PSdjYWxsb3V0Jyl7DQogICAgICAgIGluaXQoc2lkLGRhdGFUcmVlKQ0KICAgIH0NCn0NCmZ1bmN0aW9uIGluaXQoaWQsIG9iaikgew0KICAgIHZhciBjaGlsZHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXTpub3QoW2VkXFw6dG9waWN0eXBlXSkiKTsNCiAgICB2YXIgY2FsbHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6cGFyZW50aWQ9JyIgKyBpZCArICInXVtlZFxcOnRvcGljdHlwZV0iKTsNCiAgICB2YXIgc3VtbWFyeSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoInBhdGhbZWRcXDpwYXJlbnRpZCo9JyIgKyBpZCArICInXVtlZFxcOnR5cGU9J3N1bW1hcnknXSIpOw0KICAgIHZhciBib3VuZGFyeT0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgicGF0aFtlZFxcOnBhcmVudGlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0nYm91bmRhcnknXSIpOw0KICAgIHZhciByZWxhZnJvbT1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJnW2VkXFw6ZnJvbWlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0ncmVsYXRpb24nXSIpOw0KICAgIHZhciByZWxhdG89ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiZ1tlZFxcOnRvaWQqPSciICsgaWQgKyAiJ11bZWRcXDp0eXBlPSdyZWxhdGlvbiddIik7DQogICAgb2JqWyJtIiArIGlkXSA9IHt9Ow0KICAgIHZhciB0eXBlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpLmdldEF0dHJpYnV0ZSgnZWQ6dG9waWN0eXBlJyk7DQogICAgdmFyIGl3PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOndpZHRoJyk7DQogICAgdmFyIGloPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOmhlaWdodCcpOw0KICAgIGlmICh0eXBlKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0udHlwZSA9IHR5cGU7DQogICAgfQ0KICAgIGlmKGl3JiZpaCl7DQogICAgICAgIG9ialsibSIgKyBpZF0ud2lkdGggPWl3Ow0KICAgICAgICBvYmpbIm0iICsgaWRdLmhlaWdodCA9aWg7DQogICAgfQ0KICAgIGlmIChyZWxhZnJvbS5sZW5ndGggIT09IDApIHsNCiAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHJlbGFmcm9tLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZCA9IHJlbGFmcm9tW2ldLmlkOw0KICAgICAgICAgICAgdmFyIHRvaWQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpbmRleGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOnRvaWQnKTsNCiAgICAgICAgICAgIGlmIChleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCkgew0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtpbmRleGlkXSA9IHsNCiAgICAgICAgICAgICAgICAgICAgaWQ6IGluZGV4aWQsDQogICAgICAgICAgICAgICAgICAgIGZyb21pZDogaWQsDQogICAgICAgICAgICAgICAgICAgIHRvaWQ6IHRvaWQsDQogICAgICAgICAgICAgICAgICAgIGlzQzogZmFsc2UNCiAgICAgICAgICAgICAgICB9Ow0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhZnJvbVtpbmRleGlkXT17fTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYWZyb20uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChyZWxhdG8ubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgcmVsYXRvLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgaW5kZXhpZD1yZWxhdG9baV0uaWQ7DQogICAgICAgICAgICB2YXIgZnJvbWlkPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGluZGV4aWQpLmdldEF0dHJpYnV0ZSgnZWQ6ZnJvbWlkJyk7DQogICAgICAgICAgICBpZihleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCl7DQogICAgICAgICAgICAgICAgZXh0cmFSZWxhW2luZGV4aWRdPXsNCiAgICAgICAgICAgICAgICAgICAgaWQ6aW5kZXhpZCwNCiAgICAgICAgICAgICAgICAgICAgZnJvbWlkOmZyb21pZCwNCiAgICAgICAgICAgICAgICAgICAgdG9pZDppZCwNCiAgICAgICAgICAgICAgICAgICAgaXNDOmZhbHNlDQogICAgICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0ucmVsYXRvW2luZGV4aWRdPXt9Ow0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhdG8uZGlzcGxheT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnPydibG9jayc6J25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChjaGlsZHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2hpbGQgPSB7fTsNCiAgICAgICAgaWYgKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKSkgew0KICAgICAgICAgICAgLy8gY29uc29sZS5sb2coZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIgKyBpZCArICInXSIpLmNoaWxkTm9kZXNbMF0uZ2V0QXR0cmlidXRlKCd4bGluazpocmVmJykpOw0KICAgICAgICAgICAgdmFyIHRvZyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKS5jaGlsZHJlblswXS5nZXRBdHRyaWJ1dGUoJ3hsaW5rOmhyZWYnKS5zbGljZSgxKTsNCiAgICAgICAgICAgIG9ialsibSIgKyBpZF0udG9ndHlwZSA9IHRvZzsNCiAgICAgICAgfQ0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNoaWxkcy5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9IGNoaWxkc1tpXS5pZDsNCiAgICAgICAgICAgIGluaXQoY2lkLCBvYmpbIm0iICsgaWRdLmNoaWxkKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoY2FsbHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2FsbCA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNhbGxzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgY2lkID0gY2FsbHNbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5jYWxsKTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoYm91bmRhcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uYm91bmRhcnkgPSB7fTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBib3VuZGFyeS5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9Ym91bmRhcnlbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5ib3VuZGFyeSk7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKHN1bW1hcnkubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uc3VtbWFyeSA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHN1bW1hcnkubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBjaWQgPSBzdW1tYXJ5W2ldLmlkOw0KICAgICAgICAgICAgaW5pdChjaWQsIG9ialsibSIgKyBpZF0uc3VtbWFyeSk7DQogICAgICAgIH0NCiAgICB9DQp9DQovLy0taW5pdGlhbGl6ZQ0KLy90b2dnbGVkaXNwbGF5LS0NCnZhciBjaGFpbkFycj1bXTsNCmZ1bmN0aW9uIGdldGNoYWluKGlkKXsNCiAgICBjaGFpbkFyci51bnNoaWZ0KCdtJytpZCk7DQogICAgdmFyIHBhcmVudD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuZ2V0QXR0cmlidXRlKCdlZDpwYXJlbnRpZCcpOw0KICAgIGlmKCFwYXJlbnQpew0KICAgICAgICByZXR1cm47DQogICAgfQ0KICAgIGdldGNoYWluKHBhcmVudCk7DQp9DQpmdW5jdGlvbiBnZXRvYmooaWQpIHsNCiAgICBjaGFpbkFycj1bXTsNCiAgICBnZXRjaGFpbihpZCk7DQogICAgdmFyIG1haW49Y2hhaW5BcnJbMF07DQogICAgaWYoY2hhaW5BcnIubGVuZ3RoPjEpew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICAvLyBjb25zb2xlLmxvZyhjaGFpbkFycik7DQogICAgICAgIGZvcih2YXIgaT0xO2k8Y2hhaW5BcnIubGVuZ3RoO2krKykgew0KICAgICAgICAgICAgdmFyIGEgPSBjaGFpbkFycltpXTsNCiAgICAgICAgICAgIGZvcih2YXIgaj0wO2o8T2JqZWN0LmtleXMob2JqKS5sZW5ndGg7aisrKXsNCiAgICAgICAgICAgICAgICB2YXIgY29iaj0gb2JqW09iamVjdC5rZXlzKG9iailbal1dW2FdOw0KICAgICAgICAgICAgICAgIGlmKGNvYmopew0KICAgICAgICAgICAgICAgICAgICBvYmo9Y29iajsNCiAgICAgICAgICAgICAgICAgICAgY29udGludWUNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgIH0NCiAgICAgICAgcmV0dXJuIG9iag0KICAgIH1lbHNlew0KICAgICAgICB2YXIgb2JqPWRhdGFUcmVlW21haW5dOw0KICAgICAgICByZXR1cm4gb2JqDQogICAgfQ0KDQp9DQpmb3IodmFyIGk9MDtpPHNoYXBlLmxlbmd0aDtpKyspew0KICAgIHNoYXBlW2ldLm9uY2xpY2s9ZnVuY3Rpb24gKCkgew0KICAgICAgICB2YXIgaWQ9TnVtYmVyKHRoaXMuZ2V0QXR0cmlidXRlKCdlZDp0b2d0b3BpY2lkJykpOw0KICAgICAgICB2YXIgb2JqPWdldG9iaihpZCk7DQoNCiAgICAgICAgdmFyIHR5cGU9b2JqLnRvZ3R5cGU9PT0nbWludXMnPydwbHVzJzonbWludXMnOw0KICAgICAgICB2YXIgZGlzcGxheT1vYmoudG9ndHlwZT09PSdtaW51cyc/J25vbmUnOidibG9jayc7DQogICAgICAgIHRoaXMuY2hpbGRyZW5bMF0uc2V0QXR0cmlidXRlKCd4bGluazpocmVmJywnIycrdHlwZSk7DQogICAgICAgIG9iai50b2d0eXBlPXR5cGU7DQogICAgICAgIGNoZWNrSUQ9b2JqOw0KDQogICAgICAgIHV0ZChvYmosaWQsZGlzcGxheSk7DQogICAgICAgIGV4dHJhUmVsYUZpbigpOw0KICAgIH0NCn0NCmZ1bmN0aW9uIHV0ZChvYmosaWQsc2hvdyxvYykgew0KDQogICAgdmFyIHBzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5zdHlsZS5kaXNwbGF5IT09ICdub25lJz8nYmxvY2snOidub25lJzsNCiAgICBpZiAob2JqLnJlbGFmcm9tKXsNCiAgICAgICAgaWYob2JqLnJlbGFmcm9tLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhvYmoucmVsYWZyb20pOw0KICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgZm9yKHZhciBrPTA7azxyZWxhZnJvbXMubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgdmFyIGQ9cmVsYWZyb21zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhZnJvbS5kaXNwbGF5ID0gcHNob3c7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKG9iai5yZWxhdG8pew0KICAgICAgICBpZihvYmoucmVsYXRvLmRpc3BsYXkhPT0gcHNob3cpew0KICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMob2JqLnJlbGF0byk7DQogICAgICAgICAgICByZWxhdG9zLnNwbGljZShyZWxhdG9zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICB2YXIgZD1yZWxhdG9zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIG9iai5yZWxhdG8uZGlzcGxheSA9IHBzaG93Ow0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5jYWxsKXsNCiAgICAgICAgdmFyIGNhbGxzPU9iamVjdC5rZXlzKG9iai5jYWxsKTsNCiAgICAgICAgaWYoY2hlY2tJRCE9PW9iail7DQogICAgICAgICAgICBmb3IodmFyIGk9MDtpIDwgY2FsbHMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Y2FsbHNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLmNhbGxbY2FsbHNbaV1dOw0KICAgICAgICAgICAgICAgIHZhciBjPWIudG9ndHlwZTsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChhKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgaWYgKGIucmVsYWZyb20mJiFjKXsNCiAgICAgICAgICAgICAgICAgICAgaWYoYi5yZWxhZnJvbS5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIHJlbGFmcm9tcy5zcGxpY2UocmVsYWZyb21zLmluZGV4T2YoJ2Rpc3BsYXknKSwxKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYWZyb21zLmxlbmd0aDtrKyspew0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgICAgICBpZihiLnJlbGF0by5kaXNwbGF5IT09IHNob3cpew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGF0b3M9T2JqZWN0LmtleXMoYi5yZWxhdG8pOw0KICAgICAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGF0b3MubGVuZ3RoO2srKyl7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQ9cmVsYXRvc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGF0by5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihjKXsNCiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIrYSsiJ10iKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBpZiAoKGIuY2FsbHx8Yi5ib3VuZGFyeXx8Yi5zdW1tYXJ5KSYmYz09PSdwbHVzJykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3csdHJ1ZSkNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYgKGIuc3VtbWFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZiAoYi5ib3VuZGFyeSYmIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIGlmKG9iai5zdW1tYXJ5KXsNCiAgICAgICAgdmFyIHN1bW1hcnlzPU9iamVjdC5rZXlzKG9iai5zdW1tYXJ5KTsNCiAgICAgICAgaWYoKGNoZWNrSUQhPT1vYmomJihvYmoudG9ndHlwZT09PSdtaW51cyd8fCFvYmoudG9ndHlwZSkpfHxjaGVja0lEPT09b2JqKXsNCiAgICAgICAgICAgIGZvcih2YXIgaT0wO2k8c3VtbWFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9c3VtbWFyeXNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGI9b2JqLnN1bW1hcnlbc3VtbWFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZihvYmouYm91bmRhcnkpew0KICAgICAgICB2YXIgYm91bmRhcnlzPU9iamVjdC5rZXlzKG9iai5ib3VuZGFyeSk7DQogICAgICAgIGlmKGNoZWNrSUQhPT1vYmopew0KICAgICAgICAgICAgZm9yKHZhciBpPTA7aTxib3VuZGFyeXMubGVuZ3RoO2krKyl7DQogICAgICAgICAgICAgICAgdmFyIGE9Ym91bmRhcnlzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgICAgIHZhciBiPW9iai5ib3VuZGFyeVtib3VuZGFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCi8vICAgICAgICAgICAgICAgIGlmKGMpew0KLy8gICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciK2ErIiddIikuc3R5bGUuZGlzcGxheT1zaG93Ow0KLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCi8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCi8vICAgICAgICAgICAgICAgICAgICB9DQovLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQovLyAgICAgICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgfQ0KLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KLy8gICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3csdHJ1ZSkNCi8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZihPYmplY3Qua2V5cyhiKS5sZW5ndGghPT0wKXsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZighb2MmJm9iai5jaGlsZCkgew0KICAgICAgICB2YXIgY2hpbGRzID0gT2JqZWN0LmtleXMob2JqLmNoaWxkKTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjaGlsZHMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBhID0gY2hpbGRzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgdmFyIGIgPSBvYmouY2hpbGRbY2hpbGRzW2ldXTsNCiAgICAgICAgICAgIHZhciBjID0gYi50b2d0eXBlOw0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYSkuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICBpZiAoYi5yZWxhZnJvbSYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYWZyb20uZGlzcGxheSE9PSBzaG93KXsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcz1PYmplY3Qua2V5cyhiLnJlbGFmcm9tKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLDEpOw0KICAgICAgICAgICAgICAgICAgICBmb3IodmFyIGs9MDtrPHJlbGFmcm9tcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGFmcm9tc1trXTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0M9dHJ1ZTsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLnJlbGF0byYmIWMpew0KICAgICAgICAgICAgICAgIGlmKGIucmVsYXRvLmRpc3BsYXkhPT0gc2hvdyl7DQogICAgICAgICAgICAgICAgICAgIHZhciByZWxhdG9zPU9iamVjdC5rZXlzKGIucmVsYXRvKTsNCiAgICAgICAgICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksMSk7DQogICAgICAgICAgICAgICAgICAgIGZvcih2YXIgaz0wO2s8cmVsYXRvcy5sZW5ndGg7aysrKXsNCiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBkPXJlbGF0b3Nba107DQogICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDPXRydWU7DQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgYi5yZWxhdG8uZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgaWYgKGMpIHsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIiArIGEgKyAiJ10iKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICBpZiAoYyA9PT0gJ21pbnVzJykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYixhLHNob3cpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmICgoYi5jYWxsfHxiLmJvdW5kYXJ5fHxiLnN1bW1hcnkpJiZjPT09J3BsdXMnKSB7DQogICAgICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdyx0cnVlKQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmNhbGwmJiFjKSB7DQogICAgICAgICAgICAgICAgdXRkKGIsYSxzaG93LHRydWUpDQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5zdW1tYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLmJvdW5kYXJ5JiYhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLGEsc2hvdykNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCn0NCg0KZnVuY3Rpb24gZXh0cmFSZWxhRmluKCkgew0KICAgIHZhciBleHRyYWtleXM9T2JqZWN0LmtleXMoZXh0cmFSZWxhKTsNCiAgICBmb3IodmFyIGk9MDtpPGV4dHJha2V5cy5sZW5ndGg7aSsrKXsNCiAgICAgICAgdmFyIGV4dHJhT2JqPWV4dHJhUmVsYVtleHRyYWtleXNbaV1dOw0KICAgICAgICBpZihleHRyYU9iai5pc0MgPT09IHRydWUpew0KICAgICAgICAgICAgdmFyIGZzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmZyb21pZCkuc3R5bGUuZGlzcGxheSAhPT0nbm9uZSc/IHRydWU6IGZhbHNlOw0KICAgICAgICAgICAgdmFyIHRzaG93PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLnRvaWQpLnN0eWxlLmRpc3BsYXkgIT09J25vbmUnPyB0cnVlOiBmYWxzZTsNCiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmlkKS5zdHlsZS5kaXNwbGF5PWZzaG93ICYmIHRzaG93PyAnYmxvY2snOiAnbm9uZSc7DQogICAgICAgICAgICBleHRyYVJlbGFbZXh0cmFrZXlzW2ldXS5pc0MgPSBmYWxzZTsNCiAgICAgICAgfQ0KICAgIH0NCn0='))</script>
+  </body>
+</html>
